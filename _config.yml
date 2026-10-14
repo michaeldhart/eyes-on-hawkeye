@@ -7,7 +7,7 @@ baseurl: "/eyes-on-hawkeye"
 markdown: kramdown
 permalink: pretty
 excerpt_separator: ""
-exclude: [README.md, Gemfile, Gemfile.lock, scripts, vendor, node_modules]
+exclude: [README.md, CLAUDE.md, Gemfile, Gemfile.lock, scripts, vendor, node_modules]
 
 collections:
   documents:
