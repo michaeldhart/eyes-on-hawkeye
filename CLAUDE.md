@@ -33,7 +33,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 
 - Local server: `bundle exec jekyll serve --baseurl ""` (a `jekyll` config exists in `.claude/launch.json` for the preview pane). `bundle exec jekyll build` should produce no warnings.
 - Tools needed for ingest: poppler (`pdftotext`, `pdfinfo`) and `ocrmypdf`; all four city PDFs so far are scans with no text layer.
-- Git remote is HTTPS (SSH host key verification failed on this machine). Commit messages end with the Co-Authored-By line from the session's attribution guidance.
+- Git remote is SSH (`git@github.com:michaeldhart/eyes-on-hawkeye.git`). Commit messages end with the Co-Authored-By line from the session's attribution guidance.
 - Pushing to `main` deploys the live site. Commit and push when asked, and say so.
 
 ## State of the content
