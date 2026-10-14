@@ -1,0 +1,23 @@
+title: Eyes on Hawkeye
+tagline: Watching the data center deal in our town, in the open.
+description: A community-run archive of the public records behind our town's proposed data center.
+url: "https://michaeldhart.github.io"
+baseurl: "/eyes-on-hawkeye"
+
+markdown: kramdown
+permalink: pretty
+excerpt_separator: ""
+exclude: [README.md, Gemfile, Gemfile.lock, scripts, vendor, node_modules]
+
+collections:
+  documents:
+    output: true
+    permalink: /documents/:name/
+  entries:
+    output: false   # timeline-only items; documents appear on the timeline automatically
+
+defaults:
+  - scope: { path: "", type: documents }
+    values: { layout: document }
+  - scope: { path: "" }
+    values: { layout: page }

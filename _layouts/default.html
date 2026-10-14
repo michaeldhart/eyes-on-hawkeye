@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="{{ page.body_class }}">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="eye" aria-hidden="true">◉</span> Eyes on Hawkeye</a>
+      <nav aria-label="Main">
+        {% assign nav = "Documents|/documents/,Timeline|/timeline/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
+        {% for item in nav %}{% assign p = item | split: "|" %}
+        <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{% endfor %}
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Eyes on Hawkeye is a volunteer, community-run project. We post public records as the city released them, and we say plainly what we know and what we don't.</p>
+      <p><a href="{{ '/about/' | relative_url }}">About</a> · <a href="{{ '/contact/' | relative_url }}">Contact</a> · <a href="https://github.com/michaeldhart/eyes-on-hawkeye">Source</a></p>
+    </div>
+  </footer>
+  {% if page.scripts %}{% for s in page.scripts %}<script src="{{ s | relative_url }}"></script>
+  {% endfor %}{% endif %}
+</body>
+</html>

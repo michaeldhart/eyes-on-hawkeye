@@ -1,0 +1,2 @@
+{%- assign fmt = include.fmt | default: "%b %-d, %Y" -%}
+{%- if include.undated -%}Undated{%- else -%}<time datetime="{{ include.d | date: '%Y-%m-%d' }}">{{ include.d | date: fmt }}</time>{%- endif -%}

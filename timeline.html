@@ -1,0 +1,19 @@
+---
+layout: default
+title: Timeline
+body_class: wide
+scripts: [/assets/js/timeline.js]
+---
+<h1>Timeline</h1>
+<p class="lede">Scroll sideways through time. Select a dot to see what the record says.</p>
+
+<div class="tl-controls">
+  <div id="tl-legend" class="legend"></div>
+  <div class="zoom"><button type="button" id="z-out" aria-label="Zoom out">−</button><button type="button" id="z-in" aria-label="Zoom in">+</button></div>
+</div>
+<div id="timeline" class="timeline" tabindex="0" aria-label="Timeline of documents" data-src="{{ '/timeline.json' | relative_url }}">
+  <div class="tl-inner" id="tl-inner"></div>
+</div>
+<aside id="preview" class="preview" aria-live="polite">
+  <p class="muted">Select a dot on the timeline to preview that record.</p>
+</aside>

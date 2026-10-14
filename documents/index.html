@@ -1,0 +1,39 @@
+---
+layout: default
+title: Documents
+scripts: [/assets/js/documents.js]
+---
+<h1>Documents</h1>
+<p class="lede">Every record we have, newest first. Each page has the original file and the full text.</p>
+
+<div class="filters" id="filters">
+  <label>Type
+    <select id="f-type">
+      <option value="">All types</option>
+      {% for t in site.data.types %}<option value="{{ t[0] }}">{{ t[1].label }}</option>{% endfor %}
+    </select>
+  </label>
+  <label>Tag
+    <select id="f-tag">
+      <option value="">All tags</option>
+      {% assign alltags = site.documents | map: "tags" | join: "," | split: "," | uniq | sort %}
+      {% for t in alltags %}{% if t != "" %}<option value="{{ t }}">{{ t }}</option>{% endif %}{% endfor %}
+    </select>
+  </label>
+  <span id="f-count" class="muted" aria-live="polite"></span>
+</div>
+
+<table class="index">
+  <thead><tr><th>Date</th><th>Title</th><th>Type</th><th>Tags</th></tr></thead>
+  <tbody>
+  {% assign docs = site.documents | sort: "date" | reverse %}
+  {% for d in docs %}
+    <tr data-type="{{ d.type }}" data-tags="{{ d.tags | join: ',' }}">
+      <td class="nowrap">{% include date.html d=d.date undated=d.undated %}</td>
+      <td><a href="{{ d.url | relative_url }}">{{ d.title }}</a>{% if d.summary %}<div class="muted small">{{ d.summary }}</div>{% endif %}</td>
+      <td>{% include badge.html type=d.type %}</td>
+      <td>{% for t in d.tags %}<span class="tag">{{ t }}</span> {% endfor %}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

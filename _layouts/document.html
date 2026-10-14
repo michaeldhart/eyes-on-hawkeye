@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="doc">
+  <p class="crumb"><a href="{{ '/documents/' | relative_url }}">← All documents</a></p>
+  <h1>{{ page.title }}</h1>
+  <p class="meta">
+    {% include badge.html type=page.type %}
+    {% include date.html d=page.date undated=page.undated fmt="%B %-d, %Y" %}
+    {% if page.source %}· Source: {{ page.source }}{% endif %}
+    {% if page.pages_count %}· {{ page.pages_count }} pages{% endif %}
+  </p>
+
+  {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+  {% if page.undated %}<p class="note">This document carries no date. The date used for sorting is when the city posted it.</p>{% endif %}
+  {% if page.compilation %}<p class="note">This file bundles many separate items. We are breaking it into individual timeline entries over time.</p>{% endif %}
+  {% if page.sample %}<p class="note">This is a sample document used to test the site.</p>{% endif %}
+
+  <p class="actions">
+    {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}">Download the original PDF</a>{% endif %}
+    {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}">View on the city's website</a>{% endif %}
+  </p>
+  {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span> {% endfor %}</p>{% endif %}
+
+  {% assign my_entries = site.entries | where: "document", page.slug %}
+  {% if my_entries.size > 0 %}
+  <section class="entries">
+    <h2>On the timeline</h2>
+    <ul>
+      {% for e in my_entries %}<li><time>{{ e.date | date: "%b %-d, %Y" }}</time> {{ e.title }}{% if e.pages %} <span class="muted">(pp. {{ e.pages }})</span>{% endif %}</li>{% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  <details class="fulltext" {% unless page.compilation %}open{% endunless %}>
+    <summary>Full text{% if page.ocr %} <span class="muted">(machine-read from a scan; may contain errors)</span>{% endif %}</summary>
+    {{ content }}
+  </details>
+</article>

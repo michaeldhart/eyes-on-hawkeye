@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /timeline.json
+---
+{%- comment -%}
+Timeline items = every document (unless `compilation: true`, whose parts are entries)
+plus every item in _entries. Entries may point at a document and a page range.
+{%- endcomment -%}
+[
+{%- assign first = true -%}
+{%- for d in site.documents -%}
+  {%- unless d.compilation or d.undated or d.timeline == false -%}
+  {%- unless first %},{% endunless -%}{%- assign first = false %}
+  {"title": {{ d.title | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
+   "summary": {{ d.summary | default: "" | jsonify }}, "url": {{ d.url | relative_url | jsonify }},
+   "pdf": {{ d.file | relative_url | jsonify }}, "doc_title": {{ d.title | jsonify }}, "pages": ""}
+  {%- endunless -%}
+{%- endfor -%}
+{%- for e in site.entries -%}
+  {%- assign d = site.documents | where: "slug", e.document | first -%}
+  {%- unless first %},{% endunless -%}{%- assign first = false %}
+  {"title": {{ e.title | jsonify }}, "date": "{{ e.date | date: '%Y-%m-%d' }}", "type": {{ e.type | default: d.type | jsonify }},
+   "summary": {{ e.summary | default: "" | jsonify }},
+   "url": {{ d.url | default: "" | relative_url | jsonify }},
+   "pdf": {% if d.file and e.pages %}{{ d.file | append: "#page=" | append: e.pages | split: "-" | first | relative_url | jsonify }}{% elsif d.file %}{{ d.file | relative_url | jsonify }}{% else %}""{% endif %},
+   "doc_title": {{ d.title | default: "" | jsonify }}, "pages": {{ e.pages | default: "" | jsonify }}}
+{%- endfor -%}
+]
