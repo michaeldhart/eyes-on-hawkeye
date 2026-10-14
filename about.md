@@ -5,7 +5,7 @@ Eyes on Hawkeye is a volunteer project by residents who want to understand what 
 
 ## Who's Behind This
 
-Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He is a local activist and organizer, and a software engineer by trade. In the age of AI, he is using AI to give power back to the people: to read, sort and search the public record so that residents don't need a team of lawyers or a records request to know what their government is doing. He gathers the documents, writes the summaries and runs the site.
+Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He is a local activist and organizer, and a software engineer by trade. In the age of AI, he is using AI to give power back to the people: to read, sort and search the public record so that residents don't need a team of lawyers or a records request to know what their government is doing. He gathers the documents and runs the site. The summaries are written by AI, as explained under How We Work.
 
 ## What You'll Find Here
 
@@ -18,8 +18,8 @@ Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He
 1. We get documents from the city's own public releases or from public records requests.
 2. We keep an unedited copy of each file and link to where it came from.
 3. Many of the files are scans. We run them through text recognition so they can be searched. That text is machine-made and can be wrong; the PDF is the record.
-4. We write a short summary to help you find your way. Summaries are ours. The documents speak for themselves.
-5. If we get something wrong, [tell us]({{ "/contact/" | relative_url }}) and we'll fix it and note the correction.
+4. **The summaries are written by AI.** Claude, an AI assistant made by Anthropic, reads the text of each document and writes the short summary and the timeline entries that help you find your way. {% include author.html %} doesn't write them by hand. Key figures and dates are checked against the scanned pages, but an AI can still get things wrong. The documents speak for themselves, so read the original when it matters.
+5. If we get something wrong, including in a summary, [tell us]({{ "/contact/" | relative_url }}) and we'll fix it and note the correction.
 
 ## What We Are Not
 

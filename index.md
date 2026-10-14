@@ -16,7 +16,7 @@ title: Home
 <section class="cols">
   <div>
     <h2>What We Do</h2>
-    <p>We post public records exactly as the city released them. Next to each one we add a plain-language summary, the date, and a link to where it came from. We say what the documents show and what they leave out.</p>
+    <p>We post public records exactly as the city released them. Next to each one we add a plain-language summary, written by AI (see <a href="{{ '/about/' | relative_url }}">About</a>), the date, and a link to where it came from. We say what the documents show and what they leave out.</p>
   </div>
   <div>
     <h2>What We Don't Do</h2>

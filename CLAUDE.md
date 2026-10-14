@@ -6,7 +6,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 
 - Tone: a grassroots community accountability organization. Declarative, plain, warm but not cold. Not a neutral archive and not shrill.
 - The site's credibility rests on accuracy. State what the records show and what they leave out. Don't speculate about motives or fill gaps. Say "the documents don't show" instead of "there was no".
-- Summaries are ours, written in plain language from the document text. Be careful with attribution (who wrote, who signed, what date) and quote dates exactly. When two dates exist, state both (e.g. the agreement is dated May 26, 2026 but the developer's signature is dated May 21).
+- Summaries and timeline entries are written by Claude (AI), and the About page says so plainly; never describe them as written by Michael or by "us" in a way that hides that. Names that appear in the original public records stay visible on the site (the user decided this); don't anonymize them. Summaries are written in plain language from the document text. Be careful with attribution (who wrote, who signed, what date) and quote dates exactly. When two dates exist, state both (e.g. the agreement is dated May 26, 2026 but the developer's signature is dated May 21).
 - Never invent a date. If a document has none, mark it `undated: true`.
 - OCR text is machine-made and can be wrong. The PDF is the record, and the site says so.
 - The user has edited headline copy themselves (home page names "our mayor"). Don't revert user copy edits; check `git diff` before changing files the user may have touched.
