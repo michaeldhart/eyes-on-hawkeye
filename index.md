@@ -4,7 +4,7 @@ title: Home
 ---
 <section class="hero">
   <p class="eyebrow">Community records project</p>
-  <h1>Our town is considering a data center. We're reading every page so you can too.</h1>
+  <h1>Our mayor is considering a data center. We're reading every page so you can too.</h1>
   <p class="lede">The city has released agreements, emails and plans about a proposed data center. They're scattered, scanned, and hard to search. We gather them in one place, keep our own copy of each one, and put them in order, so residents can see what has been promised, by whom, and when.</p>
   <p class="actions">
     <a class="btn" href="{{ '/timeline/' | relative_url }}">See the timeline</a>
