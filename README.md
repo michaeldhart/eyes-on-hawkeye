@@ -63,7 +63,7 @@ Pushes to `main` build and deploy through GitHub Actions (`.github/workflows/pag
 ## Status and next steps
 
 - Skeleton is built and live with four documents from the city's [data center information page](https://www.belvidereil.gov/recent-data-center-information/).
-- **Communications file:** the 313-page email compilation is stored as one document and needs to be broken into individual timeline entries (roughly 337 email headers). This is the main content task.
+- **Communications file:** the 313-page email compilation is stored as one document and summarized as 31 timeline entries (Nov 2024 to Jul 2026). New compilations can be handled the same way.
 - **File storage:** PDFs live in git for now. We will decide later whether to move them to Git LFS, S3 or similar, starting with the 11 MB communications file.
 - The Contact page links to a Google Form (`contact_form_url` in `_config.yml`).
 

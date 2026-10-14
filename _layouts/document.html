@@ -13,7 +13,7 @@ layout: default
 
   {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
   {% if page.undated %}<p class="note">This document carries no date. The date used for sorting is when the city posted it.</p>{% endif %}
-  {% if page.compilation %}<p class="note">This file bundles many separate items. We are breaking it into individual timeline entries over time.</p>{% endif %}
+  {% if page.compilation %}<p class="note">This file bundles many separate email conversations. We summarize each one as an entry on the <a href="{{ '/timeline/' | relative_url }}">timeline</a>, with the page numbers to look at. Many pages are repeats, because each printed email includes the messages before it.</p>{% endif %}
   {% if page.sample %}<p class="note">This is a sample document used to test the site.</p>{% endif %}
 
   <p class="actions">

@@ -6,7 +6,7 @@ source: "City of Belvidere"
 source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Communications-2024-thru-August-31-2026.pdf
 pages_count: 313
-summary: "A 313-page compilation of emails and calendar items released by the city, covering 2024 through August 31, 2026. It is a bundle of many separate conversations; we are breaking it into individual timeline entries over time."
+summary: "A 313-page compilation of emails and calendar items released by the city. The messages run from November 2024 to July 2026. Many pages are repeated printouts of the same chains, so the file holds about 110 unique messages. Each conversation is summarized as an entry on the timeline, with page numbers, and two developer slide decks attached to November 2024 emails are included."
 tags: [hawkeye, email, compilation]
 ocr: true
 compilation: true

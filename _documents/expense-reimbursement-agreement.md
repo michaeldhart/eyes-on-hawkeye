@@ -6,7 +6,7 @@ source: "City of Belvidere"
 source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Expense-Reimbursement-Agreement.pdf
 pages_count: 5
-summary: "The developer agrees to reimburse the city's outside engineering, legal, planning and consulting costs for reviewing and negotiating Project Hawkeye, counted from April 1, 2026, and for administering the project if it is approved. The agreement is dated May 26, 2026; the developer's signature is dated May 21."
+summary: "The developer agrees to reimburse the city's outside engineering, legal, planning and consulting costs for reviewing and negotiating Project Hawkeye, counted from April 1, 2026, and for administering the project if it is approved. It also posts a $150,000 cash pledge that the city can draw on if a bill goes unpaid for 35 days. Any balance is returned within 60 days after the first certificate of occupancy, or after the city denies annexation or an annexation or redevelopment agreement, once all city expenses are paid. The city is not obligated to continue the process. The agreement is dated May 26, 2026; the developer's signature is dated May 21."
 tags: [hawkeye, datawatt, annexation, agreement]
 ocr: true
 ---

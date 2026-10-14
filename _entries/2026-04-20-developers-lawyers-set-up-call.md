@@ -1,0 +1,8 @@
+---
+title: "Developer's Lawyers Set Up a Call With the City Attorney"
+date: 2026-04-20
+type: correspondence
+document: communications-2024-2026
+pages: 156-158
+summary: "On Apr. 16, Peter Tsantilis of Liston & Tsantilis invites the developer's team and City Attorney Mike Drella to a Teams call titled “Development Discuss - Belvidere (JLL)” on Apr. 20 at 2:00 PM. Drella accepts. The meeting is reissued several times by JLL over the following weeks (pp. 140, 147, 152, 154), and one version is cancelled and replaced on May 5."
+---

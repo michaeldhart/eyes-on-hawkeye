@@ -48,9 +48,11 @@ Four documents from https://www.belvidereil.gov/recent-data-center-information/ 
 | `letter-of-support` | Mayor's May 22, 2025 letter to Datawatt supporting Project Hawkeye and raising annexation and utilities |
 | `expense-reimbursement-agreement` | Developer reimburses the city's review costs from April 1, 2026; dated May 26, 2026 |
 | `initial-concept` | Undated developer slide deck (type: presentation, not an application); JLL named as Datawatt's representative |
-| `communications-2024-2026` | 313-page email compilation (`compilation: true`); only one entry written so far |
+| `communications-2024-2026` | 313-page email compilation (`compilation: true`); broken into 31 timeline entries in `_entries/` covering Nov 2024 to Jul 2026 |
+
+How the communications file was processed (reuse for future compilations): the PDF is a stack of repeated printouts of the same email chains, newest first, so the ~337 headers collapse to ~110 unique messages. Dedupe by the "Sent:" timestamp, keep the best OCR copy, then read chronologically and write one entry per conversation (not per message), with the page where the clearest copy of it appears. Verify key figures against the scanned page image (the Read tool renders PDF pages) before quoting them. Upside-down attachment pages need `ocrmypdf --rotate-pages`; the sidecar text is what lives in the document body. Quote numbers and wording exactly as written in the emails and flag unclear units or names (e.g. "Bush"/"Busch", "250-500 MGD"). Report what the file shows and what it doesn't (calendar invites often carry no agenda).
 
 Open work, in priority order:
-1. Break the communications file into per-conversation entries in `_entries/` (about 337 email headers; draft in batches and have the user review). Page markers in the document body show where each page starts.
-2. Decide where PDFs live long term.
-3. Keep adding documents as the city releases them.
+1. Decide where PDFs live long term.
+2. Keep adding documents as the city releases them. Page 251 of the communications file (a sideways deck slide) is still unreadable to OCR.
+3. Possible features: a people-and-organizations view, a key-facts block, an RSS feed, social preview images.
