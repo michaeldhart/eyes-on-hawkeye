@@ -11,7 +11,7 @@ scripts: [/assets/js/timeline.js]
   <div id="tl-legend" class="legend"></div>
   <div class="zoom"><button type="button" id="z-out" aria-label="Zoom out">−</button><button type="button" id="z-in" aria-label="Zoom in">+</button></div>
 </div>
-<div id="timeline" class="timeline" tabindex="0" aria-label="Timeline of documents" data-src="{{ '/timeline.json' | relative_url }}">
+<div id="timeline" class="timeline" tabindex="0" aria-label="Timeline of documents" data-src="{{ '/timeline.json' | relative_url }}" data-types="{{ site.data.types | jsonify | escape }}">
   <div class="tl-inner" id="tl-inner"></div>
 </div>
 <aside id="preview" class="preview" aria-live="polite">

@@ -7,7 +7,7 @@ source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Letter-of-Support.pdf
 pages_count: 2
 summary: "Mayor Clinton Morris writes to Datawatt Energy's co-founder expressing enthusiastic support for a data center on Genoa Road south of I-90, and says the city wants to explore annexing the land and extending city utilities to it and the surrounding territory."
-tags: [project-hawkeye, mayor, annexation, datawatt]
+tags: [hawkeye, mayor, annexation, datawatt]
 ocr: true
 ---
 

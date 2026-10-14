@@ -2,6 +2,7 @@
 agenda:         { label: Agenda,                 color: "#2f6f9f" }
 minutes:        { label: Minutes,                color: "#5b8a3c" }
 application:    { label: Application,            color: "#8a5bb0" }
+presentation:   { label: Presentation,           color: "#6d5bd0" }
 staff-report:   { label: Staff report,           color: "#1f8a8a" }
 ordinance:      { label: Ordinance / resolution, color: "#c2410c" }
 correspondence: { label: Correspondence,         color: "#b8860b" }

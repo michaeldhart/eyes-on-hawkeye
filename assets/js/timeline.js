@@ -6,14 +6,9 @@
   var DAY = 86400000, LABEL_W = 56, ROW = 30, PAD = 60;
   var pxPerDay = 3, items = [], types = {}, hidden = {}, selected = null;
 
-  var colors = {
-    agenda: '#2f6f9f', minutes: '#5b8a3c', application: '#8a5bb0', 'staff-report': '#1f8a8a',
-    ordinance: '#c2410c', correspondence: '#b8860b', agreement: '#b3263e', other: '#6b6b6b'
-  };
-  var labels = {
-    agenda: 'Agenda', minutes: 'Minutes', application: 'Application', 'staff-report': 'Staff report',
-    ordinance: 'Ordinance / resolution', correspondence: 'Correspondence', agreement: 'Contract / agreement', other: 'News / other'
-  };
+  var colors = {}, labels = {};
+  var typeData = JSON.parse(wrap.dataset.types || '{}');
+  Object.keys(typeData).forEach(function (k) { colors[k] = typeData[k].color; labels[k] = typeData[k].label; });
 
   function t(d) { return Date.parse(d + 'T12:00:00Z'); }
   function fmt(d) { return new Date(t(d)).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }); }

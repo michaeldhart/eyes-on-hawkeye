@@ -7,7 +7,7 @@ source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Communications-2024-thru-August-31-2026.pdf
 pages_count: 313
 summary: "A 313-page compilation of emails and calendar items released by the city, covering 2024 through August 31, 2026. It is a bundle of many separate conversations; we are breaking it into individual timeline entries over time."
-tags: [project-hawkeye, email, compilation]
+tags: [hawkeye, email, compilation]
 ocr: true
 compilation: true
 ---

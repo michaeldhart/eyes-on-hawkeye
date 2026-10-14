@@ -7,7 +7,7 @@ source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Expense-Reimbursement-Agreement.pdf
 pages_count: 5
 summary: "The developer agrees to reimburse the city's outside engineering, legal, planning and consulting costs for reviewing and negotiating Project Hawkeye, counted from April 1, 2026, and for administering the project if it is approved. The agreement is dated May 26, 2026; the developer's signature is dated May 21."
-tags: [project-hawkeye, datawatt, annexation, agreement]
+tags: [hawkeye, datawatt, annexation, agreement]
 ocr: true
 ---
 

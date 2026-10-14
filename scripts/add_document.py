@@ -3,7 +3,7 @@
 
     scripts/add_document.py path/to/file.pdf --title "..." --date 2026-05-26 \
         --type agreement --source "City Clerk" --source-url https://... \
-        --summary "..." --tags water,zoning
+        --summary "..." --tags water,zoning   # one word per tag
 
 Copies the PDF into assets/documents/ (unchanged), extracts its text (using the
 PDF's own text layer, or OCR via ocrmypdf if it is a scan), and writes
@@ -14,7 +14,7 @@ import argparse, html, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TYPES = ["agenda", "minutes", "application", "staff-report", "ordinance",
+TYPES = ["agenda", "minutes", "application", "presentation", "staff-report", "ordinance",
          "correspondence", "agreement", "other"]
 
 
@@ -77,6 +77,12 @@ def main():
     ap.add_argument("--force", action="store_true", help="overwrite an existing document")
     a = ap.parse_args()
 
+    tags = [t.strip().lower() for t in a.tags.split(",") if t.strip()]
+    bad = [t for t in tags if not re.fullmatch(r"[a-z0-9]+", t)]
+    if bad:
+        sys.exit(f"Tags must be a single word (letters/digits only): {', '.join(bad)}")
+
+
     src = Path(a.pdf).resolve()
     dest = ROOT / "assets" / "documents" / src.name
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -99,7 +105,6 @@ def main():
     fm.append(f"file: /assets/documents/{src.name}")
     fm.append(f"pages_count: {pdf_pages(dest)}")
     fm.append(f"summary: {yq(a.summary)}")
-    tags = [t.strip() for t in a.tags.split(",") if t.strip()]
     fm.append("tags: [" + ", ".join(tags) + "]")
     if ocr: fm.append("ocr: true")
     if a.compilation: fm.append("compilation: true")

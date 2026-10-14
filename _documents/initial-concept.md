@@ -1,13 +1,13 @@
 ---
 title: "Project Hawkeye initial concept (developer presentation)"
 date: 2026-09-01
-type: application
+type: presentation
 source: "Datawatt Energy"
 source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Initial-Concept.pdf
 pages_count: 18
-summary: "An 18-page, undated developer slide deck marked Confidential. It describes a roughly 760-acre, multi-building data center campus south of I-90, currently zoned agricultural and under contract with a single landowner, with a target of 1,000+ megawatts connected to a 345 kV ComEd line. JLL is named as Datawatt's representative."
-tags: [project-hawkeye, datawatt, power, land-use]
+summary: "A developer slide deck, not a filing with the city. It is undated and marked Confidential. It describes a roughly 760-acre, multi-building data center campus south of I-90, currently zoned agricultural and under contract with a single landowner, with a target of 1,000+ megawatts connected to a 345 kV ComEd line. JLL is named as Datawatt's representative."
+tags: [hawkeye, datawatt, power, land]
 ocr: true
 undated: true
 ---
