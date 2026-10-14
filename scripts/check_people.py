@@ -38,6 +38,30 @@ def listing(fm, key):
     return [x.strip().strip("\"'") for x in m.group(1).split(",") if x.strip()]
 
 
+def warn_overview():
+    """Warn (don't fail) if a record is newer than the date the home page overview covers."""
+    import os
+    cfg = (ROOT / "_config.yml").read_text()
+    m = re.search(r"^overview_through:\s*(\d{4}-\d{2}-\d{2})", cfg, re.M)
+    if not m:
+        return
+    through = m.group(1)
+    newest = ("", "")
+    for folder in ("_documents", "_entries"):
+        for p in sorted((ROOT / folder).glob("*.md")):
+            fm = front(p)
+            # compilations are covered by their entries; undated documents carry a placeholder date
+            if re.search(r"^(compilation|undated):\s*true", fm, re.M):
+                continue
+            d = scalar(fm, "date") or ""
+            if d > newest[0]:
+                newest = (d, f"{folder}/{p.name}")
+    if newest[0] > through:
+        msg = (f"The home page overview covers records through {through}, but {newest[1]} is dated "
+               f"{newest[0]}. Update the overview and overview_through/overview_reviewed in _config.yml.")
+        print(("::warning::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: ") + msg)
+
+
 def main():
     errors = []
     registry = {}
@@ -80,6 +104,7 @@ def main():
             key = name.lower()
             if key and seen.setdefault(key, slug) != slug:
                 errors.append(f"name/alias '{name}' used by both {seen[key]} and {slug}")
+    warn_overview()
     if errors:
         print("People registry problems:")
         for e in errors:

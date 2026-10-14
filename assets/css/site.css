@@ -99,3 +99,8 @@ ul.plain { list-style: none; padding: 0; } ul.plain li { padding: .25rem 0; }
 .names { font-size: .9rem; } .names strong { font-weight: 600; margin-right: .3rem; }
 .names a { margin-right: .6rem; white-space: nowrap; }
 .who { font-size: .85rem; color: var(--muted); } .who a { margin-right: .5rem; }
+
+.overview { margin: 1.5rem 0; padding: .2rem 1.2rem 1rem; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 4px; }
+.overview h2 { margin-top: 1rem; }
+.overview-meta { font-size: .8rem; color: var(--muted); margin: -.3rem 0 1rem; }
+.overview p { max-width: 46rem; }

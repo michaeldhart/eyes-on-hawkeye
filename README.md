@@ -55,6 +55,10 @@ Every person and organization named in the records has a file in `_people/<slug>
 
 Scope: tag everyone who sends, receives or is substantively named in the conversation an entry summarizes. Don't tag incidental citations (for example companies mentioned as market examples on a slide). Roles must come from the records: put where in `role_source`, and write "title not stated in the records" when it isn't. No contact details. `python3 scripts/check_people.py` (also run in the deploy workflow) fails on unknown slugs, wrong kinds, unused or duplicate names.
 
+## Home page overview
+
+The home page has a short hand-written overview, "What the Records Show So Far." It is rewritten by hand when the story changes. Its two dates, `overview_through` and `overview_reviewed`, live in `_config.yml`. `scripts/check_people.py` warns when a record is newer than `overview_through`.
+
 ## Adding a document
 
 ```sh
