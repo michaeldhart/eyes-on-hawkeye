@@ -26,6 +26,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 - Document bodies are OCR text inside `{% raw %}<pre class="doc-text">…</pre>{% endraw %}` with `---- page N ----` markers. The `{% raw %}` wrapper is required because OCR noise can contain Liquid syntax.
 - When adding documents, use `scripts/add_document.py`, then read the text and write/verify the summary and date by hand.
 - Headings, button labels and document/entry titles use Title Case. Buttons that leave the page (original PDF, external source) open in a new tab with `rel="noopener"`. The external source link is generic ("View Original Source"); it isn't always the city's site.
+- Contact: the Contact page links to a Google Form (`contact_form_url` in `_config.yml`), opened in a new tab. All contact, document tips and corrections go through it.
 - Credit: the site is created and maintained by Michael Hart. Wherever his name appears, link it with `{% include author.html %}` (reads `site.author` in `_config.yml`), which opens michaeldhart.com in a new tab. Never type the name as plain text.
 - Dates display through `_includes/date.html` (handles `undated`). Type badges through `_includes/badge.html`.
 - If you rename a type slug in `_data/types.yml`, update every document and entry that uses it.
@@ -52,4 +53,4 @@ Four documents from https://www.belvidereil.gov/recent-data-center-information/ 
 Open work, in priority order:
 1. Break the communications file into per-conversation entries in `_entries/` (about 337 email headers; draft in batches and have the user review). Page markers in the document body show where each page starts.
 2. Decide where PDFs live long term.
-3. Fill in the Contact page (placeholder) and keep adding documents as the city releases them.
+3. Keep adding documents as the city releases them.
