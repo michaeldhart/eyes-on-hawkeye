@@ -5,7 +5,7 @@ Eyes on Hawkeye is a volunteer project by residents who want to understand what 
 
 ## Who's Behind This
 
-Eyes on Hawkeye was created, and is maintained, by {% include author.html %}, who gathers the documents, writes the summaries and runs the site.
+Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He is a local activist and organizer, and a software engineer by trade. In the age of AI, he is using AI to give power back to the people: to read, sort and search the public record so that residents don't need a team of lawyers or a records request to know what their government is doing. He gathers the documents, writes the summaries and runs the site.
 
 ## What You'll Find Here
 
