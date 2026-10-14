@@ -37,6 +37,8 @@ pages_count: 5
 sha256: <hex>               # fingerprint of the original PDF (add_document.py fills it in)
 summary: "Our plain-language summary."
 tags: [hawkeye, datawatt]   # single words only
+people: [mike-drella]       # slugs from _people/
+orgs: [city-of-belvidere]
 ocr: true                   # text was machine-read from a scan
 ```
 
@@ -46,6 +48,12 @@ Optional flags: `compilation: true` (the PDF bundles many items; describe the pa
 
 - **Type** is a single category per document, defined in `_data/types.yml` (slug, label, color). It drives the badge, the index filter and the timeline dot color. Edit that file to add or rename types; the timeline and `add_document.py` pick them up automatically. If you change a slug, update the documents that use it.
 - **Tags** are free-form topics, several per document. Keep each tag to a single lowercase word.
+
+## People and organizations
+
+Every person and organization named in the records has a file in `_people/<slug>.md` (front matter: `title`, `kind: person|org`, `role`, `org`, `aliases`, `role_source`). Documents and entries tag them with `people: [slug, ...]` and `orgs: [slug, ...]`. Pages are generated: an index at `/people/`, a page per name with every document and entry that names them, and a "People and Organizations Named" list on each document page (its own tags plus those of its timeline entries). Entries are tagged too, so the big email compilation doesn't make everyone link to one PDF.
+
+Scope: tag everyone who sends, receives or is substantively named in the conversation an entry summarizes. Don't tag incidental citations (for example companies mentioned as market examples on a slide). Roles must come from the records: put where in `role_source`, and write "title not stated in the records" when it isn't. No contact details. `python3 scripts/check_people.py` (also run in the deploy workflow) fails on unknown slugs, wrong kinds, unused or duplicate names.
 
 ## Adding a document
 

@@ -12,6 +12,8 @@ tags: [hawkeye, datawatt, power, land]
 ocr: true
 undated: true
 date_note: "The PDF carries no date. Its contents match two decks the developer emailed to the city on Nov. 7 and Nov. 25, 2024, so it was assembled no earlier than then. The date used for sorting is when the city posted it."
+people: [david-halligan, conor-mullady, kevin-coughlin, evelyn-lim, navin-nagrani]
+orgs: [datawatt-energy, jll, manhard-consulting, pepper-construction, comed]
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----

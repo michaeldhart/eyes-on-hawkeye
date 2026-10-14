@@ -1,0 +1,8 @@
+{%- comment -%} JSON array of {n: name, u: url} for the people/orgs tagged on include.item (a document or entry). {%- endcomment -%}
+[{%- assign wfirst = true -%}
+{%- for p in site.people -%}
+  {%- if include.item.people contains p.slug or include.item.orgs contains p.slug -%}
+    {%- unless wfirst %},{% endunless -%}{%- assign wfirst = false -%}
+    {"n": {{ p.title | jsonify }}, "u": {{ p.url | relative_url | jsonify }}}
+  {%- endif -%}
+{%- endfor -%}]

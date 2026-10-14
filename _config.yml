@@ -28,9 +28,14 @@ collections:
     permalink: /documents/:name/
   entries:
     output: false   # timeline-only items; documents appear on the timeline automatically
+  people:
+    output: true    # one page per person or organization; see scripts/check_people.py
+    permalink: /people/:name/
 
 defaults:
   - scope: { path: "", type: documents }
     values: { layout: document }
+  - scope: { path: "", type: people }
+    values: { layout: person }
   - scope: { path: "" }
     values: { layout: page }

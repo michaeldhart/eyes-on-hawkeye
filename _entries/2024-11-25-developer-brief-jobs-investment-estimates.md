@@ -5,4 +5,6 @@ type: presentation
 document: communications-2024-2026
 pages: 232-242
 summary: "The 11-page, “Confidential” deck attached to Datawatt's Nov. 25 email. It describes a roughly 760-acre site with a first phase of 1,000 MW on about 300 acres. It estimates more than 3,000 construction and permanent jobs, $3.0 billion of equipment and infrastructure investment, $3–5 million in property and local tax revenue (no time period given), and $2.0 million in sponsorships and donations. It says all figures are estimates only. These are also pages 1–11 of the city's “Project Hawkeye Initial Concept” document. It projects 200 MW operating in an estimated 2029 and 1,000 MW in an estimated 2034, and shows zoning and annexation work in the first half of 2025."
+people: [david-halligan, conor-mullady]
+orgs: [datawatt-energy, jll, manhard-consulting, pepper-construction, comed]
 ---

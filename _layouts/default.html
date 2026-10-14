@@ -17,7 +17,7 @@
     <div class="wrap bar">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="eye" aria-hidden="true">◉</span> Eyes on Hawkeye</a>
       <nav aria-label="Main">
-        {% assign nav = "Documents|/documents/,Timeline|/timeline/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
+        {% assign nav = "Documents|/documents/,Timeline|/timeline/,People|/people/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
         {% for item in nav %}{% assign p = item | split: "|" %}
         <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{% endfor %}
       </nav>

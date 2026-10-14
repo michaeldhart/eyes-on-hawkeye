@@ -5,8 +5,13 @@ permalink: /search.json
 [
 {%- for d in site.documents -%}
   {%- unless forloop.first %},{% endunless %}
-  {"id": {{ forloop.index0 }}, "title": {{ d.title | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
+  {"id": {{ forloop.index0 }}, "kind": "document", "title": {{ d.title | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
    "summary": {{ d.summary | default: "" | jsonify }}, "tags": {{ d.tags | join: " " | jsonify }},
    "url": {{ d.url | relative_url | jsonify }}, "text": {{ d.content | strip_html | normalize_whitespace | jsonify }}}
+{%- endfor -%}
+{%- for p in site.people -%}
+  ,
+  {"id": {{ site.documents.size | plus: forloop.index0 }}, "kind": {{ p.kind | jsonify }}, "title": {{ p.title | jsonify }}, "date": "", "type": "", "summary": {{ p.role | jsonify }}, "tags": "",
+   "url": {{ p.url | relative_url | jsonify }}, "text": {{ p.aliases | join: " " | append: " " | append: p.role | jsonify }}}
 {%- endfor -%}
 ]

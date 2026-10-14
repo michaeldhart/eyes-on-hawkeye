@@ -123,6 +123,8 @@ def main():
     fm.append(f"sha256: {sha256_of(dest)}")
     fm.append(f"summary: {yq(a.summary)}")
     fm.append("tags: [" + ", ".join(tags) + "]")
+    fm.append("people: []   # slugs from _people/ (person files)")
+    fm.append("orgs: []     # slugs from _people/ (organization files)")
     if ocr: fm.append("ocr: true")
     if a.compilation: fm.append("compilation: true")
     if a.undated: fm.append("undated: true")

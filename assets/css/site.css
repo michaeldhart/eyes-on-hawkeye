@@ -93,3 +93,9 @@ pre.doc-text { white-space: pre-wrap; word-wrap: break-word; font-family: ui-mon
 details.fingerprint { margin: .5rem 0 1rem; font-size: .85rem; }
 details.fingerprint > summary { cursor: pointer; color: var(--muted); }
 details.fingerprint code { word-break: break-all; font-size: .8rem; }
+
+table.index th.num, table.index td.num { text-align: right; width: 5rem; }
+ul.plain { list-style: none; padding: 0; } ul.plain li { padding: .25rem 0; }
+.names { font-size: .9rem; } .names strong { font-weight: 600; margin-right: .3rem; }
+.names a { margin-right: .6rem; white-space: nowrap; }
+.who { font-size: .85rem; color: var(--muted); } .who a { margin-right: .5rem; }

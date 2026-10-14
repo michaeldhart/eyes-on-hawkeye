@@ -33,8 +33,8 @@
     hits.forEach(function (h) {
       var d = docs[+h.ref];
       var li = document.createElement('li');
-      li.innerHTML = '<a href="' + d.url + '">' + esc(d.title) + '</a> <time>' + d.date + '</time>' +
-        '<p>' + (snippet(d.text, terms) || ('<span class="ai-tag">AI summary</span> ' + esc(d.summary))) + '</p>';
+      li.innerHTML = '<a href="' + d.url + '">' + esc(d.title) + '</a> ' + (d.kind === 'person' ? '<span class="ai-tag">Person</span>' : d.kind === 'org' ? '<span class="ai-tag">Organization</span>' : '<time>' + d.date + '</time>') +
+        '<p>' + (snippet(d.text, terms) || (d.kind === 'document' ? '<span class="ai-tag">AI summary</span> ' : '') + esc(d.summary)) + '</p>';
       out.appendChild(li);
     });
   }

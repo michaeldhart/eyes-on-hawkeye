@@ -1,0 +1,54 @@
+---
+layout: default
+---
+{%- assign slug = page.slug -%}
+{%- if page.kind == "org" -%}
+  {%- assign docs = site.documents | where_exp: "d", "d.orgs contains slug" | sort: "date" | reverse -%}
+  {%- assign ents = site.entries | where_exp: "e", "e.orgs contains slug" | sort: "date" | reverse -%}
+  {%- assign members = site.people | where: "org", slug | sort: "title" -%}
+{%- else -%}
+  {%- assign docs = site.documents | where_exp: "d", "d.people contains slug" | sort: "date" | reverse -%}
+  {%- assign ents = site.entries | where_exp: "e", "e.people contains slug" | sort: "date" | reverse -%}
+  {%- assign employer = site.people | where: "slug", page.org | first -%}
+{%- endif -%}
+<article class="doc">
+  <p class="crumb"><a href="{{ '/people/' | relative_url }}">&larr; All People and Organizations</a></p>
+  <h1>{{ page.title }}</h1>
+  <p class="meta"><span class="badge" style="--c: {% if page.kind == 'org' %}#4a6a8a{% else %}#7a5a3a{% endif %}">{% if page.kind == "org" %}Organization{% else %}Person{% endif %}</span>
+    {{ page.role }}{% if employer %} &middot; <a href="{{ employer.url | relative_url }}">{{ employer.title }}</a>{% endif %}</p>
+  {% if page.aliases.size > 0 %}<p class="muted small">Also appears as: {{ page.aliases | join: "; " }}</p>{% endif %}
+  {% if page.role_source %}<p class="muted small">Role as stated in the records: {{ page.role_source }}</p>{% endif %}
+  {% if content != "" %}<div class="prose">{{ content }}</div>{% endif %}
+
+  {% if members and members.size > 0 %}
+  <section>
+    <h2>People</h2>
+    <ul class="plain">{% for m in members %}<li><a href="{{ m.url | relative_url }}">{{ m.title }}</a> <span class="muted small">&mdash; {{ m.role }}</span></li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <section>
+    <h2>Appears In</h2>
+    {% if docs.size == 0 and ents.size == 0 %}<p class="muted">Not yet linked to any record.</p>{% endif %}
+    {% if docs.size > 0 %}
+    <h3>Documents</h3>
+    <ul class="doclist">
+      {% for d in docs %}<li>{% include date.html d=d.date undated=d.undated %} <a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if ents.size > 0 %}
+    <h3>Timeline Entries ({{ ents.size }})</h3>
+    <ul class="doclist">
+      {% for e in ents %}
+      {%- assign ed = site.documents | where: "slug", e.document | first -%}
+      <li>{% include date.html d=e.date %}
+        <a href="{{ '/timeline/' | relative_url }}#{{ e.name | remove: '.md' }}">{{ e.title }}</a>
+        {% if ed %}<span class="muted small">in <a href="{{ ed.url | relative_url }}">{{ ed.title }}</a>{% if e.pages %}, <a href="{{ ed.file | relative_url }}#page={{ e.pages | split: '-' | first }}" target="_blank" rel="noopener">pp. {{ e.pages }}</a>{% endif %}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+
+  <p class="note">Being named in a public record doesn&rsquo;t imply wrongdoing. Roles are shown as the records state them, and the descriptions here are written by AI from those records (<a href="{{ '/about/#how-we-work' | relative_url }}">how we work</a>).</p>
+</article>

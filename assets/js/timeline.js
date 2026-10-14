@@ -68,6 +68,9 @@
       '<time>' + fmt(it.date) + '</time></p><h2>' + esc(it.title) + '</h2>';
     if (it.summary) html += '<p>' + esc(it.summary) + '</p><p class="ai-note">Summary written by AI. <a href="' + wrap.dataset.about + '">How we work</a></p>';
     if (it.pages && it.doc_title) html += '<p class="muted small">From <em>' + esc(it.doc_title) + '</em>, pages ' + esc(it.pages) + '</p>';
+    if (it.who && it.who.length) {
+      html += '<p class="who">Named: ' + it.who.map(function (w) { return '<a href="' + w.u + '">' + esc(w.n) + '</a>'; }).join('') + '</p>';
+    }
     html += '<p class="actions">';
     if (it.url) html += '<a class="btn" href="' + it.url + '">Open Document Page</a>';
     if (it.pdf) html += '<a class="btn ghost" href="' + it.pdf + '" target="_blank" rel="noopener">Open Original PDF' + (it.pages ? ' at Page ' + esc(String(it.pages).split('-')[0]) : '') + '</a>';
@@ -107,6 +110,18 @@
     }
   }
 
+  // A link like /timeline/#2026-05-20-some-entry opens that entry and scrolls to its dot.
+  function openFromHash() {
+    var id = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (!id) return;
+    var it = items.filter(function (i) { return i.id === id; })[0];
+    if (!it) return;
+    select(it);
+    var dots = inner.querySelectorAll('.dot.sel');
+    if (dots.length) wrap.scrollLeft = Math.max(0, dots[0].offsetLeft - wrap.clientWidth / 2);
+    preview.scrollIntoView({ block: 'nearest' });
+  }
+
   document.getElementById('z-in').addEventListener('click', function () { zoom(1.6); });
   document.getElementById('z-out').addEventListener('click', function () { zoom(1 / 1.6); });
   wrap.addEventListener('keydown', function (e) {
@@ -119,5 +134,6 @@
     items.forEach(function (i) { types[i.type] = true; });
     buildLegend();
     openOnFirstDots();
+    openFromHash();
   }).catch(function () { inner.textContent = 'Could not load the timeline.'; });
 })();
