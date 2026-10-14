@@ -10321,21 +10321,11 @@ Summerfield Zoo ®
 
 ---- page 251 ----
 
-€ yenuepyuog
-
-iia
-
-‘Wr BLE wrsBOHOD uOROD
-‘SiON HALTS
-
-ue}d }da0u0D
-Aseuiwaid
-
-in co
-
-ADYANA
-
-uivvive JADIMVH LOAOdd
+PROJECT HAWKEYE
+DATAWATT ENERGY
+Preliminary Concept Plan
+[Color conceptual site plan, Belvidere, Illinois, with the Manhard Consulting logo: a drawing of building footprints, detention areas and a substation. Its labels are too small to be machine-read; see the PDF.]
+Confidential 3
 
 ---- page 252 ----
 
@@ -10459,38 +10449,30 @@ Confidential 5
 
 ---- page 254 ----
 
-9 JenuapyUdD, quequnoooy ongnd pa!
-eqoyuey jo Asianlun
-
-aniojeg ‘uegieqyl ‘jeug ‘puyasily +
-
-SBOHAWIY PUIMP}OD ‘O40 Pue OAD Ajsnoinalg +
-
-Ausnpul Adiaus ajqemaues sseah QZ +
-
-uesmeH piaeq
-
-SIOUN]| ‘4e%O1g AI21Sq eey pesusd!]«
-
-OS8d1YD ‘Aysianlug B}OAO] me] Jo ]OOYDS
-UOReIDOSSy JUSLUYSeAU] 8Je]Sq, AlsieA|UN WeYpsoy puke AysIaAIUN yeUIOQ «
-Jeoy JO S1ojoa11g jo pieog eAnNoaxy . dT1Ao1Q9W¢ 9 Aa7peH ‘peemy Suequy) +
-yueg enasay jesapad ‘sayelossy NIMeH + PUIM ISil4 WeMOd Usa) “YaMog WUOJEHOL +
-O9]!H ‘UoNNdex3 »g ABa}eS (seye8uy $07) exeg y eUINOGpeYyo
-SSOUISNG 8}2}Sq ]e0y JO Peay Ajsnoinaig + ‘@oueUl4 yelo1g ‘PEdH-OD AjsSNOIAalg +
-Ausnpuj ajyejse jeas sueeA QZ + Aysnpul ASi9ue ajqemauel sueehOZ +
-
-1ueiZeN UIAEN uury uA}aAg
-
-*SlOUl)]] SSO19e Sale QO!
-49A0 UO $1098foid Ja]U99 eJep pue AZJaua
-8)Gemeuas Suldojanap si ABiauy WeMeleg
-
-“a0UdiJ9dx98 oSloid ASIsuS
-JO SeMmesaw O00'SL pue LONG Oz} 1oAO
-UM Jadojsep Asiaua ue SiiASIOUa HeMeleR
-
-AJADIMVH LOAOdd
+PROJECT HAWKEYE
+DATAWATT ENERGY
+Datawatt Energy is an energy developer with over $20 billion and 15,000 megawatts of energy project experience.
+Datawatt Energy is developing renewable energy and data center projects on over 14,000 acres across Illinois.
+Evelyn Lim
+* 20 years renewable energy industry
+* Previously Co-Head, Project Finance, Chadbourne &amp; Parke (Los Angeles)
+* Terraform Power, Element Power, First Wind
+* Milbank, Tweed, Hadley &amp; McCloy LLP
+* Cornell University and Fordham University School of Law
+David Halligan
+* 20 years renewable energy industry
+* Previously CEO and CFO, Goldwind Americas
+* First Wind, Enel, InterGen, Deloitte
+* University of Manitoba
+* Certified Public Accountant
+Navin Nagrani
+* 20 years real estate industry
+* Previously Head of Real Estate Business Strategy &amp; Execution, Hilco
+* Hewitt Associates, Federal Reserve Bank
+* Executive Board of Directors of Real Estate Investment Association
+* Loyola University, Chicago
+* Licensed Real Estate Broker, Illinois
+Confidential 6
 
 ---- page 255 ----
 

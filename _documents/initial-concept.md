@@ -7,10 +7,11 @@ source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Initial-Concept.pdf
 pages_count: 18
 sha256: 49afe08f696acdd53d6891d88b6d462da0316d9a2ba63830fff1edfb8d198180
-summary: "A developer slide deck, not a filing with the city. It is undated and marked Confidential. It describes a roughly 760-acre, multi-building data center campus south of I-90, currently zoned agricultural and under contract with a single landowner, with a target of 1,000+ megawatts connected to a 345 kV ComEd line. JLL is named as Datawatt's representative."
+summary: "A developer slide deck marked Confidential, posted by the city with no date. Its 18 pages are two decks that Datawatt Energy attached to emails to the city, joined together: pages 1–11 match the 11-page deck sent on Nov. 25, 2024, and pages 12–18 match the earlier 7-page deck sent on Nov. 7, 2024. Both are also reproduced in the city communications file. The deck describes a roughly 760-acre, multi-building data center campus south of I-90, zoned agricultural and under contract with a single landowner, with a target of 1,000+ megawatts connected to a 345 kV ComEd line. JLL is named as Datawatt's representative."
 tags: [hawkeye, datawatt, power, land]
 ocr: true
 undated: true
+date_note: "The PDF carries no date. Its contents match two decks the developer emailed to the city on Nov. 7 and Nov. 25, 2024, so it was assembled no earlier than then. The date used for sorting is when the city posted it."
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----
@@ -470,32 +471,17 @@ Confidential 11
 
 ---- page 12 ----
 
-=) DATAWATT
-
-| LY }) ENERGY
-=
-
-Evelyn Lim
-213.261.1358
-elim@datawattenergy.com
-
-Navin Nagrani
-847.840.1475
-nnagrani@datawattenergy.com
-
-David Halligan
-617.513.8893
-
-PROJECT HAWKEYE cana
-
+DATAWATT ENERGY
+Evelyn Lim 213.261.1358 elim@datawattenergy.com
+Navin Nagrani 847.840.1475 nnagrani@datawattenergy.com
+David Halligan 617.513.8893
+PROJECT HAWKEYE
+Digital innovation complex
+760 acres | Boone County, Illinois
 Datawatt Energy is represented by:
-
-Digital innovation complex JLL 4
-
-_ . Conor Mullady Kevin Coughlin
-760 acres | Boone County, Illinois 847.308.9912 312.824.3801
-
-Conor.Mullady@jl.com kcoughlin@manhard.com
+JLL
+Conor Mullady 847.308.9912 Conor.Mullady@jll.com
+Kevin Coughlin 312.824.3801 kcoughlin@manhard.com
 
 ---- page 13 ----
 
@@ -546,16 +532,9 @@ Property boundary is an approximation and is not true to scale. Confidential 2
 ---- page 14 ----
 
 PROJECT HAWKEYE
-
 DATAWATT ENERGY
-‘BEDADERE (NGS
-‘COLGR COWCEPTUALerTE RAN
-
-zt
-
-Preliminary
-Concept Plan
-
+Preliminary Concept Plan
+[Color conceptual site plan, Belvidere, Illinois, with the Manhard Consulting logo: a drawing of building footprints, detention areas and a substation. Its labels are too small to be machine-read; see the PDF.]
 Confidential 3
 
 ---- page 15 ----
@@ -689,56 +668,28 @@ Confidential 5
 ---- page 17 ----
 
 PROJECT HAWKEYE
-
-Datawatt Effersyis an eneérey developer with
-
-Over $20 billion and 15,000 megawatts of
-Energy project experience.
-
-Datawatt Energy is developing renewable
-energy and data center projects on over
-14,000 acres across Illinois.
-
+DATAWATT ENERGY
+Datawatt Energy is an energy developer with over $20 billion and 15,000 megawatts of energy project experience.
+Datawatt Energy is developing renewable energy and data center projects on over 14,000 acres across Illinois.
 Evelyn Lim
-
-20 years renewable energy industry
-Previously Co-Head, Project Finance,
-Chadbourne &amp; Parke (Los Angeles)
-Terraform Power, Element Power, First Wind
-Milbank, Tweed, Hadley &amp; McCloy LLP
-Cornell University and Fordham University
-School of Law
-
+* 20 years renewable energy industry
+* Previously Co-Head, Project Finance, Chadbourne &amp; Parke (Los Angeles)
+* Terraform Power, Element Power, First Wind
+* Milbank, Tweed, Hadley &amp; McCloy LLP
+* Cornell University and Fordham University School of Law
 David Halligan
-
-20 years renewable energy industry
-Previously CEO and CFO, Goldwind Americas
-First Wind, Enel, InterGen, Deloitte
-
-University of Manitoba
-
-Certified Public Accountant
-
-DATAWATT
-
-ENERGY
-
+* 20 years renewable energy industry
+* Previously CEO and CFO, Goldwind Americas
+* First Wind, Enel, InterGen, Deloitte
+* University of Manitoba
+* Certified Public Accountant
 Navin Nagrani
-
 * 20 years real estate industry
-
-+ Previously Head of Real Estate Business
-Strategy &amp; Execution, Hilco
-
-+ Hewitt Associates, Federal Reserve Bank
-
-* Executive Board of Directors of Real
-Estate Investment Association
-
-+ Loyola University, Chicago
-
+* Previously Head of Real Estate Business Strategy &amp; Execution, Hilco
+* Hewitt Associates, Federal Reserve Bank
+* Executive Board of Directors of Real Estate Investment Association
+* Loyola University, Chicago
 * Licensed Real Estate Broker, Illinois
-
 Confidential 6
 
 ---- page 18 ----
