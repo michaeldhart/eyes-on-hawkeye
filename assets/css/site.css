@@ -74,7 +74,7 @@ pre.doc-text { white-space: pre-wrap; word-wrap: break-word; font-family: ui-mon
 .legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .82rem; }
 .legend label { cursor: pointer; } .swatch { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%; background: var(--c); margin-right: .2rem; }
 .zoom button { font-size: 1.2rem; width: 2.2rem; height: 2.2rem; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 4px; cursor: pointer; margin-left: .3rem; }
-.timeline { overflow-x: auto; border: 1px solid var(--line); background: var(--card); border-radius: 6px; }
+.timeline { overflow-x: auto; overscroll-behavior-x: contain; /* stop trackpad swipes at the edge from triggering browser back/forward */ border: 1px solid var(--line); background: var(--card); border-radius: 6px; }
 .tl-inner { position: relative; min-height: 14rem; }
 .tl-inner::before { content: ""; position: absolute; left: 0; right: 0; top: 32px; border-top: 2px solid var(--fg); }
 .tick { position: absolute; top: 26px; height: 12px; border-left: 1px solid var(--line); }
