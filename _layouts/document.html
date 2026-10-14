@@ -42,8 +42,8 @@ layout: default
   <section class="names">
     <h2>People and Organizations Named</h2>
     {% assign roster = site.people | sort: "title" %}
-    <p><strong>People:</strong> {% for p in roster %}{% if p.kind == "person" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endif %}{% endfor %}</p>
-    <p><strong>Organizations:</strong> {% for p in roster %}{% if p.kind == "org" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% endif %}{% endfor %}</p>
+    <p><strong>People:</strong> {% for p in roster %}{% if p.kind == "person" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
+    <p><strong>Organizations:</strong> {% for p in roster %}{% if p.kind == "org" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
     <p class="muted small">Everyone who sends, receives or is named in the conversations summarized for this document. <a href="{{ '/people/' | relative_url }}">All people and organizations</a></p>
   </section>
   {% endif %}

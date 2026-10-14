@@ -69,7 +69,7 @@
     if (it.summary) html += '<p>' + esc(it.summary) + '</p><p class="ai-note">Summary written by AI. <a href="' + wrap.dataset.about + '">How we work</a></p>';
     if (it.pages && it.doc_title) html += '<p class="muted small">From <em>' + esc(it.doc_title) + '</em>, pages ' + esc(it.pages) + '</p>';
     if (it.who && it.who.length) {
-      html += '<p class="who">Named: ' + it.who.map(function (w) { return '<a href="' + w.u + '">' + esc(w.n) + '</a>'; }).join('') + '</p>';
+      html += '<p class="who">Named: ' + it.who.map(function (w) { return '<a href="' + w.u + '">' + esc(w.n) + '</a>'; }).join(' ') + '</p>';
     }
     html += '<p class="actions">';
     if (it.url) html += '<a class="btn" href="' + it.url + '">Open Document Page</a>';
