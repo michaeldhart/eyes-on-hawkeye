@@ -13,21 +13,6 @@ title: Home
   </p>
 </section>
 
-<section class="overview" markdown="1">
-## What the Records Show So Far
-<p class="overview-meta">Covers records through {{ site.overview_through | date: "%B %-d, %Y" }} &middot; Last reviewed {{ site.overview_reviewed | date: "%B %-d, %Y" }} &middot; Written by AI (<a href="{{ '/about/#how-we-work' | relative_url }}">how we work</a>)</p>
-
-**The project.** Project Hawkeye is a proposed data center campus on about 760 acres south of Interstate 90, outside the city limits. The developer, Datawatt Energy, says the land is zoned agricultural and under contract with a single landowner. [Its slide deck]({{ '/timeline/' | relative_url }}#2024-11-25-developer-brief-jobs-investment-estimates), sent to the city in November 2024, targets 1,000 megawatts or more, connected to a 345 kV ComEd line. It estimates more than 3,000 jobs, $3.0 billion of investment and $3–5 million in property and local tax revenue, with no time period given. The deck says all figures are estimates only.
-
-**Power and water.** Both come up again and again. [In February 2025]({{ '/timeline/' | relative_url }}#2025-02-10-comed-power-could-take-six-years) the developer told the city that ComEd was suggesting power could take more than six years to arrive after a request, and that Datawatt was looking for ways to power the site without ComEd. [On water and sewer]({{ '/timeline/' | relative_url }}#2024-12-09-water-and-sewer-routes-annexation-preferred), the city and the developer's engineers discussed routes, annexation and capacity. [In June 2025]({{ '/timeline/' | relative_url }}#2025-06-05-manhard-asks-about-water-sewer-and-incentives) the developer's engineer wrote that it expects a primarily air-cooled system, with a small chance of a water-cooled one that would need several million gallons a day.
-
-**Annexation and the city.** [In December 2024]({{ '/timeline/' | relative_url }}#2024-12-09-water-and-sewer-routes-annexation-preferred) the City Attorney told the developer's representatives that annexation was preferred, if feasible, for both water and sewer. In May 2025 the mayor sent Datawatt [a letter]({{ '/documents/letter-of-support/' | relative_url }}) on city letterhead expressing "enthusiastic interest" in the project and encouraging a meeting with city staff on annexation and zoning. JLL, the developer's representative, had sent the mayor [a draft letter]({{ '/timeline/' | relative_url }}#2025-05-19-jll-sends-draft-letter-of-support) three days earlier and asked for it back in time to submit with the developer's ComEd application. The draft itself isn't in the records.
-
-**Money.** In May 2026 the city and the developer signed [a reimbursement agreement]({{ '/documents/expense-reimbursement-agreement/' | relative_url }}), dated May 26. Datawatt Hyperscale LLC agrees to pay the city's outside engineering, legal and consulting costs for reviewing and negotiating the project, counted from April 1, 2026, and to post a $150,000 cash pledge the city can draw on if bills go unpaid. The agreement says it doesn't obligate the city to continue the process. [The day before the developer signed]({{ '/timeline/' | relative_url }}#2026-05-20-mayor-met-with-developer-city-attorney-notifies-counsel), on May 20, 2026, the City Attorney emailed the developer's lawyer that the mayor and the developer had discussed the draft agreement and the city's position, and that he wanted the lawyer kept in the loop. [A June 18 email]({{ '/timeline/' | relative_url }}#2026-06-18-wire-instructions-sent-150015-ready) says a $150,015 wire was ready once wiring instructions were verbally confirmed. The records don't show whether it was sent.
-
-**What the records don't show.** A formal annexation or zoning application or petition. Any City Council, committee or public hearing action. Any incentive offered or agreed, although the developer has asked to discuss incentives. What was said on the many calls and meetings the emails schedule. The most recent item is a "Utility Discussion" call set for July 27, 2026. See [the full timeline]({{ '/timeline/' | relative_url }}).
-</section>
-
 <section class="cols">
   <div>
     <h2>What We Do</h2>
@@ -41,6 +26,21 @@ title: Home
     <h2>Why It Matters</h2>
     <p>Decisions about land, water, power and tax money are being made now. Public records belong to the public, and the public should be able to read them without a records request.</p>
   </div>
+</section>
+
+<section class="overview" markdown="1">
+## What the Records Show So Far
+<p class="overview-meta">Covers records through {{ site.overview_through | date: "%B %-d, %Y" }} &middot; Last reviewed {{ site.overview_reviewed | date: "%B %-d, %Y" }} &middot; Written by AI (<a href="{{ '/about/#how-we-work' | relative_url }}">how we work</a>)</p>
+
+**The project.** Project Hawkeye is a proposed data center campus on about 760 acres south of Interstate 90, outside the city limits. The developer, Datawatt Energy, says the land is zoned agricultural and under contract with a single landowner. [Its slide deck]({{ '/timeline/' | relative_url }}#2024-11-25-developer-brief-jobs-investment-estimates), sent to the city in November 2024, targets 1,000 megawatts or more, connected to a 345 kV ComEd line. It estimates more than 3,000 jobs, $3.0 billion of investment and $3–5 million in property and local tax revenue, with no time period given. The deck says all figures are estimates only.
+
+**Power and water.** Both come up again and again. [In February 2025]({{ '/timeline/' | relative_url }}#2025-02-10-comed-power-could-take-six-years) the developer told the city that ComEd was suggesting power could take more than six years to arrive after a request, and that Datawatt was looking for ways to power the site without ComEd. [On water and sewer]({{ '/timeline/' | relative_url }}#2024-12-09-water-and-sewer-routes-annexation-preferred), the city and the developer's engineers discussed routes, annexation and capacity. [In June 2025]({{ '/timeline/' | relative_url }}#2025-06-05-manhard-asks-about-water-sewer-and-incentives) the developer's engineer wrote that it expects a primarily air-cooled system, with a small chance of a water-cooled one that would need several million gallons a day.
+
+**Annexation and the city.** [In December 2024]({{ '/timeline/' | relative_url }}#2024-12-09-water-and-sewer-routes-annexation-preferred) the City Attorney told the developer's representatives that annexation was preferred, if feasible, for both water and sewer. In May 2025 the mayor sent Datawatt [a letter]({{ '/documents/letter-of-support/' | relative_url }}) on city letterhead expressing "enthusiastic interest" in the project and encouraging a meeting with city staff on annexation and zoning. JLL, the developer's representative, had sent the mayor [a draft letter]({{ '/timeline/' | relative_url }}#2025-05-19-jll-sends-draft-letter-of-support) three days earlier and asked for it back in time to submit with the developer's ComEd application. The draft itself isn't in the records.
+
+**Money.** In May 2026 the city and the developer signed [a reimbursement agreement]({{ '/documents/expense-reimbursement-agreement/' | relative_url }}), dated May 26. Datawatt Hyperscale LLC agrees to pay the city's outside engineering, legal and consulting costs for reviewing and negotiating the project, counted from April 1, 2026, and to post a $150,000 cash pledge the city can draw on if bills go unpaid. The agreement says it doesn't obligate the city to continue the process. [The day before the developer signed]({{ '/timeline/' | relative_url }}#2026-05-20-mayor-met-with-developer-city-attorney-notifies-counsel), on May 20, 2026, the City Attorney emailed the developer's lawyer that the mayor and the developer had discussed the draft agreement and the city's position, and that he wanted the lawyer kept in the loop. [A June 18 email]({{ '/timeline/' | relative_url }}#2026-06-18-wire-instructions-sent-150015-ready) says a $150,015 wire was ready once wiring instructions were verbally confirmed. The records don't show whether it was sent.
+
+**What the records don't show.** A formal annexation or zoning application or petition. Any City Council, committee or public hearing action. Any incentive offered or agreed, although the developer has asked to discuss incentives. What was said on the many calls and meetings the emails schedule. The most recent item is a "Utility Discussion" call set for July 27, 2026. See [the full timeline]({{ '/timeline/' | relative_url }}).
 </section>
 
 <section>
