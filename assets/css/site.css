@@ -102,5 +102,8 @@ ul.plain { list-style: none; padding: 0; } ul.plain li { padding: .25rem 0; }
 
 .overview { margin: 1.5rem 0; padding: .2rem 1.2rem 1rem; background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--accent); border-radius: 4px; }
 .overview h2 { margin-top: 1rem; }
-.overview-meta { font-size: .8rem; color: var(--muted); margin: -.3rem 0 1rem; }
+.overview-meta { font-size: .7rem; color: var(--muted); opacity: .85; letter-spacing: .01em; margin: -.3rem 0 1.1rem; }
+.overview-meta a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 2px; }
+/* the bold lead-in of each paragraph works like a run-in head */
+.overview p > strong:first-child { font-family: var(--serif); font-size: 1.28em; font-weight: 700; line-height: 1.1; }
 .overview p { max-width: 46rem; }
