@@ -31,7 +31,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 - Every place a summary is shown carries an AI disclosure (document page note, "AI summary" tag in the index and search fallback, note in the timeline preview). Keep this when adding new views that show summaries.
 - Dates display through `_includes/date.html` (handles `undated`). Type badges through `_includes/badge.html`.
 - If you rename a type slug in `_data/types.yml`, update every document and entry that uses it.
-- Use relative_url for all internal links (the site is served under `/eyes-on-hawkeye/` on GitHub Pages).
+- Use relative_url for all internal links. The site now lives at the root of https://eyesonhawkeye.com. The old github.io/eyes-on-hawkeye address redirects to it. Deploys pass the base path via the workflow, so `baseurl` stays empty. Custom domain is set in the repo's Pages settings (no CNAME file needed with Actions deploys). DNS is at GoDaddy: four A records on `@` to GitHub Pages and a `www` CNAME to michaeldhart.github.io.
 
 ## Working in this repo
 

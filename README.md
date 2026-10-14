@@ -2,7 +2,7 @@
 
 A community-run archive of public records about the proposed data center ("Project Hawkeye") in Belvidere, Illinois. We collect the documents the city has released, keep our own copy of each, summarize them in plain language, and put them in order so residents can see what has been promised, by whom, and when.
 
-Live site: https://michaeldhart.github.io/eyes-on-hawkeye/
+Live site: https://eyesonhawkeye.com (custom domain on GitHub Pages; DNS at GoDaddy)
 
 The site is a Jekyll static site with a home page, a document index, full-text search, and a horizontally scrolling timeline. Content is added by hand (by the maintainers, with Claude's help). There is no admin interface and no upload form.
 
