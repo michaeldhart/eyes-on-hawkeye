@@ -28,6 +28,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 - Headings, button labels and document/entry titles use Title Case. Buttons that leave the page (original PDF, external source) open in a new tab with `rel="noopener"`. The external source link is generic ("View Original Source"); it isn't always the city's site.
 - Contact: the Contact page links to a Google Form (`contact_form_url` in `_config.yml`), opened in a new tab. All contact, document tips and corrections go through it.
 - Credit: the site is created and maintained by Michael Hart. Wherever his name appears, link it with `{% include author.html %}` (reads `site.author` in `_config.yml`), which opens michaeldhart.com in a new tab. Never type the name as plain text.
+- Every place a summary is shown carries an AI disclosure (document page note, "AI summary" tag in the index and search fallback, note in the timeline preview). Keep this when adding new views that show summaries.
 - Dates display through `_includes/date.html` (handles `undated`). Type badges through `_includes/badge.html`.
 - If you rename a type slug in `_data/types.yml`, update every document and entry that uses it.
 - Use relative_url for all internal links (the site is served under `/eyes-on-hawkeye/` on GitHub Pages).

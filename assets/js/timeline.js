@@ -66,7 +66,7 @@
     selected = it;
     var html = '<p class="meta"><span class="badge" style="--c:' + (colors[it.type] || '#6b6b6b') + '">' + esc(labels[it.type] || it.type) + '</span> ' +
       '<time>' + fmt(it.date) + '</time></p><h2>' + esc(it.title) + '</h2>';
-    if (it.summary) html += '<p>' + esc(it.summary) + '</p>';
+    if (it.summary) html += '<p>' + esc(it.summary) + '</p><p class="ai-note">Summary written by AI. <a href="' + wrap.dataset.about + '">How we work</a></p>';
     if (it.pages && it.doc_title) html += '<p class="muted small">From <em>' + esc(it.doc_title) + '</em>, pages ' + esc(it.pages) + '</p>';
     html += '<p class="actions">';
     if (it.url) html += '<a class="btn" href="' + it.url + '">Open Document Page</a>';

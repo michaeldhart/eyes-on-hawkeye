@@ -30,7 +30,7 @@ scripts: [/assets/js/documents.js]
   {% for d in docs %}
     <tr data-type="{{ d.type }}" data-tags="{{ d.tags | join: ',' }}">
       <td class="nowrap">{% include date.html d=d.date undated=d.undated %}</td>
-      <td><a href="{{ d.url | relative_url }}">{{ d.title }}</a>{% if d.summary %}<div class="muted small">{{ d.summary }}</div>{% endif %}</td>
+      <td><a href="{{ d.url | relative_url }}">{{ d.title }}</a>{% if d.summary %}<div class="muted small"><span class="ai-tag" title="Summary written by AI">AI summary</span> {{ d.summary }}</div>{% endif %}</td>
       <td>{% include badge.html type=d.type %}</td>
       <td>{% for t in d.tags %}<span class="tag">{{ t }}</span> {% endfor %}</td>
     </tr>

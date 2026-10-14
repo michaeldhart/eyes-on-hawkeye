@@ -34,7 +34,7 @@
       var d = docs[+h.ref];
       var li = document.createElement('li');
       li.innerHTML = '<a href="' + d.url + '">' + esc(d.title) + '</a> <time>' + d.date + '</time>' +
-        '<p>' + (snippet(d.text, terms) || esc(d.summary)) + '</p>';
+        '<p>' + (snippet(d.text, terms) || ('<span class="ai-tag">AI summary</span> ' + esc(d.summary))) + '</p>';
       out.appendChild(li);
     });
   }
