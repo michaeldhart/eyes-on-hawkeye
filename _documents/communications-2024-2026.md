@@ -9482,494 +9482,452 @@ you do not wish to receive similar electronic messages from us in the future the
 
 ---- page 232 ----
 
-SOU] ‘AYUNOD 9U00g | saloe 997
+PROJECT HAWKEYE
 
-X9]GWO9 UO!EAOUU! ]eUZIG
+Digital innovation complex
 
-Woo) [@Apey ny, 1ou0g
-cL66'808 278
+760 acres | Boone County, Illinois
 
-eee JADIMVH LOAlOdd
+S DATAWATT
 
-:Aq paiuasaidal si ASisuy Wemejeq i
+L/ }) ENERGY
 
-WooAsiauanemelepmuesijeyup
-E688 SLS°ZL9
-uesineH piaeq
+David Halligan
+617.513.8893
+dhalligan@datawattenergy.com
 
-Aguana (
+Datawatt Energy is represented by:
 
-LIVMVLIVO &lt;5
+JLL
 
-i
+Conor Mullady, JLL
+847.308.9912
+Conor.Mullady@jll.com
 
 ---- page 233 ----
 
-Z lenuepyuog
+PROJECT HAWKEYE
 
-“sndwied Jaquao eyep WeMeZE-900'L +
+ENERGY
 
-2 JO} 991} Jeu! Ue YM Ayedoid
+) DATAWATT
+ce
 
-oy} BuNoesue) aun UOIssisUe PIO
-AASVE &amp; OYU! Xa]dIO ayy oUUODIOIUI
-0} sue}d Heme}eq “juaWdojenep
+Pearl St
 
-94} JO B]y0I1d Ayiqeuleysns ay) poddns
-0} saoinos Agisue 8}qemauai W014 Jamod
-Buyinoes si ABaqeNs Wemeyeq oy} 0} 2109
+Summerfield Zoo 2
 
-“OBeOIYD UMOJUMOP Ody SeyNUILU OG
-93290) AyualUeAuod pue 06 ere3S102U}
-40 YINOS 9}I1W JeyeNb-suU0 Ajayewixosdde
-si AWedoud a4) yo uepunog wssyyoU ey
+* Property boundary is an approximation and is not true to scale.
 
-“youMOpue] a)BUIs
+Datawatt Energy is developing a digital
+innovation complex anchored by a multi-
+building data center campus. The
+complex is to be sited on an
+approximately 760-acre multi-parcel
+property in Belvidere (Boone County),
+Illinois. The property is currently zoned
+agricultural and is controlled under a
+purchase and sale agreement with a
+single landowner.
 
-2 UM uoWaedge a}es pue sseyound
+The northern boundary of the property is
+approximately one-quarter mile south of
+Interstate 90 and conveniently located
+90 minutes from downtown Chicago.
 
-® J@PUN Pa}]}O1UOD S| pue jesnyNoWZe
-pauoz Ajuesino s| Auadoud ayy “sioun!
-‘(Aung aucog) asapinjag ul Aadoid
-Jeoued-nynw a19e-09/ Ajeyeuxoidde
+Core to the Datawatt strategy is securing
+power from renewable energy sources to
+support the sustainability profile of the
+development. Datawatt plans to
+interconnect the complex into a 345kV
+ComEd transmission line transecting the
+Property with an initial target for a
++1,000-megawatt data center campus.
 
-UE UO pays aq 0} SI xa}du0o
-
-UL “sndwes JajUa9 eyep Bulping
-
-~hynw e Aq pesoyoue xajdwioo uoneaouul
-jeusip e Sudojenap si ASsauzg eMeIeg
-
-AOuaNna f fall
-divMviva LS
-
-@ zZelq soy
-
-“@]B9S 0} 8N.3 JOU SI pue UOeWIxoudde Ue s! Alepunog Aedolg ,
-
-&amp; 002z playing
-
-JADIMVH LOAOdd
+Confidential 2
 
 ---- page 234 ----
 
-€ jenuepyuog
+PROJECT HAWKEYE
 
-oes BdIJ10 “Ybs OOO‘OS Puke UONeISqns ANN Mau pepnjoU! Ino “SpIMUOHeU SyUA!}9 ayeAUd pue oNGnd
+DATAWATT
 
-DNILINSNOD
--plIng “I Sued uP{UeLy UI UoRONASUOD Jeddag Aq 1eqUe0 exep A107S-oma “bs QOO'SEE Buinies souatiadxe sieeK Og 4en0 YIM UN ADYUD)Y »-=
-SIOUM! Sed UNUEA LOVEYG Buidenuns pue ZUL@euUlBUa yA! Bd!A1eS-})N4 Pp Yy aS
-doupyed Sueeulzug pue yIAID ran
+Illinois Expertise
 
-“L@6| GOUls S1oJOas JUSLULUEAOS pue Sonusorr
-ajeaud panies sey yey} Wy JUsWaseueWL -PouUoJsueAL MOLOWUOL
-uononjsuos pue Bunsenuosjeieucg ©6s§-§@ WON ONLASUOD
-seuped ainjonAsedyuy —— 4oddedg
+Project Hawkeye is being developed by a team of
+Illinois-based energy, construction and engineering
 
-“BOLO YLION SSos0e eoualiedxe Joe/oid
-ABs9ue Jo semeZaw 090s pue uoMIG AOQUANA
+firms:
 
-OZ$ 4900 YM Jedojenap AZ19ua aiqemeuey LIVMVLVG
-sedojaaeq pesy
+DATAWATT
 
-SUA
-SULJ99UISUS PUe UO!}ONIySUOD ‘AZIeUs paseq-sioul]]
-Jo wes} e Aq padojaaap 8uleq si afeymeH JO9!01g
+ENERGY
 
-esiviedxq sioul]|
+Pepper —
 
-ASYANG
+Tomorrow warwomed/
 
-ivmviva JADIMVH LOAOdd
+M4 Manhard.
+
+CONSULTING
+
+Lead Developer
+
+Renewable energy developer with over $20
+billion and 15,000 megawatts of energy
+project experience across North America.
+
+Infrastructure Partner
+
+General contracting and construction
+management firm that has served private
+and government sectors since 1927.
+
+Civil and Engineering Partner
+Full-service civil engineering and surveying
+firm with over 50 years experience serving
+public and private clients nationwide.
+
+DR9401 Franklin Park, Illinois
+
+385,000 sqft. two-story data center by Pepper Construction in Franklin Park, IL. Build-
+out included new utility substation and 30,000 sqft. office facilities.
+
+Confidential 3
 
 ---- page 235 ----
 
-y yenuspyuoD
+DATAWATT
 
-“UOIZO1 OU} Ul S9III0e4 1194) Sulpuedxe
-uaeq aAey Ja PUL “YJOSOIDIP| ‘a}B009
-se yons sueAejd afie7] ‘siajsesip jeunjyeu
+PROJECT HAWKEYE
 
-40J 4S11 MO} Ajaaneyas pue ‘saizo “sf
+J ENERGY
 
-Jofew 0} AYWANOBUUOD BUOIs ‘UOIe90)
+(cs o
+——-vanesville Elkhorn °
+~. Chicago
+) { Escoct } Tier 1 Data Center Market
+sense enaeaBelolt ©
+Northern Illinois is attracting hyperscale
+Roscoe Harvard data centers due to the region's strategic
+advantages, including robust
+Loves Park infrastructure, reliable access to power
+pena Marengo and established fiber network.
+or =e
+; NM foe Chicago is a key hub for data center
 
-jesU90 sii Aq UsALIP “WUsUdO)}eAep
-491U89 eJep 10) qny Asx e si o8e01YyD
+@ S Usrerer ies which development, driven by its central
 
-YOMISU JAql Paysijqejse pue
-Jemod 0} sseo0e a)qeljal ‘aunjonyseul
-ysnqol Sulpnjoul ‘seseyueape
+a Penview) location, strong connectivity to major
 
-9189}21]S S,UOIZa1 84} 0} eNp siaquao eYep
-ayeosiadAy Buljoese SI slouN| We4yLON
+— -Evanston,
 
-JOB] 49}U9D &amp;1eq | JAIL
-oseoluy
+4 — Lia U.S. cities, and relatively low risk for
+Sycamore | G A gl . .
+al 500 ‘ gie —— See natural disasters. Large players such as
+oe a @ oe SS | 2 Google, Microsoft, and Meta have been
+NV oometa | oOMet - - expanding their facilities in the region.
+eta j-
+AB Dekalb J Confidential 4
+2] re P
 
-ASYANG
-
-LivmMviva
-
-y amyreden” Buoun.
-ox aa a'aex=a j
-
-“Bioweats
-uoisueng-—S2uleld 88 s8as- — oS
-i a =
-Ua|
-Wesrauels “Beet “UW asapinjog bt
-
-ADYaNS
-
-|
-LIVMVLVa N
-\ as
-
-“qleyea. e377
-
-(32)
-
-wou,
-
-“esr Kaye, on ©.
-
-&lt; ayeTeISKIQ., _oBuaLe|
-a ot n-@-- arpiajeg Psopyooy-
-. 34903SPOOM subg Sanoy
-— AUHON :
-\ |
-® ion soosoy
-ae (ja Vioad
-
-eysdusy &gt; if aa }
-
-4
-
-yosory eB |
-~ 1280,
-_— Z
-@ ~~ uoibuying @ WOYAg
-aujey + a
-
-ajliassuep-
-fooy
-
-SADIMVH LOAOdd
+‘Naperville
 
 ---- page 236 ----
 
-g jenuepyuoD
+PROJECT HAWKEYE
 
-swomiou pue
-“srunves 2Bu20}s 20) semeow sopriou puEag “9sn0y UED J2}UBD Kp B Branses jo saqUINY 94 328499 0} UIIdNELOD Jemod fa po;nseaLS PiRaE,
+ro +) DATAWATT
 
-aed vi0z,
--0 | I I i
-‘suayeosiodAyy iia I i In in 1 |
-WOE
-1 seve
-soqueduioo “= 08
-‘woRPeO9|-09
-— 9%
-oe
-sosudueg i
-= -o «= HB —ae
+) ENERGY
 
-B1EYS % ‘Sesudieque/siepinoud
+Sustainable Data Centers
 
-SHemeBi6 ‘sesudiejue/siepinoad
-Aq ‘wonduinsucs somod saqueo eq
+Investing in the rising data center economy*
+January 17, 2023
 
-fq ‘uonduinsuce semod 19]U99 B}eq
+“Data centers are big energy consumers—a
+hyperscaler’s data center can use as much power as
+80,000 households do. Pressure to make data centers
+sustainable is therefore high, and some regulators and
+governments are imposing sustainability standards on
+newly built data centers.
 
-“0E07 IHUN
-4eaf B juediad Q} atuos Aq Mos6 0} }S29810) SI puBap Je}Ue9 B}ep SF}
+In fact, the use of renewable energy is a critical
+component of the hyperscalers’ strategies.”
 
-Auedwo7) 3)
-AOSUTYO
+* https://www.mckinsey.comvindustries/technology-media-and-telecommunications/our-insights/investing-in-the-rising-data-center-economy
 
-AOUYANa ( fall
-LLIVMVLIVO --
+McKinsey
+&amp; Company
 
-Auwiouode-493189-2}ep-BU|Si1-84}-U|-BUNSAAUL/SIYBISU!-1NO/SUOESIUNLWLO99)31-PUe-eIPeLU-A3O}OUYOa}/SalNSNPUL/WOd‘AesUpjoUMMMy/:SdaY *
+US data center demand is forecast to grow by some 10 percent a year
+until 2030.
 
-« Salsa}es ,siajeossadAy ay} JO JuBUOdWOD
-789/319 @ Si ABZ19uUa a}qemauas Jo BSN ay) Oe ul
+Data center power consumption, by
+providers/enterprises,' gigawatts
 
-*s49]Ua90 e1ep YING Ajmau
-uo splepuejs Aypiqeujeysns Sulsoduy ase S}U@LUUIAaAOS
-pue SJojejNses awoOs pue “Ysly o10jasay] S} ayqeuleysns
-$49]U89 B]ep ayeW 0} aiNssaid ‘Op spjoyesnoy 000‘0g
+35 —
 
-se 48Mod YON se asn ued J3]U90 ejep Ss sajeossedAy
-e—siauinsuod AZJaua Siq ase SJajuad e}]eq,,
+Data center power consumption, by
+providers/enterprises,' % share
 
-€70e ‘ZL Avenue
-,AWIOU0Da 49}2U99 beep SUIS ey? Ul SuRSeEAU]
+sae Ct - wr
 
-$19]U95 e}eq 9]qeuleisns
+Enterprises
+30
+_
 
-JADIMVH LOAOdd
+26 — =" |
+
+ita _ Co-location
+20- i companies.
+qe-) CAR j
+
++13.0% I
+“alll ol
+
+° so 2020 2014 2030
+
+"Demand is measurad by power consumption to retire the numberof servers a datn center can house, Demand includes regawalls for storage, servers,
+and networks
+
+Confidential 5
 
 ---- page 237 ----
 
-“Alen Kew Suiwuin payeyas ayy pue syunowe yemoy ‘siuewdojenep 49jUue0
-9 JenuEpyuoD Prep ojeosiedAy @)qesedui09 pue syd2ou0e jen!u! ekeyme} Yoo[o1g UO posed ale pue Ajuo seyeUUlASe o1e SJUNOW diyjsiosuods pue jUALASAAU! ‘SOxe) ‘SO! IY
+PROJECT HAWKEYE
 
-SUOHEUOG
-ISdIUSIOStiods
+Major Economic Driver
 
-Wo°e$
+* f | x
+Project Hawkeye will be a major economic _ JOBS
+driver forthe City of Belvidere by creating high- BS &gt;3,000
+paying construction jobs and permanent high- aaah Gropertye Leen ties
+tech positions, while increasing tax revenues to Permanent Revenue
 
-SUN OMISeHUy
-*Qqusuidinbsy |e “AWOUO0DA }eUSIP MoU au)
+support public services and infrastructure.
 
-goes — UL YWods W49}-8U0} 8Ul198}S0} pue saniunyoddo
-ieee sseulsng aininy 8uljoeie 10}098s AZo}0uYyoe}
-84} ul JeAe\d Aoy e Se 9)01 S,a19plAjag
+This transformative investment expands
 
-é spuedxe JUSLUISSAU! SANEWIOJSUEI] SIYL
+INVESTMENT EDUCATION
 
-INAWILSSANI
+Belvidere’s role as a key player in the
 
-NOIWVONGs
+technology sector, attracting future business 3 caper al
 
-“aANJONAISeIJU! Pue SBdIAJas 91I]Gqnd yoddns
+opportunities and fostering long-term growth in — $3.0B $2.0M
 
-‘ ae ‘ ausHenledg 0} SONUDAAS XE} SUISESJOUI SIUM ‘SUOIySOd YOE}
+the new digital economy. ) Equipment &amp; SPONSOIsHips
+Infrastructure Donations
 
-(= l=toto) ASCOT LOMO NAS
-
-ee eee) SORES 4 pa _—--UBIy JueueLUed pue sqof UononsUOD BulKed
-000 e&lt; — -Ysiy 8uneaso Aq aJapinjag Jo Ald 84) JO) JeALIP
-
-4 Sd1lu0U0sa Jofew eB aq WIM ahaymepy jO9IoO1
-&lt;Sdor y ! ! qn! MEH J9!l0ld
-
-J9ALIQ DIWIOU0DZ Joffe
-
-JADIMVH LOAOdd
+* Alljobs, taxes, investment and sponsorship amounts are estimates only and are based on Project Hawkeye initial concepts and comparable hyperscale data Confidential 6
+center developments, Actual amounts and the related timing may vary.
 
 ---- page 238 ----
 
-&amp; Tenuepyuen *S}OU9q 1290) JUBOIUZIS
-Iseydwiea Jayyny ‘suoneiado uo yueds L$ Arena Joy AYAQOe
-S/LU0U098 1290) U! Bg 0} S$ BJe18U9B UDdYO sjOe/old Ja}Ua0 ejeq
+PROJECT HAWKEYE
 
-sendin yeduy s1WoUClR
+DATAWATT
 
-“Buninsuog pueyueW Aq sadinies SulAenins
-pue soinosel Jajem “Buyeaulgua yy 191U99 ejep pA palyiues Q3a37 ‘Ybs 000‘0s
+ENERGY
 
-Stouml ‘Aunod 27 183UBD BEG JOBUIEID "MM
+Job Creation
 
-*(!e}e1 e900) pue ‘aseouyjeay ‘Sursnoy
-Ul Siax10M Aq Bulpuads Ba) AyOeuIpUl JO Ajoeilp pakoyduie asouy
-Jo AyANoe O1WOUODe peseeoU! ay Aq perealg :sqor poonput ,
+Summary of Job Creation Estimates for Project Hawkeye:
 
-Sqof000'Z-OOL‘L 1eI0L “py
+1. Construction Phase:
 
-Sqof 000‘L-00G:,peonpu “¢
+1. Direct: 1,000 - 1,500 construction and contracting jobs
+2. Indirect: 1,500 - 3,000 suppliers and local service jobs
+3. Total: 2,500 - 4,500 jobs
 
-Sqo/ ad\Alas ]290) pue Janddns o¢7 — Op OeNIpUL °Z
+2. Operations Phase:
+1. Direct: 200 - 250 permanent operationaVtechnician jobs
+2. Indirect: 400 - 750 supplier and local service jobs
+3. Induced*: 500- 1,000 jobs
+4. Total: 1,100 - 2,000 jobs
 
-sqol ueisiuyoeijeuoijeiado yuauewed 0SZ-007}9911g ‘1
-saseud Suol}eiedg ‘Z
+* Induced Jobs: Created by the increased economic activity of
 
-sqo! 00S‘y- 00S‘ "1e10L_ “¢
+those employed directly or indirectly (e.g., spending by workers in
+housing, healthcare, and local retail).
 
-Sqof ao1Mas }200) pue sianddns 990‘¢ - OOS‘L Weupuy “Zz
+Economic Impact Multiplier
+Data center projects often generate $5 to $8 in local economic
 
-3 = = SqofBunde4U09 pue UoHONISUOCD QNS‘L-000'L 981g “|
-“g % taseUd UO!ONAYSUOD “1
+activity for every $1 spent on operations, further emphasizing their
+significant local benefits.
 
-reheymeH Joofolg 10 sazewNSy uoneald gor jo Arewuing
+W.W. Grainger Data Center Lake County, Illinois
+30,000 sqft. LEED certified v4 data center with engineering, water resource and
+surveying services by Manhard Consulting.
 
-uo}}ealy gor
-
-ADYANSA
-
-Livmviva JADIMVH LOAOd
+Confidential 7
 
 ---- page 239 ----
 
-B lenuspyuoDd
+PROJECT HAWKEYE }eATawart
 
-aunjonasesyu! je01.03)8
-pul Uonersqns Jo yno-pyIng pue ewH pes] ZuIpued «
+Preliminary
+Concept Plan
 
-“AUNWIWOD Yd9} BuIMOUS e se BdUesald
-S,2sepiAjag soUeyus }}IM pue sndwed
-eyep 94} JUaWAa}dWOD }IM Saseud ainyng
+Phase 1.0: 1,000 MW Data Campus
+* — Sited on +/- 300 acres of total 760-acre
+property
+* — Environmental &amp; community stewardship
+considerations:
+“Noise, water and air quality
+* Landscaping and screening
+Traffic and emergency services
+“Educational and job training
 
-MW 000‘L ee)
-MW 00S TLHeeA
-MW 002 TGIEOA
+* — Initial data center ramp schedule*:
 
-:&lt;8]Npayos dwes Jaquso eyep yeu]
-Buujey qofpuejeuoneonpz
+‘SITE DATA
 
-seolles AouaBistua pue oes
+Future crennes SS
+Phase Sawmonan
 
-Bujuseios pue Buideospue]
-Ayenb ue pue sayem ‘asion
+|
+= Manhardl
 
-rsuonesapisuco
+Phase 1.0 ; “Year 5: 200 MW
 
-diyspiemays Ayunuiwos g yeyUaWUOMAU
++/-300 HE Year7: 500 MW
 
-Ayadoid
+ees A Year 10: 1,000 MW
+Es
 
-9498-097 1210} JO S108 OOE -/+ UO peris
+Future phases will complement the data
+campus and will enhance Belvidere’s
+Presence as a growing tech community.
 
-sndweg €1eq MW 000‘L :0°L eseud
-
-Uue}d }d90u0y
-AIBUIWI)|e1d
-
-ADYANGA
-
-LIVMVLVG
-
-i
-
-“MBS Ww BTaYUOTaABO
-‘sou Raa
-‘ADNEND ALVIN
-
-S108 QE -/+
-OL eseud
-
-eseud
-aiming
-
-JADIMVH LOAOdd
+* Pending lead time and build-out of substation and
+electrical infrastructure
+Confidential 8
 
 ---- page 240 ----
 
-=a
-6 1enuepyucD on
-eovues Ul peoeydyuewdinby + \
-(uonezjuezio &amp; oN
-Uolss|LUsUed} }BU0IZEs) Wid YM UOeUIPIOOD = « : y my
-Suljsay pue Suu LULUOD ‘BUIUSAL] OM P}BI4 +
-(sueak g- 7 "}Se) UONONIYSUOD :¢ BseUd
+PROJECT HAWKEYE
 
-surg mga gan vouha
+ru DATAWATT
 
-4809 jeu pue ajnpayos Uo}JoNYsSUOD ss
-Ugisap jeuy pue BuIQIWeg = «+
+ENERGY
 
-syeliayeul pea] uo) Joyusweind0lgG se
+TasPe) ASHE wnOreyDUa-UOIRE
 
-(syjuow Qo} — g) Suseulsuq peyiejeq :z eseud
+am
 
-Byron- Wempletown 385K) (345 0)
+Byron Nuctes
+2049
 
-soo pue sjuawalinbas yustudinbyZ«
-uonenjens yuaweoiojuiel WayshS +
-
-uSisop SueeulBUe AIEUIWINald =e foe)
-
-(syjuow 01 - g) SulaeuIsug BZuidoosg :1 eseud
-
-myer
-+ saa fiaug aiopp0u Ow
-
-"\
-
-~
-paopy0u ‘eee
-
-ssseooid
-
-Jeah-g 0} 7 &amp; aq 0} pa}dadxe s! UO!}ONASUOD
-pue SueaulZUe Boles peo] ‘sHemese OO0‘L
-Jo ysanbei peo) e SulAias ayenjens 0) sse90id
-Suleeulsue paseyd pajleyep e sey pyWOD de uolsstwsues,
+new
 
 |
-\ pviee)
-*A1OYU119] BDIAIBS PYWOD ul s! eAaxMeH 300[01
 
-34493 991 PAOD Urs! OASIMBH 1981OAd ANWdWOD NO3X3 NV Vex |
+©) comed
 
-ysonbey peo7 pswod | | _
+AN EXELON COMPANY
 
-uivvive (4 JADIMVH LOAfOdd
+) Transmission Map
+
+Er
+
+Load Request
+
+Project Hawkeye is in ComEd service territory.
+ComEd has a detailed phased engineering
+process to evaluate serving a load request of
+1,000 megawatts. Load service engineering and
+construction is expected to be a 4 to 5-year
+process:
+
+Phase 1: Scoping Engineering (8 - 10 months)
++ Preliminary engineering design
+
++ — System reinforcement evaluation
+
++ Equipment requirements and cost
+
+Phase 2: Detailed Engineering (8 - 10 months)
++ Procurement of long lead materials
+
+* — Permitting and final design
+
+* Construction schedule and final cost
+
+Phase 3: Construction (est. 2-3 years)
++ Field work, livening, commissioning and testing
+* Coordination with PJM (regional transmission
+organization)
++ Equipment placed in service
+Confidential 9
 
 ---- page 241 ----
 
-OL 1e@huapyuoD
+PROJECT HAWKEYE Ly oATAwatt
 
-ONILLINYAd AaAYNS NV
-aseyd UONONsySUOD AyI9B4 Nv NoIsad ALLVOLLSSANI
-pue einjonsysesyu] 7291439973, NOLLVXASNNV
-CNV ONINOZ
-vEOe 6207 |
-payewisy peyeunsy 92 des $z98q szinrszunr gzidy gzseW gzuef «PZAON 92190 HZ des
-+--—-------—----4 ye | 3 d
-ONIWIINIONA ONIdOOS wval
-; ZaSWHd LaSVHd aualA13a
-(AAW 000‘L) (MW 002) NOILONYLSNOO aawoo dawoo aan
-‘WNOLLWuadO WWNOLLWuadO £aSVHd INSW390VONI SNINNV1d
-ALUOV ALOWS aawoo ALINAWWOS 1da9NO9 Luvs Loaroud
+Initial Timeline and Plan
 
-|
+Datawatt Energy is estimating the planning, design and development phase of Project Hawkeye to require approximately two years
+to complete. We aim to align final campus design and kick-off of site works with that of ComEd’s construction of the electrical
+infrastructure and substations. Full construction of campus and ramp of service to require estimated 10 years to complete.
 
-eseud JsUdo}eneg pue SulUUe}d 199f01g
+Project Planning and Development Phase
 
-*9]8)d W090 0} suead QL peyeuyse s1INbe 0} sdiAJas jo dues pue sndwied Jo uo!oNjjsUOd NY “suo}e\sqns pue siNjoN\sedjul
-]€911193]8 aU} JO UONNISUOD S,PAWOD Jo JEU} YIM SOM a}IS JO JJO-49!y Pue UBIsap sndweo jeuy Use 0} We apy “8}0]dWO9 0}
-sieak om) Ajayewixoidde auinbas 0) afaymey yOelolg Jo eseyd yusWidojanep pue UBisap ‘BujuuUeyd ay} Supeuse s| ABZ19U Wemejeq
+PROJECT START CONCEPT COMMUNITY COMED FACILITY FACILITY
+PLANNING ENGAGEMENT PHASE 3 OPERATIONAL OPERATIONAL
+MEET COMED COMED CONSTRUCTION (200 MW) (1,000 MW)
+BELVIDERE PHASE 1 PHASE 2
+TEAM SCOPING ENGINEERING
+L. | ot | es es ;
+Sep24 Oct24 Nov24 Jan25  Mar25 Apr25 Jun 25 Jul 25 Dec 25 Sep 26 Estimated Estimated
+| 2029 2034
+ZONING AND | ‘ |
+ANNEXATION Electrical Infrastructure and
+INVESTIGATIVE DESIGN AND Facility Construction Phase
+AND SURVEY PERMITTING
 
-AQYANA
-
-LIVMVLV
-
-ue} pue suljouy yeuy
-
-JADIMVH LOAfOdd
+Confidential 10
 
 ---- page 242 ----
 
-LL Jenuapyuog
+PROJECT HAWKEYE
 
-. . *slour)| ul Jusdo)jaAap JapunN s}oalold Je|Os pue
-6ZOZ YBNOIYI £ZOT SuNJUO BUILD ‘sjoul))| WISYNOS UJ SEUILL }eOo
++ DATAWATT
 
-S0B}INS pautiejoel Uo pedojanep Bulag syoeloid aFe10]s Auayeq puke Jejos MW 000'E Pulm Aue 8uy} WOd) AZi9ue 8oinos 0} Asnpul A3i190uUa
+J ENERGY
 
-syoum ‘Aunog Aue BUIUI] JEOD }MEH FYSIU} 8]GeMeUA! BY} UIYJM xJOMIAU SAISUD}XA S}! aBesUa
+Energy Sourcing
 
-Sa es edn Aew yemeyeq ‘afaymepH 109[01d Jo spaeu ABiaue oy
+Sourcing of renewable energy is essential to meeting
 
-juawa)dwod Jayyny of ‘pywog Aq panddns samod
+the sustainability requirements of Project Hawkeye.
 
-plu peo) aseq oy} JUsWa}dwWOd 0} pedde} aq ued
+Access to energy and integrating into the local
 
-yeyl sloun]| ul syoafo1d a8e10}s A19},eq Pue Je}0S Jo
+transmission network are two of the most important
 
-snlemesew Q00‘E J8A0 Buldoyanap si ASJouy Wemejeq
+considerations for developing a hyperscale data
 
-i “sndwes 19]U99
-eyep ayeosiodAy e 8uldojaAap 40} Suoljesapisuod
+center campus. io
 
-JUBLOCUI! JSOW 9U} JO OM} Je JOMJOU UOISSILUSUBI}
+Datawatt Energy is developing over 3,000 megawatts
+of solar and battery storage projects in Illinois that
+can be tapped to complement the base load grid
+power supplied by ComEd. To further complement
+the energy needs of Project Hawkeye, Datawatt may
+engage its extensive network within the renewable
 
-e090) 64} OU! BuNeIZeqU! pue AZieua 0] ssa00y
+Knight Hawk Coal Mining P.
 
-‘akayMe} yelo1g Jo sjusWAINDas Aygeuleysns ayy
+erry County, Iltinois
+energy industry to source energy from the many wind 3,000 MW solar and battery storage projects being developed on reclaimed surface
+. . + + coal mines in southern Illinois, coming online 2027 through 2029.
+and solar projects under development in Illinois.
 
-Sunes 0} jellUuesse si AB19uUa B]GeMaua JO BUIDINOS
-
-suioinos Agiouy
-
-ADMINS (
-
-tivmviva CY AADIMVH LOAfOdd
+Confidential 11
 
 ---- page 243 ----
 
@@ -10290,88 +10248,75 @@ copies thereof, including all attachments.
 
 ---- page 249 ----
 
-WOs'pieyUueW@UNYysnoo
+i} DATAWATT
 
-‘Aq pejuesaidas si AS19Uz Wemejeq
+L/ ) ENERGY
 
-WOs'AZiouayemejepouesnjeyp
-688'SLS'Z19
-ueSmeH pineq
+Evelyn Lim
+213.261.1358
+elim@datawattenergy.com
 
-Woo ASiauanemejepoiuewseuu
-SZVL O08 278
-1UBISEN UIARN
+Navin Nagrani
 
-WOo‘ASiauE}eMeepm)UI|o
-8SEL LOZ ELC
-lui] uA}aAg
+847.840.1475
+nnagrani@datawattenergy.com
 
-AQDYANA =
+David Halligan
+617.513.8893
 
-LIVMVLVG '
+PROJECT HAWKEYE mae
 
-W0o"){OApeyjnpy souog
-LOSE 778 CLE 166808278
-ulysnog ulAa&gt;| Apeynpw iou05
+Datawatt Energy is represented by:
 
-p TI
+Digital innovation complex JLL 4
 
-slouly}| ‘AlUNOD au0og | sas9e Q9/
+2 ’ Conor Mullady Kevin Coughlin
+760 acres | Boone County, Illinois 847.308.9912 312.824.3801
 
-X9]dWODUOIeAOUUI ]eUSIG
-
-AADIMVH LOAfOdd
+Conor.Mullady@jll.com kcoughlin@manhard.com
 
 ---- page 250 ----
 
-Z 1enuspyuog
+PROJECT HAWKEYE
 
-“Awouodea 1131p
+ATAWATT
 
-MOU BU} Ul YIMOIS LU19}-BU0} 49}SO0}
-0} BuINnuNUOD pue salUNyOddo
-Ssaulsng Jeyyny Bunoeipe
+ENERGY
 
-‘40,988 AB0)0UY9a} ay) Ul Jake] Kay
-&amp; se uollisod s,aiapiajeg puedxa
-TM queWAsaAU! BAneUUOJSUBH sIyL
+7 = - 7 _ a 7 - Datawatt Energy is developing a
+Belvidere Tollway Oasis {_) B digital innovation complex
+SS ee ae ee ee anchored by a multi-building data
+center campus. The complex is to
+be sited on an approximately 760-
+acre multi-parcel property in
+Belvidere (Boone County), Illinois.
 
-“ainjondjsedul pue sediias onqnd
-uoddns 0} senuana: xe} Bulseaioul
-8114M ‘sqof 4yo9}-ysiy jueuBUEd
-Puke UononssUOD Jo spuesnoyy
-BUIe819 Aq atapinjag Jo Awiouose
-1290) 84} 0} sOOg JueOIIUBIS
+Project Hawkeye will create a
+significant boost to the local
+economy of Belvidere by creating
+thousands of construction and
+permanent high-tech jobs, while
+P. mk, increasing tax revenues to support
+Sukup Q Property public sonvices and infrastructure,
 
-28 978819 }IM ahaymey JOO[O1lg
+Pearl St
 
-“slouml ‘(Aunog auoog) aiepiajag
-ul Auadoud jaosed-nwW aloe
+Gomera i
+CACKY Tranisinission tine
 
-094 Ajayewixoidde ue uo pays aq
-01 SI Xe]dWo9 ayy “sndwies Jajueo
-yep Bulpying-njnw e Aq pesoyoue
-x@)dui09 uoNeAoUU! 1e7/31p
+This transformative investment will
+expand Belvidere’s position as a
+key player in the technology sector,
+attracting further business
+opportunities and continuing to
+foster long-term growth in the new
+digital economy.
 
-@ Buidojenap si ASiauUy yemejeq
+| ncho Los Diaz &amp;
 
-ADYANA
+Summerfield Zoo ®
 
-Livmviva Cu
-
-(1) ze1q so7 oyou
-
-“81898 0} an} Jou S! pue UOeWIXoIdde Ue si Atepunog Auedolg »
-
-&amp;2 007 playounung
-
-speed
-
-“3S Heed
-
-© siseo KemioL auapiajag
-
-AJADIMVH LOAOdd
+* Property boundary is an approximation and is not true to scale. Confidential 2
 
 ---- page 251 ----
 
@@ -10393,120 +10338,123 @@ uivvive JADIMVH LOAOdd
 
 ---- page 252 ----
 
-vy \enuepyuoD
+PROJECT HAWKEYE
 
-“UoISa4 8} Ul S9lq}19e) 4184) Sulpuedxe
-Uae aAey ejay PUL ‘YOSOIOIW| ‘8}8009
-se yons sishejd egie7] ‘siaysesip jeinjyeu
+aay
 
-JO} YSI MO} AVAANe}94 puke ‘salio “S°fA
-Jofeww 0} AVANDaUUOD BUaL}s ‘UONe90}]
-ye43Ua90 sy Aq UdALIP ‘JUaLUdoO]eAep
-49]U989 eJep JO) qny Aay e s| oSed1yD
+“oS. aa
+Janesville “Ektdin Burlington=-~" =
+“Delavan ao)
+“fe © Microsoft L====*
+— County, WI
 
-“JOMJ9U Jaqly paysnqejse pue
-Jamod 0} sseooe ayqeijas ‘einjonssedjul
-4snqos Zulpnjoul ‘sesgequeape
+Roscoe
 
-9188] e11S S,U0IZaJ 84} 0} aNp sioyUsd e}ep
-ayeosisdAy Buljoes3e SI SlouN)| WeUyON
+LV ~
+- shoves Park Woodstock
+_ ; f i
+“SRockford—-~ ~géividere _ JON hs
+pay chery vei Marengo "&gt; Crystal Hake
+wi fl
 
-}O1eW] 19]U95 &amp;}eQ | JOIL
-oseolyy
+$F,
+} ~
+00 Nae DATAWATT |)
 
-ASuana fe
+ENERGY
 
-livMviva 4
+t
+—-@ ——} Belvidere, iL }
 
-= wna
+Sycamore _{ Seoae le
+a @ &gt; dekalb ents tt =~
+on a aa a
 
-= 216605 Biowedés =
+p ~Lsnaaond
+\Coometa ooMeta |.
+tL DeKalb, IL To i ‘i
+ad ay) Ora ‘Naperville: | oa
 
-ots.
-TW e1epnjog
+DATAWATT
 
-—
-| es
+J ENERGY
 
-SAID ~~ 06ualeW- (2) BQ
+Chicago
+Tier 1 Data Center Market
 
-e
+Northern Illinois is attracting hyperscale
+data centers due to the region's strategic
+advantages, including robust
+infrastructure, reliable access to power
+and established fiber network.
 
-_ | a
-se HOSOI am eid
+Chicago is a key hub for data center
+development, driven by its central
+location, strong connectivity to major
+U.S. cities, and relatively low risk for
+natural disasters. Large players such as
+Google, Microsoft, and Meta have been
+expanding their facilities in the region.
 
-ee UONBUITI @ wow ajiassuep- ——~
-
-a 2.
-
-io)
-
-AJADIMVH LOAOdd
+Confidential 4
 
 ---- page 253 ----
 
-§ JenUepyuCD
+PROJECT HAWKEYE
 
-Aujouocs-101U90-2}2p -BuIsiI-84}-ul-3uNsenul/siysIsul-sNd/SUONed|UNLLUODS}62-PUe-eIPaLU-AFo}OUYoe1/seLSNPUL/LOD“AasUPjOU-MMMy/:SChIY L
+Eo DATAWATT
 
-‘uomyou pe
-iiomefow S9pndu pueWd "9Enoy U'd JeIUB9 ELEPW SiBAAS Jo JOqUINU By) JAH O} UONKUNS 0D saMod Ky pouNECOA § PUTO,
+J) ENERGY
 
-0z0% ad
+Sustainable Data Centers
 
-ih Td
-_ il ‘ies
-HOE |
-‘ ~3
-ydvd |
+Investing in the rising data center economy’
+January 17, 2023
 
-~ 0%
-sesudioqug,
+“Data centers are big energy consumers—a
+hyperscaler’s data center can use as much power as
+80,000 households do. Pressure to make data centers
+sustainable is therefore high, and some regulators and
+governments are imposing sustainability standards on
+newly built data centers.
 
-Ls
+In fact, the use of renewable energy is a critical
+component of the hyperscalers’ strategies.”
 
-{
-ad
-— 0
+McKinsey
+&amp; Company
 
-= =-001 one
+US data center demand is forecast to grow by some 10 percent a year
+until 2030.
 
-—s¢
+Date center power consumption, by
 
-a12ys 06 ,'Sestiduoquessepinoid
+Data center power consumption, by
+providers/enterprises,’ gigawatts
 
-snemesiB sesudioque/sipioid
-fq ‘uonduinsucs somod 49,u09 Beg
+providers/enterprises,' % share
+35 — 100 ~ we oe
 
-fq ‘uoyduinsuoa Jemod 18}U09 8}eq
+Enterprises
+30 —
+25 -
 
-“Of0S IU
-seek e jusoJed O} ewos Aq mos6 0} }SB9910} SI pueWap 4e}U289 eepsn
+|"
+rash
+fn Pal Co-location
+20 — companies
+'CAGR :
+Bi +3.0% |
+alll ot
 
-Aureduo) 39
-AOSUTYIJAI
+2030 2020
 
-ADYANG /
+‘Osmand is measured by power corsumption toreiect the number of servers a data centr ean house, Demand includes megawatts fr storage, sewers,
+and networks,
 
-LivmMviva CS
+1 https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/investing-in-the-rising-data-center-economy
 
-« Salga}e4s ,SiajeasiadAy ay} JO JUBUOdWIOD
-JBORLO @ SI ASJaUa B}GeMaUA JO BSN ay} JOE, Ul
-
-*s49]U99 Bep HING AjMau
-uo spiepue}s Ayjiqeuieysns Zujsodu} ase S}UaUILIBAOS
-pue s10je)NZas awos pue “YySly a40jas9y) SI ajqeulejysns
-$J8]U89 JEP aYeW O} B/NSSald ‘Op spjoyesnoy 000‘08
-
-se 4aMod YONW Se asn ued Ja}U99 eJep s,1a}eossadAYy
-&amp;—slaUINsuod AZsau—a iq ase $/a}Ua9 e}eq,,
-
-£707 ‘ZL Asenuer
-AWiouodvea 49}U99 e}Jep Zuls}s ay} UI SURSEAU]
-
-$19]U99 e}eq s]qeulejsns
-
-JADIMVH LOAOdd
+Confidential 5
 
 ---- page 254 ----
 
@@ -10545,31 +10493,35 @@ AJADIMVH LOAOdd
 
 ---- page 255 ----
 
-Z Jenuspyuog
+PROJECT HAWKEYE
 
-“M0jOe} 198} WAYS]YIOg J9LUOy UO Pays Joafosd PUIM AAWOZ
-210A MEN ‘EUUEMEDET SPUL 1201S
+DATAWATT
 
-“s}OUM| WayyNos ul saul }eO9 aoeyins UO padojanep
-Buteq yoeloid e8e10ys Alayeq smd sej0s MWO00'S
-slouml ‘uno Aued ZUIUIW JEOD YMEH ISIUy}
+ENERGY
 
-ADYANG
+Select
+Sample of
+Datawatt
+Experience
 
-rivmMviva CU
+Shady Oaks Lee County, Illinois
+110MW wind project has a 20-year power purchase
+agreement with Commonwealth Edison.
 
-“sndweo sonsigo)
-9198-90E"E Se padojenapa juRyd jaalg WaYa]yjeg 1804
-pueuew ‘sowed OUeTY JUIOdapelL
+=
+Tradepoint Atlantic Baltimore, Maryland
 
-souslledxy
-“UOSIPY YNESaMUOWLUOD WWM JUsaalze yWeMe Ve |
-eseyoind Jemod ieef-9z e sey yoaloid pulm MWOLL
+Former Bethlehem Steel plant redeveloped as 3,300-acre
+logistics campus.
 
-sjouml ‘Aunog 227 sy2Q Apeys jo 2] d we Ss
-19919
+Knight Hawk Coal Mining Perry County, Ittinois
+3,000MW solar plus battery storage project being
+developed on surface coal mines in southern Illinois.
 
-AADIMVH LOAOdd
+Steel Winds Lackawanna, New York
+20MW wind project sited on former Bethlehem Steel factory.
+
+Confidential 7
 
 ---- page 256 ----
 
