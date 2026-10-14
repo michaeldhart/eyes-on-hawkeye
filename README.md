@@ -34,6 +34,7 @@ source: "City of Belvidere"
 source_url: https://...     # where the city published it
 file: /assets/documents/Name.pdf
 pages_count: 5
+sha256: <hex>               # fingerprint of the original PDF (add_document.py fills it in)
 summary: "Our plain-language summary."
 tags: [hawkeye, datawatt]   # single words only
 ocr: true                   # text was machine-read from a scan
@@ -68,7 +69,7 @@ Pushes to `main` build and deploy through GitHub Actions (`.github/workflows/pag
 
 - Skeleton is built and live with four documents from the city's [data center information page](https://www.belvidereil.gov/recent-data-center-information/).
 - **Communications file:** the 313-page email compilation is stored as one document and summarized as 31 timeline entries (Nov 2024 to Jul 2026). New compilations can be handled the same way.
-- **File storage:** PDFs live in git for now. We will decide later whether to move them to Git LFS, S3 or similar, starting with the 11 MB communications file.
+- **File storage:** PDFs live in git, with a SHA-256 fingerprint for each on its document page. Decision: stay in git until the total passes about 500 MB or a single file passes about 50 MB, then move large files to object storage (Cloudflare R2 is the likely choice). Avoid Git LFS: Pages deploys through Actions, and every deploy would pull the LFS files against the free bandwidth quota. `add_document.py` warns above 25 MB. Keep a separate backup of the originals outside GitHub.
 - The Contact page links to a Google Form (`contact_form_url` in `_config.yml`).
 
 ## License

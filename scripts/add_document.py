@@ -10,12 +10,23 @@ PDF's own text layer, or OCR via ocrmypdf if it is a scan), and writes
 _documents/<slug>.md with front matter. Review and edit the result by hand.
 Requires poppler (pdftotext, pdfinfo); scans also need ocrmypdf.
 """
-import argparse, html, re, shutil, subprocess, sys, tempfile
+import argparse, hashlib, html, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # Type slugs come from _data/types.yml so the two can't drift apart.
 TYPES = re.findall(r"^([a-z][a-z0-9-]*):", (ROOT / "_data" / "types.yml").read_text(), re.M)
+
+
+SIZE_WARN_MB = 25  # git keeps every version forever; see README "File storage"
+
+
+def sha256_of(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def slugify(s):
@@ -86,6 +97,11 @@ def main():
     src = Path(a.pdf).resolve()
     dest = ROOT / "assets" / "documents" / src.name
     dest.parent.mkdir(parents=True, exist_ok=True)
+    size_mb = src.stat().st_size / (1 << 20)
+    if size_mb > SIZE_WARN_MB:
+        print(f"WARNING: {src.name} is {size_mb:.1f} MB (over {SIZE_WARN_MB} MB). Git keeps every committed "
+              "version forever, so a mistake here bloats the repo permanently. Consider object storage for "
+              "large files (README, File storage) before committing.", file=sys.stderr)
     if src != dest:
         shutil.copy2(src, dest)
 
@@ -104,6 +120,7 @@ def main():
     if a.source_url: fm.append(f"source_url: {a.source_url}")
     fm.append(f"file: /assets/documents/{src.name}")
     fm.append(f"pages_count: {pdf_pages(dest)}")
+    fm.append(f"sha256: {sha256_of(dest)}")
     fm.append(f"summary: {yq(a.summary)}")
     fm.append("tags: [" + ", ".join(tags) + "]")
     if ocr: fm.append("ocr: true")
@@ -113,7 +130,7 @@ def main():
 
     out.parent.mkdir(exist_ok=True)
     out.write_text("\n".join(fm) + "\n" + body_from_text(text))
-    print(f"Wrote {out.relative_to(ROOT)}  (PDF: {dest.relative_to(ROOT)})")
+    print(f"Wrote {out.relative_to(ROOT)}  (PDF: {dest.relative_to(ROOT)}, {size_mb:.1f} MB)")
 
 
 if __name__ == "__main__":

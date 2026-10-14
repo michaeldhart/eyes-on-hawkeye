@@ -21,6 +21,12 @@ layout: default
     {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}" target="_blank" rel="noopener">Open Original PDF</a>{% endif %}
     {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}" target="_blank" rel="noopener">View Original Source</a>{% endif %}
   </p>
+  {% if page.sha256 %}<details class="fingerprint">
+    <summary>Verify this file</summary>
+    <p>SHA-256 fingerprint of the original PDF we host:</p>
+    <p><code>{{ page.sha256 }}</code></p>
+    <p class="muted small">To check your copy, run <code>shasum -a 256 {{ page.file | split: '/' | last }}</code> (Mac/Linux) or <code>certutil -hashfile {{ page.file | split: '/' | last }} SHA256</code> (Windows). If the result matches, it is the same file we have, byte for byte.</p>
+  </details>{% endif %}
   {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span> {% endfor %}</p>{% endif %}
 
   {% assign my_entries = site.entries | where: "document", page.slug %}

@@ -89,3 +89,7 @@ pre.doc-text { white-space: pre-wrap; word-wrap: break-word; font-family: ui-mon
 
 .ai-note { font-size: .8rem; color: var(--muted); margin: -.4rem 0 1rem; }
 .ai-tag { display: inline-block; font-size: .65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border: 1px solid var(--line); border-radius: 3px; padding: 0 .35rem; color: var(--muted); vertical-align: middle; }
+
+details.fingerprint { margin: .5rem 0 1rem; font-size: .85rem; }
+details.fingerprint > summary { cursor: pointer; color: var(--muted); }
+details.fingerprint code { word-break: break-all; font-size: .8rem; }

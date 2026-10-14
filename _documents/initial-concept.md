@@ -6,6 +6,7 @@ source: "Datawatt Energy"
 source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Initial-Concept.pdf
 pages_count: 18
+sha256: 49afe08f696acdd53d6891d88b6d462da0316d9a2ba63830fff1edfb8d198180
 summary: "A developer slide deck, not a filing with the city. It is undated and marked Confidential. It describes a roughly 760-acre, multi-building data center campus south of I-90, currently zoned agricultural and under contract with a single landowner, with a target of 1,000+ megawatts connected to a 345 kV ComEd line. JLL is named as Datawatt's representative."
 tags: [hawkeye, datawatt, power, land]
 ocr: true
