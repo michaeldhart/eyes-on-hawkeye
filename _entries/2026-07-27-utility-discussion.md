@@ -1,5 +1,5 @@
 ---
-title: "Mayor's office accepts a “Utility Discussion” call with Datawatt's representative"
+title: "Mayor's Office Accepts a “Utility Discussion” Call with Datawatt's Representative"
 date: 2026-07-27
 type: correspondence
 document: communications-2024-2026

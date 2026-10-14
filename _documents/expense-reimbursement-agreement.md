@@ -1,5 +1,5 @@
 ---
-title: "Expense reimbursement and pledge agreement with Datawatt Hyperscale"
+title: "Expense Reimbursement and Pledge Agreement with Datawatt Hyperscale"
 date: 2026-05-26
 type: contract
 source: "City of Belvidere"

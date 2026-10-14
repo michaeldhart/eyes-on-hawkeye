@@ -1,5 +1,5 @@
 ---
-title: "City communications about Project Hawkeye, 2024 through August 31, 2026"
+title: "City Communications About Project Hawkeye, 2024 Through August 31, 2026"
 date: 2026-08-31
 type: correspondence
 source: "City of Belvidere"

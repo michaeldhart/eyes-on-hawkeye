@@ -2,7 +2,7 @@
 layout: default
 ---
 <article class="doc">
-  <p class="crumb"><a href="{{ '/documents/' | relative_url }}">← All documents</a></p>
+  <p class="crumb"><a href="{{ '/documents/' | relative_url }}">← All Documents</a></p>
   <h1>{{ page.title }}</h1>
   <p class="meta">
     {% include badge.html type=page.type %}
@@ -17,15 +17,15 @@ layout: default
   {% if page.sample %}<p class="note">This is a sample document used to test the site.</p>{% endif %}
 
   <p class="actions">
-    {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}">Download the original PDF</a>{% endif %}
-    {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}">View on the city's website</a>{% endif %}
+    {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}" target="_blank" rel="noopener">Open Original PDF</a>{% endif %}
+    {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}" target="_blank" rel="noopener">View Original Source</a>{% endif %}
   </p>
   {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span> {% endfor %}</p>{% endif %}
 
   {% assign my_entries = site.entries | where: "document", page.slug %}
   {% if my_entries.size > 0 %}
   <section class="entries">
-    <h2>On the timeline</h2>
+    <h2>On the Timeline</h2>
     <ul>
       {% for e in my_entries %}<li><time>{{ e.date | date: "%b %-d, %Y" }}</time> {{ e.title }}{% if e.pages %} <span class="muted">(pp. {{ e.pages }})</span>{% endif %}</li>{% endfor %}
     </ul>
@@ -33,7 +33,7 @@ layout: default
   {% endif %}
 
   <details class="fulltext" {% unless page.compilation %}open{% endunless %}>
-    <summary>Full text{% if page.ocr %} <span class="muted">(machine-read from a scan; may contain errors)</span>{% endif %}</summary>
+    <summary>Full Text{% if page.ocr %} <span class="muted">(machine-read from a scan; may contain errors)</span>{% endif %}</summary>
     {{ content }}
   </details>
 </article>

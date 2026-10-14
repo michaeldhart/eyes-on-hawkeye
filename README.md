@@ -54,7 +54,7 @@ scripts/add_document.py ~/Downloads/file.pdf --title "..." --date 2026-05-26 \
   --summary "..." --tags water,zoning
 ```
 
-The script copies the PDF, extracts text (OCR via `ocrmypdf` if it is a scan), and writes the document file. Always read the result and correct the title, date and summary by hand. OCR text is machine-made and the PDF is the record.
+The script copies the PDF, extracts text (OCR via `ocrmypdf` if it is a scan), and writes the document file. Always read the result and correct the title (Title Case), date and summary by hand. OCR text is machine-made and the PDF is the record.
 
 ## Deploy
 

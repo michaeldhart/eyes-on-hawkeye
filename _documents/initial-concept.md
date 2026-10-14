@@ -1,5 +1,5 @@
 ---
-title: "Project Hawkeye initial concept (developer presentation)"
+title: "Project Hawkeye Initial Concept (Developer Presentation)"
 date: 2026-09-01
 type: presentation
 source: "Datawatt Energy"

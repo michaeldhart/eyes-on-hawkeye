@@ -1,5 +1,5 @@
 ---
-title: "Mayor's letter of support for Project Hawkeye"
+title: "Mayor's Letter of Support for Project Hawkeye"
 date: 2025-05-22
 type: correspondence
 source: "City of Belvidere"

@@ -68,8 +68,8 @@
     if (it.summary) html += '<p>' + esc(it.summary) + '</p>';
     if (it.pages && it.doc_title) html += '<p class="muted small">From <em>' + esc(it.doc_title) + '</em>, pages ' + esc(it.pages) + '</p>';
     html += '<p class="actions">';
-    if (it.url) html += '<a class="btn" href="' + it.url + '">Open document page</a>';
-    if (it.pdf) html += '<a class="btn ghost" href="' + it.pdf + '">Open the PDF' + (it.pages ? ' at page ' + esc(String(it.pages).split('-')[0]) : '') + '</a>';
+    if (it.url) html += '<a class="btn" href="' + it.url + '">Open Document Page</a>';
+    if (it.pdf) html += '<a class="btn ghost" href="' + it.pdf + '" target="_blank" rel="noopener">Open Original PDF' + (it.pages ? ' at Page ' + esc(String(it.pages).split('-')[0]) : '') + '</a>';
     html += '</p>';
     preview.innerHTML = html;
     render();
