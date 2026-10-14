@@ -16,10 +16,17 @@
   <header class="site-header">
     <div class="wrap bar">
       <a class="brand" href="{{ '/' | relative_url }}"><span class="eye" aria-hidden="true">◉</span> Eyes on Hawkeye</a>
-      <nav aria-label="Main">
-        {% assign nav = "Documents|/documents/,Timeline|/timeline/,People|/people/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
-        {% for item in nav %}{% assign p = item | split: "|" %}
-        <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{% endfor %}
+      <nav class="site-nav" aria-label="Main">
+        {%- comment -%} Pure-CSS menu on phones (same pattern as the Belvidere Wire site): a visually hidden but focusable checkbox, a hamburger label, and a dropdown panel. Works without JavaScript. {%- endcomment -%}
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" aria-label="Menu">
+        <label for="nav-trigger" class="nav-toggle" aria-hidden="true">
+          <svg viewBox="0 0 18 15" width="18" height="15" fill="currentColor" aria-hidden="true"><rect y="0" width="18" height="2.6" rx="1.3"/><rect y="6" width="18" height="2.6" rx="1.3"/><rect y="12" width="18" height="2.6" rx="1.3"/></svg>
+        </label>
+        <div class="trigger">
+          {% assign nav = "Documents|/documents/,Timeline|/timeline/,People|/people/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
+          {% for item in nav %}{% assign p = item | split: "|" %}
+          <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{% endfor %}
+        </div>
       </nav>
     </div>
   </header>
@@ -33,6 +40,12 @@
       <p><a href="{{ '/about/' | relative_url }}">About</a> · <a href="{{ '/contact/' | relative_url }}">Contact</a> · <a href="https://github.com/michaeldhart/eyes-on-hawkeye">Source</a></p>
     </div>
   </footer>
+  <script>
+    document.addEventListener("keydown", function (e) {
+      var t = document.getElementById("nav-trigger");
+      if (e.key === "Escape" && t && t.checked) { t.checked = false; t.focus(); }
+    });
+  </script>
   {% if page.scripts %}{% for s in page.scripts %}<script src="{{ s | relative_url }}"></script>
   {% endfor %}{% endif %}
 </body>

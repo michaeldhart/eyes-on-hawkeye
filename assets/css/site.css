@@ -26,6 +26,20 @@ body.wide .wrap { max-width: 78rem; }
 nav a { margin-right: 1rem; color: var(--fg); text-decoration: none; font-weight: 500; padding-bottom: 2px; }
 nav a:last-child { margin-right: 0; }
 nav a:hover, nav a[aria-current] { border-bottom: 2px solid var(--accent); }
+.site-nav { position: relative; }
+/* the checkbox is visually hidden but stays focusable, so keyboard users can open the menu */
+.nav-trigger { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.nav-toggle { display: none; }
+@media (max-width: 40rem) {
+  .nav-toggle { display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; cursor: pointer; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 4px; }
+  .nav-trigger:focus-visible + .nav-toggle { outline: 2px solid var(--fg); outline-offset: 2px; }
+  .nav-trigger:checked + .nav-toggle { border-color: var(--fg); }
+  .site-nav .trigger { display: none; position: absolute; right: 0; top: calc(100% + .4rem); z-index: 10; min-width: 11rem; padding: .3rem 0; background: var(--card); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 24px rgba(0, 0, 0, .25); }
+  .nav-trigger:checked ~ .trigger { display: block; }
+  .site-nav .trigger a { display: block; margin: 0; padding: .6rem 1rem; border-bottom: 0; }
+  .site-nav .trigger a:hover { background: var(--bg); }
+  .site-nav .trigger a[aria-current] { font-weight: 700; color: var(--accent); border-bottom: 0; }
+}
 main { padding-bottom: 3rem; min-height: 60vh; }
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; padding: 1.5rem 0; }
 
