@@ -76,11 +76,11 @@ pre.doc-text { white-space: pre-wrap; word-wrap: break-word; font-family: ui-mon
 .zoom button { font-size: 1.2rem; width: 2.2rem; height: 2.2rem; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 4px; cursor: pointer; margin-left: .3rem; }
 .timeline { overflow-x: auto; border: 1px solid var(--line); background: var(--card); border-radius: 6px; }
 .tl-inner { position: relative; min-height: 14rem; }
-.tl-inner::before { content: ""; position: absolute; left: 0; right: 0; top: 20px; border-top: 2px solid var(--fg); }
-.tick { position: absolute; top: 14px; height: 14px; border-left: 1px solid var(--line); }
-.tick.year { border-left: 2px solid var(--fg); height: 20px; top: 8px; }
-.tick span { position: absolute; top: -2px; left: 4px; font-size: .7rem; color: var(--muted); white-space: nowrap; }
-.tick.year span { font-weight: 700; color: var(--fg); font-size: .8rem; top: 0; }
+.tl-inner::before { content: ""; position: absolute; left: 0; right: 0; top: 32px; border-top: 2px solid var(--fg); }
+.tick { position: absolute; top: 26px; height: 12px; border-left: 1px solid var(--line); }
+.tick.year { border-left: 2px solid var(--fg); height: 24px; top: 20px; }
+.tick span { position: absolute; top: -22px; left: 4px; font-size: .7rem; color: var(--muted); white-space: nowrap; }
+.tick.year span { font-weight: 700; color: var(--fg); font-size: .8rem; top: -16px; }
 .dot { position: absolute; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: var(--c); border: 2px solid var(--card); box-shadow: 0 0 0 1px var(--c); cursor: pointer; padding: 0; }
 .dot:hover, .dot:focus-visible { transform: scale(1.3); outline: 2px solid var(--fg); outline-offset: 2px; }
 .dot.sel { box-shadow: 0 0 0 3px var(--fg); transform: scale(1.25); }

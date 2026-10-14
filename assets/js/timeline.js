@@ -50,7 +50,7 @@
       b.type = 'button';
       b.className = 'dot' + (selected === it ? ' sel' : '');
       b.style.left = x + 'px';
-      b.style.top = (40 + lane * ROW) + 'px';
+      b.style.top = (56 + lane * ROW) + 'px';
       b.style.setProperty('--c', colors[it.type] || '#6b6b6b');
       b.setAttribute('aria-label', fmt(it.date) + ': ' + it.title);
       b.title = fmt(it.date) + ' — ' + it.title;
