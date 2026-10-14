@@ -1,7 +1,7 @@
 ---
 title: "Expense reimbursement and pledge agreement with Datawatt Hyperscale"
 date: 2026-05-26
-type: agreement
+type: contract
 source: "City of Belvidere"
 source_url: https://www.belvidereil.gov/recent-data-center-information/
 file: /assets/documents/Expense-Reimbursement-Agreement.pdf

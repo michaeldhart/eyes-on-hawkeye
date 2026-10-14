@@ -21,7 +21,7 @@ Front matter flags: `compilation: true` (PDF bundles many items; use entries ins
 
 ```sh
 scripts/add_document.py ~/Downloads/file.pdf --title "..." --date 2026-05-26 \
-  --type agreement --source "City Clerk" --source-url https://... --summary "..." --tags water,zoning
+  --type contract --source "City Clerk" --source-url https://... --summary "..." --tags water,zoning
 ```
 
 Copies the PDF, extracts text (OCR via `ocrmypdf` if it's a scan), and scaffolds the file. Needs `brew install poppler ocrmypdf`. Always read the result and fix the summary and date by hand. OCR text is machine-made and the PDF is the record.

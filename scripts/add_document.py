@@ -2,7 +2,7 @@
 """Add a PDF to the site as a document.
 
     scripts/add_document.py path/to/file.pdf --title "..." --date 2026-05-26 \
-        --type agreement --source "City Clerk" --source-url https://... \
+        --type contract --source "City Clerk" --source-url https://... \
         --summary "..." --tags water,zoning   # one word per tag
 
 Copies the PDF into assets/documents/ (unchanged), extracts its text (using the
@@ -14,8 +14,8 @@ import argparse, html, re, shutil, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TYPES = ["agenda", "minutes", "application", "presentation", "staff-report", "ordinance",
-         "correspondence", "agreement", "other"]
+# Type slugs come from _data/types.yml so the two can't drift apart.
+TYPES = re.findall(r"^([a-z][a-z0-9-]*):", (ROOT / "_data" / "types.yml").read_text(), re.M)
 
 
 def slugify(s):
