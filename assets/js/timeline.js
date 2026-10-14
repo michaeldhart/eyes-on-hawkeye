@@ -31,7 +31,8 @@
       var tick = document.createElement('div');
       tick.className = 'tick' + (isYear ? ' year' : '');
       tick.style.left = x + 'px';
-      if (isYear || pxPerDay >= 3 || m.getUTCMonth() % 3 === 0) {
+      var mo = m.getUTCMonth();
+      if (isYear || pxPerDay >= 3 || (pxPerDay >= 1 && mo % 3 === 0) || (pxPerDay < 1 && mo % 6 === 0)) {
         var lab = document.createElement('span');
         lab.textContent = isYear ? m.getUTCFullYear() : m.toLocaleDateString(undefined, { month: 'short', timeZone: 'UTC' });
         tick.appendChild(lab);
@@ -87,10 +88,25 @@
 
   function zoom(f) {
     var center = (wrap.scrollLeft + wrap.clientWidth / 2) / pxPerDay;
-    pxPerDay = Math.min(30, Math.max(0.5, pxPerDay * f));
+    pxPerDay = Math.min(30, Math.max(0.1, pxPerDay * f));
     render();
     wrap.scrollLeft = center * pxPerDay - wrap.clientWidth / 2;
   }
+  // Open on the earliest dot, zoomed out just enough that at least two dots are in view.
+  function openOnFirstDots() {
+    var sorted = items.slice().sort(function (a, b) { return t(a.date) - t(b.date); });
+    var lead = 80;
+    if (sorted.length > 1) {
+      var gap = (t(sorted[1].date) - t(sorted[0].date)) / DAY;
+      if (gap > 0) pxPerDay = Math.max(0.1, Math.min(pxPerDay, (wrap.clientWidth - lead - 40) / gap));
+    }
+    render();
+    if (sorted.length) {
+      var x = PAD + (t(sorted[0].date) - inner._start) / DAY * pxPerDay;
+      wrap.scrollLeft = Math.max(0, x - lead);
+    }
+  }
+
   document.getElementById('z-in').addEventListener('click', function () { zoom(1.6); });
   document.getElementById('z-out').addEventListener('click', function () { zoom(1 / 1.6); });
   wrap.addEventListener('keydown', function (e) {
@@ -102,7 +118,6 @@
     items = data;
     items.forEach(function (i) { types[i.type] = true; });
     buildLegend();
-    render();
-    wrap.scrollLeft = wrap.scrollWidth; // start at the most recent end
+    openOnFirstDots();
   }).catch(function () { inner.textContent = 'Could not load the timeline.'; });
 })();
