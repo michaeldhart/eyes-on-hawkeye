@@ -6,6 +6,10 @@
   <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  {%- if jekyll.environment == 'production' and site.goatcounter_code %}
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+  {%- endif %}
 </head>
 <body class="{{ page.body_class }}">
   <a class="skip" href="#main">Skip to content</a>

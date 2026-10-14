@@ -56,6 +56,10 @@ scripts/add_document.py ~/Downloads/file.pdf --title "..." --date 2026-05-26 \
 
 The script copies the PDF, extracts text (OCR via `ocrmypdf` if it is a scan), and writes the document file. Always read the result and correct the title (Title Case), date and summary by hand. OCR text is machine-made and the PDF is the record.
 
+## Analytics
+
+Page views are counted with [GoatCounter](https://www.goatcounter.com) (site code `eyesonhawkeye`, set as `goatcounter_code` in `_config.yml`). It is cookieless and collects no personal data. It only loads in production builds, so local previews don't record hits. The public dashboard is at https://eyesonhawkeye.goatcounter.com and the About page discloses what is collected.
+
 ## Deploy
 
 Pushes to `main` build and deploy through GitHub Actions (`.github/workflows/pages.yml`) to GitHub Pages.

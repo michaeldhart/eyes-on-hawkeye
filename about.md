@@ -24,3 +24,13 @@ Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He
 ## What We Are Not
 
 We're not the city and we don't speak for it. We don't have inside information. Everything here is something any resident could request, and we'd like to save you the trouble.
+
+## What This Site Records About You
+
+{% if site.goatcounter_code -%}
+This site counts page views using [GoatCounter](https://www.goatcounter.com), an open-source analytics service. It sets no cookies and collects no personal data, which is why you weren't asked to dismiss a banner to read this. It records the page, where you arrived from, your country, your browser and operating system, and your screen size. Those are counted in aggregate, never tied to a person, never sold and never shared.
+
+You don't have to take that on trust. The numbers are [public](https://{{ site.goatcounter_code }}.goatcounter.com), and you can see the same view we do. A site that asks you to hold the government accountable shouldn't keep its own readership a secret.
+{%- else -%}
+Nothing is counted. This site runs no analytics, sets no cookies, and has no record that you were here.
+{%- endif %}

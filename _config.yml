@@ -6,6 +6,13 @@ baseurl: ""
 
 contact_form_url: https://docs.google.com/forms/d/e/1FAIpQLSe2vlTj41j0sDUg6e8GYaK8-Ye-CXdBKYFu3u3HbZEwE9Lffg/viewform
 
+# GoatCounter: the site code only, not the full URL. _layouts/default.html builds
+# https://<code>.goatcounter.com/count from it. Cookieless and with no personal
+# data, so it needs no consent banner. It only loads in the production build
+# (the Pages workflow), so local previews never record a hit. What it collects is
+# disclosed on /about/, which is also gated on this key.
+goatcounter_code: eyesonhawkeye
+
 author:
   name: Michael Hart
   url: https://michaeldhart.com
