@@ -3,6 +3,10 @@ title: About
 ---
 Eyes on Hawkeye is a volunteer project by residents who want to understand what our local government is doing about a proposed data center, and who think everyone else should be able to understand it too.
 
+## Who's Behind This
+
+Eyes on Hawkeye was created, and is maintained, by {% include author.html %}, who gathers the documents, writes the summaries and runs the site.
+
 ## What You'll Find Here
 
 - **Documents.** Public records the city has released, saved here as the city published them. Where we know the original web address, we link to it.

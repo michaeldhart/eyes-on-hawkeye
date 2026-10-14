@@ -4,6 +4,10 @@ description: A community-run archive of the public records behind our town's pro
 url: "https://michaeldhart.github.io"
 baseurl: "/eyes-on-hawkeye"
 
+author:
+  name: Michael Hart
+  url: https://michaeldhart.com
+
 markdown: kramdown
 permalink: pretty
 excerpt_separator: ""

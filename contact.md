@@ -1,7 +1,7 @@
 ---
 title: Contact
 ---
-This page is a placeholder. Contact details will go here.
+This page is a placeholder. Contact details for {% include author.html %}, who runs this site, will go here.
 
 - **Email:** *coming soon*
 - **Send us a document:** *coming soon*

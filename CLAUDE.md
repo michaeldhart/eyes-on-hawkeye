@@ -26,6 +26,7 @@ A community-run Jekyll site archiving public records about the proposed "Project
 - Document bodies are OCR text inside `{% raw %}<pre class="doc-text">…</pre>{% endraw %}` with `---- page N ----` markers. The `{% raw %}` wrapper is required because OCR noise can contain Liquid syntax.
 - When adding documents, use `scripts/add_document.py`, then read the text and write/verify the summary and date by hand.
 - Headings, button labels and document/entry titles use Title Case. Buttons that leave the page (original PDF, external source) open in a new tab with `rel="noopener"`. The external source link is generic ("View Original Source"); it isn't always the city's site.
+- Credit: the site is created and maintained by Michael Hart. Wherever his name appears, link it with `{% include author.html %}` (reads `site.author` in `_config.yml`), which opens michaeldhart.com in a new tab. Never type the name as plain text.
 - Dates display through `_includes/date.html` (handles `undated`). Type badges through `_includes/badge.html`.
 - If you rename a type slug in `_data/types.yml`, update every document and entry that uses it.
 - Use relative_url for all internal links (the site is served under `/eyes-on-hawkeye/` on GitHub Pages).
