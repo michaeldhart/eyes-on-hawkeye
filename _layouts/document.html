@@ -61,3 +61,11 @@ layout: default
     {{ content }}
   </details>
 </article>
+<script>
+  // The full-text box scrolls, so keyboard users need to be able to focus it.
+  document.querySelectorAll("pre.doc-text").forEach(function (p) {
+    p.tabIndex = 0;
+    p.setAttribute("role", "region");
+    p.setAttribute("aria-label", "Full text of this document (scrollable)");
+  });
+</script>

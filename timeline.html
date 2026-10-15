@@ -6,14 +6,18 @@ scripts: [/assets/js/timeline.js]
 ---
 <h1>Timeline</h1>
 <p class="lede">Scroll sideways through time. Select a dot to see what the record says.</p>
+<noscript><p class="note">The timeline needs JavaScript. Without it, browse the <a href="{{ '/documents/' | relative_url }}">documents</a> or the <a href="{{ '/people/' | relative_url }}">people and organizations</a> instead.</p></noscript>
 
 <div class="tl-controls">
-  <div id="tl-legend" class="legend"></div>
-  <div class="zoom"><button type="button" id="z-out" aria-label="Zoom out">−</button><button type="button" id="z-in" aria-label="Zoom in">+</button></div>
+  <fieldset id="tl-legend" class="legend"><legend class="sr-only">Show or hide record types</legend></fieldset>
+  <div class="zoom"><button type="button" id="z-out" aria-label="Zoom out">&minus;</button><button type="button" id="z-in" aria-label="Zoom in">+</button></div>
 </div>
-<div id="timeline" class="timeline" tabindex="0" aria-label="Timeline of documents" data-src="{{ '/timeline.json' | relative_url }}" data-types="{{ site.data.types | jsonify | escape }}" data-about="{{ '/about/#how-we-work' | relative_url }}">
+<div id="tl-listbox"></div>
+<p id="tl-help" class="sr-only">Press Tab to reach the records, then use the arrow keys to move between them, Home and End to jump to the first or last, and Enter to select one. With the timeline itself focused, the arrow keys scroll sideways. The same records are available as a list above the timeline.</p>
+<div id="timeline" class="timeline" tabindex="0" role="region" aria-label="Timeline of records, scrolls sideways" aria-describedby="tl-help" data-src="{{ '/timeline.json' | relative_url }}" data-types="{{ site.data.types | jsonify | escape }}" data-about="{{ '/about/#how-we-work' | relative_url }}">
   <div class="tl-inner" id="tl-inner"></div>
 </div>
-<aside id="preview" class="preview" aria-live="polite">
+<p id="tl-status" class="sr-only" role="status"></p>
+<section id="preview" class="preview" role="region" aria-label="Selected record">
   <p class="muted">Select a dot on the timeline to preview that record.</p>
-</aside>
+</section>
