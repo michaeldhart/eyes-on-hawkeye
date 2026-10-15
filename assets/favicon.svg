@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Eyes on Hawkeye">
+  <rect width="512" height="512" rx="96" fill="#16150f"/>
+  <circle cx="256" cy="256" r="148" fill="none" stroke="#e0592a" stroke-width="46"/>
+  <circle cx="256" cy="256" r="70" fill="#faf7f2"/>
+</svg>
