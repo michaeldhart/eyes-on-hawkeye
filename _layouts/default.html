@@ -3,8 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.summary | default: site.description | strip_html | escape }}">
+  {%- if page.url == "/" -%}
+    {%- assign full_title = site.title | append: " · " | append: site.tagline -%}
+  {%- else -%}
+    {%- assign full_title = page.title | default: site.title | append: " · " | append: site.title -%}
+  {%- endif -%}
+  {%- if page.layout == "person" -%}
+    {%- assign seo_desc = page.role | append: ". Where " | append: page.title | append: " appears in the public records about Belvidere's proposed data center." -%}
+  {%- else -%}
+    {%- assign seo_desc = page.description | default: page.summary | default: site.description -%}
+  {%- endif -%}
+  {%- assign seo_desc = seo_desc | strip_html | normalize_whitespace | replace: "..", "." -%}
+  {%- comment -%} Keep descriptions to about 200 characters, cut at a sentence boundary where possible. {%- endcomment -%}
+  {%- if seo_desc.size > 200 -%}
+    {%- assign parts = seo_desc | split: ". " -%}
+    {%- assign acc = "" -%}
+    {%- for s in parts -%}
+      {%- assign cand = acc | append: s | append: ". " -%}
+      {%- if cand.size <= 201 -%}{%- assign acc = cand -%}{%- else -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+    {%- if acc != "" -%}{%- assign seo_desc = acc | strip | replace: "..", "." -%}{%- else -%}{%- assign seo_desc = seo_desc | truncatewords: 30, "…" -%}{%- endif -%}
+  {%- endif -%}
+  {%- assign seo_image = '/assets/og-card.png' | absolute_url -%}
+  {%- assign seo_image_alt = site.title | append: ": " | append: site.tagline -%}
+  <title>{{ full_title | escape }}</title>
+  <meta name="description" content="{{ seo_desc | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="{{ full_title | escape }}">
+  <meta property="og:description" content="{{ seo_desc | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ seo_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ seo_image_alt | escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ full_title | escape }}">
+  <meta name="twitter:description" content="{{ seo_desc | escape }}">
+  <meta name="twitter:image" content="{{ seo_image }}">
+  <meta name="twitter:image:alt" content="{{ seo_image_alt | escape }}">
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48">
   <link rel="icon" href="{{ '/assets/favicon-32x32.png' | relative_url }}" sizes="32x32" type="image/png">

@@ -1,4 +1,5 @@
 ---
+description: "Send Eyes on Hawkeye a document, report an error in a summary, or ask a question."
 title: Contact
 ---
 Use the form below to reach {% include author.html %}, who runs this site. It's the one way to get in touch, whatever it's about:

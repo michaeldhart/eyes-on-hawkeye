@@ -1,4 +1,5 @@
 ---
+description: "Search the full text of every public record we have about Belvidere's proposed data center."
 layout: default
 title: Search
 scripts: [https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js, /assets/js/search.js]

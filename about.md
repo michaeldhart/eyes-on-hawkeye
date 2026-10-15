@@ -1,4 +1,5 @@
 ---
+description: "Eyes on Hawkeye is a volunteer project that posts the public records about Belvidere's proposed data center, with plain-language summaries written by AI."
 title: About
 ---
 Eyes on Hawkeye is a volunteer project by residents who want to understand what our local government is doing about a proposed data center, and who think everyone else should be able to understand it too.
