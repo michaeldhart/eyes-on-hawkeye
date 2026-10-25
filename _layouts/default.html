@@ -1,17 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ page.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {%- if page.url == "/" -%}
-    {%- assign full_title = site.title | append: " · " | append: site.tagline -%}
+  {%- assign tagline = 'site_tagline' | t -%}
+  {%- if page.lang == "es" -%}
+    {%- assign en_url = page.url | remove_first: "/es" -%}
+    {%- assign es_url = page.url -%}
+  {%- else -%}
+    {%- assign en_url = page.url -%}
+    {%- assign es_url = page.url | prepend: "/es" -%}
+    {%- comment -%} First visit from a browser that prefers Spanish: go to the Spanish twin of this page. A choice made with the footer language link wins. Spanish pages never redirect. {%- endcomment %}
+  <script>
+    (function () {
+      var want = null;
+      try { want = localStorage.getItem("hawkeye-lang"); } catch (e) {}
+      if (!want) {
+        var ls = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || "en"];
+        for (var i = 0; i < ls.length; i++) {
+          var l = String(ls[i]).slice(0, 2).toLowerCase();
+          if (l === "es" || l === "en") { want = l; break; }
+        }
+      }
+      if (want === "es") {
+        var base = "{{ site.baseurl }}";
+        location.replace(base + "/es" + location.pathname.slice(base.length) + location.search + location.hash);
+      }
+    })();
+  </script>
+  {%- endif -%}
+  {%- if page.url == "/" or page.url == "/es/" -%}
+    {%- assign full_title = site.title | append: " · " | append: tagline -%}
   {%- else -%}
     {%- assign full_title = page.title | default: site.title | append: " · " | append: site.title -%}
   {%- endif -%}
   {%- if page.layout == "person" -%}
-    {%- assign seo_desc = page.role | append: ". Where " | append: page.title | append: " appears in the public records about Belvidere's proposed data center." -%}
+    {%- assign seo_desc = 'person_desc' | t: page.role, page.title -%}
   {%- else -%}
-    {%- assign seo_desc = page.description | default: page.summary | default: site.description -%}
+    {%- assign site_desc = 'site_description' | t -%}
+    {%- assign seo_desc = page.description | default: page.summary | default: site_desc -%}
   {%- endif -%}
   {%- assign seo_desc = seo_desc | strip_html | normalize_whitespace | replace: "..", "." -%}
   {%- comment -%} Keep descriptions to about 200 characters, cut at a sentence boundary where possible. {%- endcomment -%}
@@ -24,14 +51,18 @@
     {%- endfor -%}
     {%- if acc != "" -%}{%- assign seo_desc = acc | strip | replace: "..", "." -%}{%- else -%}{%- assign seo_desc = seo_desc | truncatewords: 30, "…" -%}{%- endif -%}
   {%- endif -%}
-  {%- assign seo_image = '/assets/og-card.png' | absolute_url -%}
-  {%- assign seo_image_alt = site.title | append: ": " | append: site.tagline -%}
+  {%- if page.lang == "es" -%}{%- assign seo_image = '/assets/og-card-es.png' | absolute_url -%}{%- else -%}{%- assign seo_image = '/assets/og-card.png' | absolute_url -%}{%- endif -%}
+  {%- assign seo_image_alt = site.title | append: ": " | append: tagline -%}
   <title>{{ full_title | escape }}</title>
   <meta name="description" content="{{ seo_desc | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+  <link rel="alternate" hreflang="es" href="{{ es_url | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ en_url | absolute_url }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.title | escape }}">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="{% if page.lang == 'es' %}es_US{% else %}en_US{% endif %}">
+  <meta property="og:locale:alternate" content="{% if page.lang == 'es' %}en_US{% else %}es_US{% endif %}">
   <meta property="og:title" content="{{ full_title | escape }}">
   <meta property="og:description" content="{{ seo_desc | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
@@ -56,20 +87,20 @@
   {%- endif %}
 </head>
 <body class="{{ page.body_class }}">
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">{{ 'skip_to_content' | t }}</a>
   <header class="site-header">
     <div class="wrap bar">
-      <a class="brand" href="{{ '/' | relative_url }}"><span class="eye" aria-hidden="true">◉</span> Eyes on Hawkeye</a>
-      <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="{{ '/' | loc | relative_url }}"><span class="eye" aria-hidden="true">◉</span> Eyes on Hawkeye</a>
+      <nav class="site-nav" aria-label="{{ 'nav_main' | t }}">
         {%- comment -%} Pure-CSS menu on phones (same pattern as the Belvidere Wire site): a visually hidden but focusable checkbox, a hamburger label, and a dropdown panel. Works without JavaScript. {%- endcomment -%}
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" aria-label="Menu">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" aria-label="{{ 'nav_menu' | t }}">
         <label for="nav-trigger" class="nav-toggle" aria-hidden="true">
           <svg viewBox="0 0 18 15" width="18" height="15" fill="currentColor" aria-hidden="true"><rect y="0" width="18" height="2.6" rx="1.3"/><rect y="6" width="18" height="2.6" rx="1.3"/><rect y="12" width="18" height="2.6" rx="1.3"/></svg>
         </label>
         <div class="trigger">
-          {% assign nav = "Documents|/documents/,Timeline|/timeline/,People|/people/,Search|/search/,About|/about/,Contact|/contact/" | split: "," %}
+          {% assign nav = "nav_documents|/documents/,nav_timeline|/timeline/,nav_people|/people/,nav_search|/search/,nav_about|/about/,nav_contact|/contact/" | split: "," %}
           {% for item in nav %}{% assign p = item | split: "|" %}
-          <a href="{{ p[1] | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] }}</a>{% endfor %}
+          <a href="{{ p[1] | loc | relative_url }}"{% if page.url contains p[1] %} aria-current="page"{% endif %}>{{ p[0] | t }}</a>{% endfor %}
         </div>
       </nav>
     </div>
@@ -79,9 +110,10 @@
   </main>
   <footer class="site-footer">
     <div class="wrap">
-      <p>Eyes on Hawkeye is a volunteer, community-run project. We post public records as the city released them, and we say plainly what we know and what we don't.</p>
-      <p>Created and maintained by {% include author.html %}.</p>
-      <p><a href="{{ '/about/' | relative_url }}">About</a> · <a href="{{ '/contact/' | relative_url }}">Contact</a> · <a href="https://github.com/michaeldhart/eyes-on-hawkeye">Source</a></p>
+      <p>{{ 'footer_blurb' | t }}</p>
+      {%- capture author_link %}{% include author.html %}{% endcapture %}
+      <p>{{ 'footer_created' | t: author_link }}</p>
+      <p><a href="{{ '/about/' | loc | relative_url }}">{{ 'nav_about' | t }}</a> · <a href="{{ '/contact/' | loc | relative_url }}">{{ 'nav_contact' | t }}</a> · <a href="https://github.com/michaeldhart/eyes-on-hawkeye">{{ 'footer_source' | t }}</a> · {% if page.lang == "es" %}<a href="{{ en_url | relative_url }}" hreflang="en" lang="en" data-setlang="en">English</a>{% else %}<a href="{{ es_url | relative_url }}" hreflang="es" lang="es" data-setlang="es">Español</a>{% endif %}</p>
     </div>
   </footer>
   <script>
@@ -89,8 +121,15 @@
       var t = document.getElementById("nav-trigger");
       if (e.key === "Escape" && t && t.checked) { t.checked = false; t.focus(); }
     });
+    // The footer language link is also a saved choice: it overrides the browser's language on later visits.
+    document.querySelectorAll("[data-setlang]").forEach(function (a) {
+      a.addEventListener("click", function () {
+        try { localStorage.setItem("hawkeye-lang", a.getAttribute("data-setlang")); } catch (e) {}
+      });
+    });
   </script>
-  {% if page.scripts %}{% for s in page.scripts %}<script src="{{ s | relative_url }}"></script>
+  {% if page.scripts %}<script>window.I18N = {{ nil | i18n_strings | jsonify }}; window.LANG = "{{ page.lang | default: 'en' }}";</script>
+  {% for s in page.scripts %}<script src="{{ s | relative_url }}"></script>
   {% endfor %}{% endif %}
 </body>
 </html>

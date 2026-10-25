@@ -12,43 +12,44 @@ layout: default
   {%- assign employer = site.people | where: "slug", page.org | first -%}
 {%- endif -%}
 <article class="doc">
-  <p class="crumb"><a href="{{ '/people/' | relative_url }}">&larr; All People and Organizations</a></p>
+  <p class="crumb"><a href="{{ '/people/' | loc | relative_url }}">{{ 'person_all' | t }}</a></p>
   <h1>{{ page.title }}</h1>
-  <p class="meta"><span class="badge" style="--c: {% if page.kind == 'org' %}#4a6a8a{% else %}#7a5a3a{% endif %}">{% if page.kind == "org" %}Organization{% else %}Person{% endif %}</span>
-    {{ page.role }}{% if employer %} &middot; <a href="{{ employer.url | relative_url }}">{{ employer.title }}</a>{% endif %}</p>
-  {% if page.aliases.size > 0 %}<p class="muted small">Also appears as: {{ page.aliases | join: "; " }}</p>{% endif %}
-  {% if page.role_source %}<p class="muted small">Role as stated in the records: {{ page.role_source }}</p>{% endif %}
-  {% if content != "" %}<div class="prose">{{ content }}</div>{% endif %}
+  <p class="meta"><span class="badge" style="--c: {% if page.kind == 'org' %}#4a6a8a{% else %}#7a5a3a{% endif %}">{% if page.kind == "org" %}{{ 'organization' | t }}{% else %}{{ 'person' | t }}{% endif %}</span>
+    {{ page.role }}{% if employer %} &middot; <a href="{{ employer.url | loc | relative_url }}">{{ employer.title }}</a>{% endif %}</p>
+  {% if page.aliases.size > 0 %}<p class="muted small">{{ 'person_aliases' | t }}: {{ page.aliases | join: "; " }}</p>{% endif %}
+  {% if page.role_source %}<p class="muted small">{{ 'person_role_source' | t }}: {{ page.role_source }}</p>{% endif %}
+  {%- comment -%} The one-line note under a name is the page body; Spanish pages take note_es instead (check_i18n.py requires it when there is a body). {%- endcomment %}
+  {% if page.lang == "es" and page.note %}<div class="prose"><p>{{ page.note }}</p></div>{% elsif content != "" %}<div class="prose">{{ content }}</div>{% endif %}
 
   {% if members and members.size > 0 %}
   <section>
-    <h2>People</h2>
-    <ul class="plain">{% for m in members %}<li><a href="{{ m.url | relative_url }}">{{ m.title }}</a> <span class="muted small">&mdash; {{ m.role }}</span></li>{% endfor %}</ul>
+    <h2>{{ 'people' | t }}</h2>
+    <ul class="plain">{% for m in members %}<li><a href="{{ m.url | loc | relative_url }}">{{ m.title }}</a> <span class="muted small">&mdash; {{ m | tx: 'role' }}</span></li>{% endfor %}</ul>
   </section>
   {% endif %}
 
   <section>
-    <h2>Appears In</h2>
-    {% if docs.size == 0 and ents.size == 0 %}<p class="muted">Not yet linked to any record.</p>{% endif %}
+    <h2>{{ 'person_appears_in' | t }}</h2>
+    {% if docs.size == 0 and ents.size == 0 %}<p class="muted">{{ 'person_none' | t }}</p>{% endif %}
     {% if docs.size > 0 %}
-    <h3>Documents</h3>
+    <h3>{{ 'documents' | t }}</h3>
     <ul class="doclist">
-      {% for d in docs %}<li>{% include date.html d=d.date undated=d.undated %} <a href="{{ d.url | relative_url }}">{{ d.title }}</a></li>{% endfor %}
+      {% for d in docs %}<li>{% include date.html d=d.date undated=d.undated %} <a href="{{ d.url | loc | relative_url }}">{{ d | tx: 'title' }}</a></li>{% endfor %}
     </ul>
     {% endif %}
     {% if ents.size > 0 %}
-    <h3>Timeline Entries ({{ ents.size }})</h3>
+    <h3>{{ 'person_entries' | t: ents.size }}</h3>
     <ul class="doclist">
       {% for e in ents %}
       {%- assign ed = site.documents | where: "slug", e.document | first -%}
       <li>{% include date.html d=e.date %}
-        <a href="{{ '/timeline/' | relative_url }}#{{ e.name | remove: '.md' }}">{{ e.title }}</a>
-        {% if ed %}<span class="muted small">in <a href="{{ ed.url | relative_url }}">{{ ed.title }}</a>{% if e.pages %}, <a href="{{ ed.file | relative_url }}#page={{ e.pages | split: '-' | first }}" target="_blank" rel="noopener">pp. {{ e.pages }}</a>{% endif %}</span>{% endif %}
+        <a href="{{ '/timeline/' | loc | relative_url }}#{{ e.name | remove: '.md' }}">{{ e | tx: 'title' }}</a>
+        {% if ed %}<span class="muted small">{{ 'person_in' | t }} <a href="{{ ed.url | loc | relative_url }}">{{ ed | tx: 'title' }}</a>{% if e.pages %}, <a href="{{ ed.file | relative_url }}#page={{ e.pages | split: '-' | first }}" target="_blank" rel="noopener">{{ 'pp' | t }} {{ e.pages }}</a>{% endif %}</span>{% endif %}
       </li>
       {% endfor %}
     </ul>
     {% endif %}
   </section>
 
-  <p class="note">Being named in a public record doesn&rsquo;t imply wrongdoing. Roles are shown as the records state them, and the descriptions here are written by AI from those records (<a href="{{ '/about/#how-we-work' | relative_url }}">how we work</a>).</p>
+  <p class="note">{{ 'person_note_1' | t }} <a href="{{ '/about/#how-we-work' | loc | relative_url }}">{{ 'how_we_work_lc' | t }}</a>{{ 'person_note_2' | t }}{% if page.lang == "es" %} {% if page.es_reviewed %}{{ 'es_reviewed_note' | t }}{% else %}{{ 'es_unreviewed_note' | t }}{% endif %}{% endif %}</p>
 </article>

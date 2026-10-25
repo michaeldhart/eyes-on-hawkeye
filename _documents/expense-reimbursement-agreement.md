@@ -12,6 +12,8 @@ tags: [hawkeye, datawatt, annexation, agreement]
 ocr: true
 people: [clinton-morris, david-halligan]
 orgs: [city-of-belvidere, datawatt-hyperscale]
+title_es: "Acuerdo de reembolso de gastos y garantía con Datawatt Hyperscale"
+summary_es: "El desarrollador acepta reembolsar los costos externos de ingeniería, asesoría legal, planificación y consultoría de la ciudad por revisar y negociar el Proyecto Hawkeye, contados desde el 1 de abril de 2026, y por administrar el proyecto si se aprueba. También deposita una garantía en efectivo de $150,000 que la ciudad puede utilizar si una factura queda sin pagar durante 35 días. Cualquier saldo se devuelve dentro de los 60 días siguientes al primer certificado de ocupación, o después de que la ciudad niegue la anexión o un acuerdo de anexión o de redesarrollo, una vez pagados todos los gastos de la ciudad. La ciudad no está obligada a continuar el proceso. El acuerdo tiene fecha del 26 de mayo de 2026; la firma del desarrollador tiene fecha del 21 de mayo."
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----

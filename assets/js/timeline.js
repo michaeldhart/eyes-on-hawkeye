@@ -5,6 +5,8 @@
   var legend = document.getElementById('tl-legend');
   var statusEl = document.getElementById('tl-status');
   var listBox = document.getElementById('tl-listbox');
+  var LANG = window.LANG === 'es' ? 'es-US' : 'en-US';
+  function T(k, a, b) { return String((window.I18N || {})[k] || k).replace(/%1/g, a == null ? '' : a).replace(/%2/g, b == null ? '' : b); }
   var DAY = 86400000, ROW = 30, PAD = 60, SLOT = 26; // SLOT: min horizontal gap so 24px targets don't overlap
   var pxPerDay = 3, items = [], types = {}, hidden = {}, selected = null;
   var buttons = [];      // dot buttons, in time order, for the records currently shown
@@ -13,7 +15,7 @@
 
   var colors = {}, labels = {}, shapes = {};
   var typeData = JSON.parse(wrap.dataset.types || '{}');
-  Object.keys(typeData).forEach(function (k) { colors[k] = typeData[k].color; labels[k] = typeData[k].label; shapes[k] = typeData[k].shape; });
+  Object.keys(typeData).forEach(function (k) { colors[k] = typeData[k].color; labels[k] = typeData[k]['label_' + window.LANG] || typeData[k].label; shapes[k] = typeData[k].shape; });
 
   // Shapes in a 20x20 box. Color is never the only cue: each type also has its own shape.
   var SHAPES = {
@@ -33,8 +35,10 @@
   }
 
   function t(d) { return Date.parse(d + 'T12:00:00Z'); }
-  function fmt(d) { return new Date(t(d)).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }); }
+  function fmt(d) { return new Date(t(d)).toLocaleDateString(LANG, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  // Spanish summaries quote the records in English, then translate in parentheses; mark the English for screen readers.
+  function enQuotes(s) { return window.LANG === 'es' ? s.replace(/“([^”]+)”(?= \(“)/g, '<span lang="en">“$1”</span>') : s; }
   function say(msg) { statusEl.textContent = ''; setTimeout(function () { statusEl.textContent = msg; }, 30); }
   function typeColor(type) { return colors[type] || '#6b6b6b'; }
 
@@ -42,7 +46,7 @@
     inner.innerHTML = '';
     shown = items.filter(function (i) { return !hidden[i.type]; }).sort(function (a, b) { return t(a.date) - t(b.date); });
     buttons = [];
-    if (!items.length) { inner.textContent = 'No records yet.'; return; }
+    if (!items.length) { inner.textContent = T('tl_none'); return; }
     var all = items.map(function (i) { return t(i.date); });
     var start = new Date(Math.min.apply(null, all)); start = Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), 1);
     var endD = new Date(Math.max.apply(null, all) + 31 * DAY); var end = Date.UTC(endD.getUTCFullYear(), endD.getUTCMonth(), 1);
@@ -62,7 +66,7 @@
       var mo = m.getUTCMonth();
       if (isYear || pxPerDay >= 3 || (pxPerDay >= 1 && mo % 3 === 0) || (pxPerDay < 1 && mo % 6 === 0)) {
         var lab = document.createElement('span');
-        lab.textContent = isYear ? m.getUTCFullYear() : m.toLocaleDateString(undefined, { month: 'short', timeZone: 'UTC' });
+        lab.textContent = isYear ? m.getUTCFullYear() : m.toLocaleDateString(LANG, { month: 'short', timeZone: 'UTC' });
         tick.appendChild(lab);
       }
       axis.appendChild(tick);
@@ -72,7 +76,7 @@
     // the dots are a real list, oldest first; overlapping dates stack into lanes
     var ol = document.createElement('ol');
     ol.className = 'tl-dots';
-    ol.setAttribute('aria-label', 'Records, oldest first');
+    ol.setAttribute('aria-label', T('tl_dots_label'));
     var lanes = [];
     shown.forEach(function (it, idx) {
       var x = PAD + (t(it.date) - start) / DAY * pxPerDay;
@@ -163,14 +167,15 @@
     buttons.forEach(function (b, i) { b.setAttribute('aria-pressed', shown[i] === it ? 'true' : 'false'); });
     var html = '<p class="meta"><span class="badge" style="--c:' + typeColor(it.type) + '">' + esc(labels[it.type] || it.type) + '</span> ' +
       '<time>' + fmt(it.date) + '</time></p><h2 id="preview-title" tabindex="-1">' + esc(it.title) + '</h2>';
-    if (it.summary) html += '<p>' + esc(it.summary) + '</p><p class="ai-note">Summary written by AI. <a href="' + wrap.dataset.about + '">How we work</a></p>';
-    if (it.pages && it.doc_title) html += '<p class="muted small">From <em>' + esc(it.doc_title) + '</em>, pages ' + esc(it.pages) + '</p>';
+    if (it.summary) html += '<p>' + enQuotes(esc(it.summary)) + '</p><p class="ai-note">' + esc(T('ai_note')) + ' <a href="' + wrap.dataset.about + '">' + esc(T('how_we_work')) + '</a>' +
+      (window.LANG === 'es' ? ' ' + esc(T(it.rev ? 'es_reviewed_note' : 'es_unreviewed_note')) : '') + '</p>';
+    if (it.pages && it.doc_title) html += '<p class="muted small">' + T('tl_from', '<em>' + esc(it.doc_title) + '</em>', esc(it.pages)) + '</p>';
     if (it.who && it.who.length) {
-      html += '<p class="who">Named: ' + it.who.map(function (w) { return '<a href="' + w.u + '">' + esc(w.n) + '</a>'; }).join(' ') + '</p>';
+      html += '<p class="who">' + esc(T('tl_named')) + ' ' + it.who.map(function (w) { return '<a href="' + w.u + '">' + esc(w.n) + '</a>'; }).join(' ') + '</p>';
     }
     html += '<p class="actions">';
-    if (it.url) html += '<a class="btn" href="' + it.url + '">Open Document Page</a>';
-    if (it.pdf) html += '<a class="btn ghost" href="' + it.pdf + '" target="_blank" rel="noopener">Open Original PDF' + (it.pages ? ' at Page ' + esc(String(it.pages).split('-')[0]) : '') + '</a>';
+    if (it.url) html += '<a class="btn" href="' + it.url + '">' + esc(T('tl_open_doc')) + '</a>';
+    if (it.pdf) html += '<a class="btn ghost" href="' + it.pdf + '" target="_blank" rel="noopener">' + esc(it.pages ? T('tl_open_pdf_at', String(it.pages).split('-')[0]) : T('tl_open_pdf')) + '</a>';
     html += '</p>';
     preview.innerHTML = html;
     var idx = shown.indexOf(it);
@@ -180,7 +185,7 @@
       document.getElementById('preview-title').focus();
       preview.scrollIntoView({ block: 'nearest' });
     } else {
-      say('Selected: ' + it.title + ', ' + fmt(it.date) + '. Details are in the Selected record section below the timeline.');
+      say(T('tl_selected_say', it.title, fmt(it.date)));
     }
   }
 
@@ -191,7 +196,7 @@
       l.querySelector('input').addEventListener('change', function (e) {
         hidden[k] = !e.target.checked;
         render();
-        say(shown.length + ' of ' + items.length + ' records shown.');
+        say(T('tl_n_shown', shown.length, items.length));
       });
       legend.appendChild(l);
     });
@@ -202,7 +207,7 @@
     var sorted = items.slice().sort(function (a, b) { return t(a.date) - t(b.date); });
     var d = document.createElement('details');
     d.className = 'tl-list';
-    var html = '<summary>View all ' + sorted.length + ' records as a list</summary><ol>';
+    var html = '<summary>' + esc(T('tl_view_list', sorted.length)) + '</summary><ol>';
     sorted.forEach(function (it, i) {
       html += '<li><time datetime="' + esc(it.date) + '">' + esc(fmt(it.date)) + '</time> <span class="tl-type">' + esc(labels[it.type] || it.type) + '</span> ' +
         '<button type="button" class="linklike" data-i="' + i + '">' + esc(it.title) + '</button></li>';
@@ -220,7 +225,7 @@
     pxPerDay = Math.min(30, Math.max(0.1, pxPerDay * f));
     render();
     wrap.scrollLeft = center * pxPerDay - wrap.clientWidth / 2;
-    say(f > 1 ? 'Zoomed in.' : 'Zoomed out.');
+    say(T(f > 1 ? 'tl_zoomed_in' : 'tl_zoomed_out'));
   }
   // Open on the earliest dot, zoomed out just enough that at least two dots are in view.
   function openOnFirstDots() {
@@ -258,5 +263,5 @@
     buildList();
     openOnFirstDots();
     openFromHash();
-  }).catch(function () { inner.textContent = 'Could not load the timeline.'; });
+  }).catch(function () { inner.textContent = T('tl_error'); });
 })();

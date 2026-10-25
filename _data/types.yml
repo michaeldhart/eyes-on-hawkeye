@@ -1,10 +1,10 @@
-# slug: label, color, shape  (color and shape are used on the timeline and badges; shape keeps color from being the only cue)
-agenda:         { label: Agenda,                 color: "#2f6f9f", shape: diamond }
-minutes:        { label: Minutes,                color: "#5b8a3c", shape: pentagon }
-application:    { label: Application,            color: "#8a5bb0", shape: hexagon }
-presentation:   { label: Presentation,           color: "#c2559d", shape: triangle }
-staff-report:   { label: Staff Report,           color: "#1f8a8a", shape: octagon }
-ordinance:      { label: Ordinance,              color: "#c2410c", shape: cross }
-correspondence: { label: Correspondence,         color: "#b8860b", shape: circle }
-contract:       { label: Contract,               color: "#b3263e", shape: square }
-news:           { label: News,                   color: "#6b6b6b", shape: star }
+# slug: label, label_es, color, shape  (color and shape are used on the timeline and badges; shape keeps color from being the only cue)
+agenda:         { label: Agenda, label_es: Agenda, color: "#2f6f9f", shape: diamond }
+minutes:        { label: Minutes, label_es: Acta, color: "#5b8a3c", shape: pentagon }
+application:    { label: Application, label_es: Solicitud, color: "#8a5bb0", shape: hexagon }
+presentation:   { label: Presentation, label_es: Presentación, color: "#c2559d", shape: triangle }
+staff-report:   { label: Staff Report, label_es: Informe del personal, color: "#1f8a8a", shape: octagon }
+ordinance:      { label: Ordinance, label_es: Ordenanza, color: "#c2410c", shape: cross }
+correspondence: { label: Correspondence, label_es: Correspondencia, color: "#b8860b", shape: circle }
+contract:       { label: Contract, label_es: Contrato, color: "#b3263e", shape: square }
+news:           { label: News, label_es: Noticia, color: "#6b6b6b", shape: star }

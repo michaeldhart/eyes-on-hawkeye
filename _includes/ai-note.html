@@ -1,0 +1,2 @@
+{%- comment -%} The AI disclosure under a summary. On Spanish pages it also says whether a person has reviewed the translation (es_reviewed: true in the record's front matter). Pass reviewed=page.es_reviewed. {%- endcomment -%}
+<p class="ai-note">{{ 'ai_note' | t }} <a href="{{ '/about/#how-we-work' | loc | relative_url }}">{{ 'how_we_work' | t }}</a>{% if page.lang == "es" %} {% if include.reviewed %}{{ 'es_reviewed_note' | t }}{% else %}{{ 'es_unreviewed_note' | t }}{% endif %}{% endif %}</p>

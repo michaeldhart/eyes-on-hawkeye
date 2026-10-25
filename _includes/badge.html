@@ -1,2 +1,2 @@
 {%- assign t = site.data.types[include.type] -%}
-<span class="badge" style="--c: {{ t.color | default: '#6b6b6b' }}">{{ t.label | default: include.type }}</span>
+<span class="badge" style="--c: {{ t.color | default: '#6b6b6b' }}">{{ t | tx: 'label' | default: include.type }}</span>

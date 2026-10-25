@@ -55,6 +55,15 @@ Every person and organization named in the records has a file in `_people/<slug>
 
 Scope: tag everyone who sends, receives or is substantively named in the conversation an entry summarizes. Don't tag incidental citations (for example companies mentioned as market examples on a slide). Roles must come from the records: put where in `role_source`, and write "title not stated in the records" when it isn't. No contact details. `python3 scripts/check_people.py` (also run in the deploy workflow) fails on unknown slugs, wrong kinds, unused or duplicate names.
 
+## Spanish version
+
+The whole site is also published in Spanish under `/es/`. A browser whose preferred language is Spanish is sent there automatically on a first visit; the footer link ("English" / "Español") switches and remembers the choice. The Spanish is written by Claude alongside the English and is marked as not yet reviewed until a Spanish speaker sets `es_reviewed: true` on that record.
+
+- **Per record** (documents, entries, people): add `title_es`, `summary_es`, `role_es`, `role_source_es` (and `date_note_es`, `note_es` where the English has them) to the front matter. A `_es` key replaces its English twin on the Spanish page.
+- **Shared text:** UI strings are in `_data/i18n/en.yml` and `es.yml`, type names in `_data/types.yml` (`label_es`), tag names in `_data/i18n/tags_es.yml`. Home, About and Contact are written by hand in `es/`.
+- **Not translated:** the PDFs and their OCR text. Quotes from the records stay in English, followed by a Spanish translation in parentheses.
+- **Check:** `python3 scripts/check_i18n.py` fails if anything lacks its Spanish (CI runs it). `scripts/make_og_card.py` makes both social cards. How the `/es/` pages are generated and the Liquid helpers are documented at the top of `_plugins/i18n.rb`.
+
 ## Home page overview
 
 The home page has a short hand-written overview, "What the Records Show So Far." It is rewritten by hand when the story changes. Its two dates, `overview_through` and `overview_reviewed`, live in `_config.yml`. `scripts/check_people.py` warns when a record is newer than `overview_through`.
@@ -64,10 +73,11 @@ The home page has a short hand-written overview, "What the Records Show So Far."
 ```sh
 scripts/add_document.py ~/Downloads/file.pdf --title "..." --date 2026-05-26 \
   --type contract --source "City Clerk" --source-url https://... \
-  --summary "..." --tags water,zoning
+  --summary "..." --tags water,zoning \
+  --title-es "..." --summary-es "..."
 ```
 
-The script copies the PDF, extracts text (OCR via `ocrmypdf` if it is a scan), and writes the document file. Always read the result and correct the title (Title Case), date and summary by hand. OCR text is machine-made and the PDF is the record.
+The script copies the PDF, extracts text (OCR via `ocrmypdf` if it is a scan), and writes the document file. Always read the result and correct the title (Title Case), date and summary by hand, and check the Spanish title and summary (`python3 scripts/check_i18n.py`). OCR text is machine-made and the PDF is the record.
 
 ## Social previews and page metadata
 

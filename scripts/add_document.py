@@ -4,10 +4,13 @@
     scripts/add_document.py path/to/file.pdf --title "..." --date 2026-05-26 \
         --type contract --source "City Clerk" --source-url https://... \
         --summary "..." --tags water,zoning   # one word per tag
+        --title-es "..." --summary-es "..."   # the Spanish version (required by check_i18n.py)
 
 Copies the PDF into assets/documents/ (unchanged), extracts its text (using the
 PDF's own text layer, or OCR via ocrmypdf if it is a scan), and writes
 _documents/<slug>.md with front matter. Review and edit the result by hand.
+Every document also needs Spanish: pass --title-es and --summary-es (and --date-note-es if you give the
+document a date_note). New tags need a Spanish name in _data/i18n/tags_es.yml.
 Requires poppler (pdftotext, pdfinfo); scans also need ocrmypdf.
 """
 import argparse, hashlib, html, re, shutil, subprocess, sys, tempfile
@@ -79,6 +82,8 @@ def main():
     ap.add_argument("--source", default="")
     ap.add_argument("--source-url", default="")
     ap.add_argument("--summary", default="")
+    ap.add_argument("--title-es", default="", help="Spanish title (sentence case)")
+    ap.add_argument("--summary-es", default="", help="Spanish summary; quotes stay in English followed by a translation in parentheses")
     ap.add_argument("--tags", default="")
     ap.add_argument("--compilation", action="store_true",
                     help="PDF bundles many items (e.g. an email dump); describe its parts as _entries instead of one dot")
@@ -122,12 +127,16 @@ def main():
     fm.append(f"pages_count: {pdf_pages(dest)}")
     fm.append(f"sha256: {sha256_of(dest)}")
     fm.append(f"summary: {yq(a.summary)}")
+    fm.append(f"title_es: {yq(a.title_es)}")
+    fm.append(f"summary_es: {yq(a.summary_es)}")
     fm.append("tags: [" + ", ".join(tags) + "]")
     fm.append("people: []   # slugs from _people/ (person files)")
     fm.append("orgs: []     # slugs from _people/ (organization files)")
     if ocr: fm.append("ocr: true")
     if a.compilation: fm.append("compilation: true")
     if a.undated: fm.append("undated: true")
+    if not (a.title_es and a.summary_es):
+        print("NOTE: title_es / summary_es are empty. Fill them in before committing (scripts/check_i18n.py fails otherwise).", file=sys.stderr)
     fm.append("---\n")
 
     out.parent.mkdir(exist_ok=True)

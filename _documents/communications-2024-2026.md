@@ -11,6 +11,8 @@ summary: "A 313-page compilation of emails and calendar items released by the ci
 tags: [hawkeye, email, compilation]
 ocr: true
 compilation: true
+title_es: "Comunicaciones de la ciudad sobre el Proyecto Hawkeye, de 2024 al 31 de agosto de 2026"
+summary_es: "Una compilación de 313 páginas de correos electrónicos y elementos de calendario publicada por la ciudad. Los mensajes van de noviembre de 2024 a julio de 2026. Muchas páginas son impresiones repetidas de las mismas cadenas de mensajes, por lo que el archivo contiene unos 110 mensajes únicos. Cada conversación se resume como una entrada en la cronología, con números de página, y se incluyen dos presentaciones del desarrollador adjuntas a correos de noviembre de 2024."
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----

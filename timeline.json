@@ -1,6 +1,7 @@
 ---
 layout: null
 permalink: /timeline.json
+i18n: true
 ---
 {%- comment -%}
 Timeline items = every document (unless `compilation: true`, whose parts are entries)
@@ -11,18 +12,18 @@ plus every item in _entries. Entries may point at a document and a page range.
 {%- for d in site.documents -%}
   {%- unless d.compilation or d.undated or d.timeline == false -%}
   {%- unless first %},{% endunless -%}{%- assign first = false %}
-  {"id": {{ d.slug | jsonify }}, "who": {% include who-json.html item=d %}, "title": {{ d.title | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
-   "summary": {{ d.summary | default: "" | jsonify }}, "url": {{ d.url | relative_url | jsonify }},
-   "pdf": {{ d.file | relative_url | jsonify }}, "doc_title": {{ d.title | jsonify }}, "pages": ""}
+  {"id": {{ d.slug | jsonify }}, "who": {% include who-json.html item=d %}, "title": {{ d | tx: 'title' | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
+   "summary": {{ d | tx: 'summary' | default: "" | jsonify }}, "rev": {{ d.es_reviewed | default: false | jsonify }}, "url": {{ d.url | loc | relative_url | jsonify }},
+   "pdf": {{ d.file | relative_url | jsonify }}, "doc_title": {{ d | tx: 'title' | jsonify }}, "pages": ""}
   {%- endunless -%}
 {%- endfor -%}
 {%- for e in site.entries -%}
   {%- assign d = site.documents | where: "slug", e.document | first -%}
   {%- unless first %},{% endunless -%}{%- assign first = false %}
-  {"id": {{ e.name | remove: ".md" | jsonify }}, "who": {% include who-json.html item=e %}, "title": {{ e.title | jsonify }}, "date": "{{ e.date | date: '%Y-%m-%d' }}", "type": {{ e.type | default: d.type | jsonify }},
-   "summary": {{ e.summary | default: "" | jsonify }},
-   "url": {{ d.url | default: "" | relative_url | jsonify }},
+  {"id": {{ e.name | remove: ".md" | jsonify }}, "who": {% include who-json.html item=e %}, "title": {{ e | tx: 'title' | jsonify }}, "date": "{{ e.date | date: '%Y-%m-%d' }}", "type": {{ e.type | default: d.type | jsonify }},
+   "summary": {{ e | tx: 'summary' | default: "" | jsonify }}, "rev": {{ e.es_reviewed | default: false | jsonify }},
+   "url": {{ d.url | default: "" | loc | relative_url | jsonify }},
    "pdf": {% if d.file and e.pages %}{{ d.file | append: "#page=" | append: e.pages | split: "-" | first | relative_url | jsonify }}{% elsif d.file %}{{ d.file | relative_url | jsonify }}{% else %}""{% endif %},
-   "doc_title": {{ d.title | default: "" | jsonify }}, "pages": {{ e.pages | default: "" | jsonify }}}
+   "doc_title": {{ d | tx: 'title' | default: "" | jsonify }}, "pages": {{ e.pages | default: "" | jsonify }}}
 {%- endfor -%}
 ]

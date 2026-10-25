@@ -2,23 +2,26 @@
 description: "Emails, agreements and presentations about Belvidere's proposed data center, in date order. Select any dot to see what the record says."
 layout: default
 title: Timeline
+title_es: Cronología
+description_es: "Correos, acuerdos y presentaciones sobre el centro de datos propuesto en Belvidere, en orden de fecha. Seleccione cualquier punto para ver lo que dice el registro."
+i18n: true
 body_class: wide
 scripts: [/assets/js/timeline.js]
 ---
-<h1>Timeline</h1>
-<p class="lede">Scroll sideways through time. Select a dot to see what the record says.</p>
-<noscript><p class="note">The timeline needs JavaScript. Without it, browse the <a href="{{ '/documents/' | relative_url }}">documents</a> or the <a href="{{ '/people/' | relative_url }}">people and organizations</a> instead.</p></noscript>
+<h1>{{ page.title }}</h1>
+<p class="lede">{{ 'tl_lede' | t }}</p>
+<noscript><p class="note">{{ 'tl_noscript_1' | t }} <a href="{{ '/documents/' | loc | relative_url }}">{{ 'tl_noscript_docs' | t }}</a> {{ 'tl_noscript_or' | t }} <a href="{{ '/people/' | loc | relative_url }}">{{ 'tl_noscript_people' | t }}</a>{{ 'tl_noscript_2' | t }}</p></noscript>
 
 <div class="tl-controls">
-  <fieldset id="tl-legend" class="legend"><legend class="sr-only">Show or hide record types</legend></fieldset>
-  <div class="zoom"><button type="button" id="z-out" aria-label="Zoom out">&minus;</button><button type="button" id="z-in" aria-label="Zoom in">+</button></div>
+  <fieldset id="tl-legend" class="legend"><legend class="sr-only">{{ 'tl_legend' | t }}</legend></fieldset>
+  <div class="zoom"><button type="button" id="z-out" aria-label="{{ 'tl_zoom_out' | t }}">&minus;</button><button type="button" id="z-in" aria-label="{{ 'tl_zoom_in' | t }}">+</button></div>
 </div>
 <div id="tl-listbox"></div>
-<p id="tl-help" class="sr-only">Press Tab to reach the records, then use the arrow keys to move between them, Home and End to jump to the first or last, and Enter to select one. With the timeline itself focused, the arrow keys scroll sideways. The same records are available as a list above the timeline.</p>
-<div id="timeline" class="timeline" tabindex="0" role="region" aria-label="Timeline of records, scrolls sideways" aria-describedby="tl-help" data-src="{{ '/timeline.json' | relative_url }}" data-types="{{ site.data.types | jsonify | escape }}" data-about="{{ '/about/#how-we-work' | relative_url }}">
+<p id="tl-help" class="sr-only">{{ 'tl_help' | t }}</p>
+<div id="timeline" class="timeline" tabindex="0" role="region" aria-label="{{ 'tl_region' | t | escape }}" aria-describedby="tl-help" data-src="{{ '/timeline.json' | loc | relative_url }}" data-types="{{ site.data.types | jsonify | escape }}" data-about="{{ '/about/#how-we-work' | loc | relative_url }}">
   <div class="tl-inner" id="tl-inner"></div>
 </div>
 <p id="tl-status" class="sr-only" role="status"></p>
-<section id="preview" class="preview" role="region" aria-label="Selected record">
-  <p class="muted">Select a dot on the timeline to preview that record.</p>
+<section id="preview" class="preview" role="region" aria-label="{{ 'tl_selected' | t | escape }}">
+  <p class="muted">{{ 'tl_select_prompt' | t }}</p>
 </section>

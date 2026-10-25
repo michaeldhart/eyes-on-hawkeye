@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- comment -%} One entry per English URL and its /es twin, each pointing at the other with hreflang. {%- endcomment -%}
+{%- assign urls = "" | split: "," -%}
+{%- for p in site.pages -%}{%- if p.lang == "en" and p.url contains "/" and p.url != "/404.html" -%}{%- assign tail = p.url | split: "/" | last -%}{%- unless tail contains "." -%}{%- assign urls = urls | push: p.url -%}{%- endunless -%}{%- endif -%}{%- endfor -%}
+{%- for d in site.documents -%}{%- assign urls = urls | push: d.url -%}{%- endfor -%}
+{%- for d in site.people -%}{%- assign urls = urls | push: d.url -%}{%- endfor -%}
+{%- for u in urls %}
+  <url>
+    <loc>{{ u | absolute_url }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ u | absolute_url }}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="{{ u | prepend: '/es' | absolute_url }}"/>
+  </url>
+  <url>
+    <loc>{{ u | prepend: '/es' | absolute_url }}</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="{{ u | absolute_url }}"/>
+    <xhtml:link rel="alternate" hreflang="es" href="{{ u | prepend: '/es' | absolute_url }}"/>
+  </url>
+{%- endfor %}
+</urlset>

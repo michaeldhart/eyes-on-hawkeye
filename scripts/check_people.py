@@ -58,7 +58,7 @@ def warn_overview():
                 newest = (d, f"{folder}/{p.name}")
     if newest[0] > through:
         msg = (f"The home page overview covers records through {through}, but {newest[1]} is dated "
-               f"{newest[0]}. Update the overview and overview_through/overview_reviewed in _config.yml.")
+               f"{newest[0]}. Update the overview (index.md and its Spanish twin es/index.md) and overview_through/overview_reviewed in _config.yml.")
         print(("::warning::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: ") + msg)
 
 

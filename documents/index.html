@@ -2,38 +2,41 @@
 description: "Every public record we have about Belvidere's proposed data center, each with the original PDF and its full text."
 layout: default
 title: Documents
+title_es: Documentos
+description_es: "Todos los registros públicos que tenemos sobre el centro de datos propuesto en Belvidere, cada uno con el PDF original y su texto completo."
+i18n: true
 scripts: [/assets/js/documents.js]
 ---
-<h1>Documents</h1>
-<p class="lede">Every record we have, newest first. Each page has the original file and the full text.</p>
+<h1>{{ page.title }}</h1>
+<p class="lede">{{ 'docs_lede' | t }}</p>
 
 <div class="filters" id="filters">
-  <label>Type
+  <label>{{ 'type' | t }}
     <select id="f-type">
-      <option value="">All types</option>
-      {% for t in site.data.types %}<option value="{{ t[0] }}">{{ t[1].label }}</option>{% endfor %}
+      <option value="">{{ 'all_types' | t }}</option>
+      {% for t in site.data.types %}<option value="{{ t[0] }}">{{ t[1] | tx: 'label' }}</option>{% endfor %}
     </select>
   </label>
-  <label>Tag
+  <label>{{ 'tag' | t }}
     <select id="f-tag">
-      <option value="">All tags</option>
+      <option value="">{{ 'all_tags' | t }}</option>
       {% assign alltags = site.documents | map: "tags" | join: "," | split: "," | uniq | sort %}
-      {% for t in alltags %}{% if t != "" %}<option value="{{ t }}">{{ t }}</option>{% endif %}{% endfor %}
+      {% for t in alltags %}{% if t != "" %}<option value="{{ t }}">{{ t | tag_t }}</option>{% endif %}{% endfor %}
     </select>
   </label>
   <span id="f-count" class="muted" aria-live="polite"></span>
 </div>
 
 <table class="index">
-  <thead><tr><th>Date</th><th>Title</th><th>Type</th><th>Tags</th></tr></thead>
+  <thead><tr><th>{{ 'date' | t }}</th><th>{{ 'title' | t }}</th><th>{{ 'type' | t }}</th><th>{{ 'tags' | t }}</th></tr></thead>
   <tbody>
   {% assign docs = site.documents | sort: "date" | reverse %}
   {% for d in docs %}
     <tr data-type="{{ d.type }}" data-tags="{{ d.tags | join: ',' }}">
       <td class="nowrap">{% include date.html d=d.date undated=d.undated %}</td>
-      <td><a href="{{ d.url | relative_url }}">{{ d.title }}</a>{% if d.summary %}<div class="muted small"><span class="ai-tag" title="Summary written by AI">AI summary</span> {{ d.summary }}</div>{% endif %}</td>
+      <td><a href="{{ d.url | loc | relative_url }}">{{ d | tx: 'title' }}</a>{% assign sm = d | tx: 'summary' %}{% if sm %}<div class="muted small"><span class="ai-tag" title="{{ 'ai_note' | t | escape }}">{{ 'ai_summary' | t }}</span> {{ sm | en_quotes }}</div>{% endif %}</td>
       <td>{% include badge.html type=d.type %}</td>
-      <td>{% for t in d.tags %}<span class="tag">{{ t }}</span> {% endfor %}</td>
+      <td>{% for t in d.tags %}<span class="tag">{{ t | tag_t }}</span> {% endfor %}</td>
     </tr>
   {% endfor %}
   </tbody>

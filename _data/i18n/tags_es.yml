@@ -1,0 +1,11 @@
+# Display names for the single-word tags (the English tag stays the stable key in filters and URLs).
+# scripts/check_i18n.py fails if a tag used by a document is missing here.
+agreement: acuerdo
+annexation: anexión
+compilation: compilación
+datawatt: datawatt
+email: correo
+hawkeye: hawkeye
+land: terreno
+mayor: alcalde
+power: electricidad

@@ -1,17 +1,20 @@
 ---
 layout: null
 permalink: /search.json
+i18n: true
 ---
 [
 {%- for d in site.documents -%}
+  {%- capture tagtext %}{% for t in d.tags %}{{ t }} {% if page.lang == "es" %}{{ t | tag_t }} {% endif %}{% endfor %}{% endcapture -%}
   {%- unless forloop.first %},{% endunless %}
-  {"id": {{ forloop.index0 }}, "kind": "document", "title": {{ d.title | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
-   "summary": {{ d.summary | default: "" | jsonify }}, "tags": {{ d.tags | join: " " | jsonify }},
-   "url": {{ d.url | relative_url | jsonify }}, "text": {{ d.content | strip_html | normalize_whitespace | jsonify }}}
+  {"id": {{ forloop.index0 }}, "kind": "document", "title": {{ d | tx: 'title' | jsonify }}, "date": "{{ d.date | date: '%Y-%m-%d' }}", "type": {{ d.type | jsonify }},
+   "summary": {{ d | tx: 'summary' | default: "" | jsonify }}, "tags": {{ tagtext | strip | jsonify }},
+   "url": {{ d.url | loc | relative_url | jsonify }}, "text": {{ d.content | strip_html | normalize_whitespace | jsonify }}}
 {%- endfor -%}
 {%- for p in site.people -%}
+  {%- capture ptext %}{{ p.aliases | join: " " }} {{ p.role }}{% if page.lang == "es" %} {{ p.role_es }}{% endif %}{% endcapture -%}
   ,
-  {"id": {{ site.documents.size | plus: forloop.index0 }}, "kind": {{ p.kind | jsonify }}, "title": {{ p.title | jsonify }}, "date": "", "type": "", "summary": {{ p.role | jsonify }}, "tags": "",
-   "url": {{ p.url | relative_url | jsonify }}, "text": {{ p.aliases | join: " " | append: " " | append: p.role | jsonify }}}
+  {"id": {{ site.documents.size | plus: forloop.index0 }}, "kind": {{ p.kind | jsonify }}, "title": {{ p.title | jsonify }}, "date": "", "type": "", "summary": {{ p | tx: 'role' | jsonify }}, "tags": "",
+   "url": {{ p.url | loc | relative_url | jsonify }}, "text": {{ ptext | jsonify }}}
 {%- endfor -%}
 ]

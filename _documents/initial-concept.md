@@ -14,6 +14,9 @@ undated: true
 date_note: "The PDF carries no date. Its contents match two decks the developer emailed to the city on Nov. 7 and Nov. 25, 2024, so it was assembled no earlier than then. The date used for sorting is when the city posted it."
 people: [david-halligan, conor-mullady, kevin-coughlin, evelyn-lim, navin-nagrani]
 orgs: [datawatt-energy, jll, manhard-consulting, pepper-construction, comed]
+title_es: "Concepto inicial del Proyecto Hawkeye (presentación del desarrollador)"
+summary_es: "Una presentación de diapositivas del desarrollador marcada “Confidential” (“Confidencial”), publicada por la ciudad sin fecha. Sus 18 páginas son dos presentaciones que Datawatt Energy adjuntó a correos enviados a la ciudad, unidas en un solo archivo: las páginas 1–11 coinciden con la presentación de 11 páginas enviada el 25 de noviembre de 2024, y las páginas 12–18 con la presentación anterior de 7 páginas enviada el 7 de noviembre de 2024. Ambas también se reproducen en el archivo de comunicaciones de la ciudad. La presentación describe un campus de centro de datos de unos 760 acres con varios edificios, al sur de la I-90, con zonificación agrícola y bajo contrato con un único propietario, con una meta de más de 1,000 megavatios conectados a una línea de ComEd de 345 kV. JLL aparece nombrada como representante de Datawatt."
+date_note_es: "El PDF no tiene fecha. Su contenido coincide con dos presentaciones que el desarrollador envió por correo a la ciudad el 7 y el 25 de noviembre de 2024, por lo que se armó no antes de esas fechas. La fecha que usamos para ordenarlo es la de su publicación por la ciudad."
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----

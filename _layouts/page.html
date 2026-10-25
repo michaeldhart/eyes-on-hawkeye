@@ -3,5 +3,6 @@ layout: default
 ---
 <article class="prose">
   <h1>{{ page.title }}</h1>
+  {% if page.lang == "es" and page.es_reviewed != true and page.es_note != false %}<p class="note" lang="es">{{ 'es_unreviewed_page' | t }}</p>{% endif %}
   {{ content }}
 </article>

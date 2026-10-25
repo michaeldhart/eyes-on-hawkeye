@@ -13,6 +13,8 @@ jobs:
         with: { ruby-version: "3.4", bundler-cache: true }
       - name: Check the people and organizations registry
         run: python3 scripts/check_people.py
+      - name: Check the Spanish translations
+        run: python3 scripts/check_i18n.py
       - id: pages
         uses: actions/configure-pages@v5
       - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

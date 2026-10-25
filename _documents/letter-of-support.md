@@ -12,6 +12,8 @@ tags: [hawkeye, mayor, annexation, datawatt]
 ocr: true
 people: [clinton-morris, david-halligan]
 orgs: [city-of-belvidere, datawatt-energy]
+title_es: "Carta de apoyo del alcalde al Proyecto Hawkeye"
+summary_es: "El alcalde Clinton Morris escribe al cofundador de Datawatt Energy expresando “enthusiastic interest” (“interés entusiasta”) en un centro de datos en Genoa Road, al sur de la I-90, y diciendo que el alcalde lo apoya. La carta dice que la ciudad quiere explorar la extensión de los servicios de la ciudad al sitio y al territorio circundante, anima a una reunión con el personal de la ciudad sobre anexión y zonificación, y señala que la anexión y el desarrollo están sujetos a la revisión y aprobación del Concejo Municipal."
 ---
 
 {% raw %}<pre class="doc-text">---- page 1 ----

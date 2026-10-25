@@ -2,18 +2,21 @@
 description: "Everyone named in the records about Belvidere's proposed data center, and where each person or organization appears. Being named doesn't imply wrongdoing."
 layout: default
 title: People and Organizations
+title_es: Personas y Organizaciones
+description_es: "Todas las personas y organizaciones nombradas en los registros sobre el centro de datos propuesto en Belvidere, y dónde aparece cada una. Ser nombrado no implica una falta."
+i18n: true
 scripts: [/assets/js/people.js]
 ---
-<h1>People and Organizations</h1>
-<p class="lede">Everyone named in the records we've posted, with the documents and timeline entries where they appear. Roles are shown as the records state them. Being named in a public record doesn't imply wrongdoing.</p>
-<div class="filters"><label>Filter by name or role <input id="p-filter" type="search" placeholder="e.g. mayor, JLL, Tait" autocomplete="off"></label><span id="p-count" class="muted" aria-live="polite"></span></div>
+<h1>{{ page.title }}</h1>
+<p class="lede">{{ 'people_lede' | t }}</p>
+<div class="filters"><label>{{ 'people_filter' | t }} <input id="p-filter" type="search" placeholder="{{ 'people_filter_ph' | t | escape }}" autocomplete="off"></label><span id="p-count" class="muted" aria-live="polite"></span></div>
 
 {% assign everyone = site.people | sort: "title" %}
 {% assign kinds = "person,org" | split: "," %}
 {% for kind in kinds %}
-<h2>{% if kind == "org" %}Organizations{% else %}People{% endif %}</h2>
+<h2>{% if kind == "org" %}{{ 'organizations' | t }}{% else %}{{ 'people' | t }}{% endif %}</h2>
 <table class="index people-index">
-  <thead><tr><th>Name</th><th>Role</th><th class="num">Records</th></tr></thead>
+  <thead><tr><th>{{ 'name' | t }}</th><th>{{ 'role' | t }}</th><th class="num">{{ 'records' | t }}</th></tr></thead>
   <tbody>
   {% for p in everyone %}{% if p.kind == kind %}
     {%- assign slug = p.slug -%}
@@ -25,9 +28,9 @@ scripts: [/assets/js/people.js]
       {%- assign ne = site.entries | where_exp: "e", "e.people contains slug" | size -%}
     {%- endif -%}
     {%- assign emp = site.people | where: "slug", p.org | first -%}
-    <tr data-search="{{ p.title | downcase }} {{ p.role | downcase }} {{ p.aliases | join: ' ' | downcase }} {{ emp.title | downcase }}">
-      <td><a href="{{ p.url | relative_url }}">{{ p.title }}</a></td>
-      <td>{{ p.role }}{% if emp %} <span class="muted small">&middot; {{ emp.title }}</span>{% endif %}</td>
+    <tr data-search="{{ p.title | downcase }} {{ p | tx: 'role' | downcase }} {{ p.aliases | join: ' ' | downcase }} {{ emp.title | downcase }}">
+      <td><a href="{{ p.url | loc | relative_url }}">{{ p.title }}</a></td>
+      <td>{{ p | tx: 'role' }}{% if emp %} <span class="muted small">&middot; {{ emp.title }}</span>{% endif %}</td>
       <td class="num">{{ nd | plus: ne }}</td>
     </tr>
   {% endif %}{% endfor %}

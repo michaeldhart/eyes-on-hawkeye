@@ -22,6 +22,12 @@ Eyes on Hawkeye was created, and is maintained, by {% include author.html %}. He
 4. **The summaries are written by AI.** Claude, an AI assistant made by Anthropic, reads the text of each document and writes the short summary and the timeline entries that help you find your way. {% include author.html %} doesn't write them by hand. Key figures and dates are checked against the scanned pages, but an AI can still get things wrong. The documents speak for themselves, so read the original when it matters.
 5. If we get something wrong, including in a summary, [tell us]({{ "/contact/" | relative_url }}) and we'll fix it and note the correction.
 
+## The Spanish Version
+
+This site is also available in Spanish. It appears automatically when your browser's language is set to Spanish, and the "Español" or "English" link at the bottom of every page switches between them.
+
+The Spanish is translated from the English by Claude, the same AI that writes the summaries. We don't translate the documents themselves: the PDFs and their full text stay in English, because they are the record. Direct quotes also stay in English, as the records have them, followed by a Spanish translation in parentheses. Spanish-speaking volunteers are reviewing the translations, and each Spanish page says whether a person has reviewed it yet. If you find a mistake in either language, [tell us]({{ "/contact/" | relative_url }}).
+
 ## What We Are Not
 
 We're not the city and we don't speak for it. We don't have inside information. Everything here is something any resident could request, and we'd like to save you the trouble.
@@ -35,3 +41,5 @@ You don't have to take that on trust. The numbers are [public](https://{{ site.g
 {%- else -%}
 Nothing is counted. This site runs no analytics, sets no cookies, and has no record that you were here.
 {%- endif %}
+
+If you choose a language with the link at the bottom of a page, your browser remembers that choice on your device, in local storage rather than a cookie. It stays on your device and is never sent to us.

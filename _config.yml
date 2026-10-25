@@ -40,6 +40,8 @@ collections:
     permalink: /people/:name/
 
 defaults:
+  - scope: { path: "" }
+    values: { lang: en }    # Spanish pages set lang: es; see _plugins/i18n.rb
   - scope: { path: "", type: documents }
     values: { layout: document }
   - scope: { path: "", type: people }

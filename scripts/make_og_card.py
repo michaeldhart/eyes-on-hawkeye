@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the site-wide social preview card, assets/og-card.png (1200x630).
+"""Generate the site-wide social preview cards, assets/og-card.png and assets/og-card-es.png (1200x630).
 
     python3 scripts/make_og_card.py
 
@@ -14,9 +14,12 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 FONT_DIR = os.environ.get("FONT_DIR", "/System/Library/Fonts/Supplemental/")
 
-EYEBROW = "COMMUNITY RECORDS PROJECT  ·  BELVIDERE, ILLINOIS"
 TITLE = ("Eyes on", "Hawkeye")
-TAGLINE = ("Belvidere’s data center,", "in the public record.")
+# per language: (file name, eyebrow, tagline lines). Keep in step with site_tagline in _data/i18n/*.yml.
+CARDS = {
+    "en": ("og-card.png", "COMMUNITY RECORDS PROJECT  ·  BELVIDERE, ILLINOIS", ("Belvidere’s data center,", "in the public record.")),
+    "es": ("og-card-es.png", "PROYECTO COMUNITARIO DE REGISTROS  ·  BELVIDERE, ILLINOIS", ("El centro de datos de Belvidere,", "en el registro público.")),
+}
 DOMAIN = "eyesonhawkeye.com"
 
 BG, ORANGE, CREAM = (22, 21, 15), (224, 89, 42), (250, 247, 242)   # same palette as the site's dark theme
@@ -24,7 +27,8 @@ MUTED, DIM = (190, 184, 172), (150, 144, 132)
 S = 2  # draw at 2x, then downsample for smooth edges
 
 
-def main():
+def make(lang):
+    filename, EYEBROW, TAGLINE = CARDS[lang]
     im = Image.new("RGB", (1200 * S, 630 * S), BG)
     d = ImageDraw.Draw(im)
     font = lambda name, size: ImageFont.truetype(FONT_DIR + name, size * S)
@@ -51,9 +55,14 @@ def main():
     r2 = 72 * S
     d.ellipse([cx - r2, cy - r2, cx + r2, cy + r2], fill=CREAM)
 
-    out = ROOT / "assets" / "og-card.png"
+    out = ROOT / "assets" / filename
     im.resize((1200, 630), Image.LANCZOS).save(out, optimize=True)
     print(f"Wrote {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
+
+
+def main():
+    for lang in CARDS:
+        make(lang)
 
 
 if __name__ == "__main__":

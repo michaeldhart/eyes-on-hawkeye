@@ -2,32 +2,33 @@
 layout: default
 ---
 <article class="doc">
-  <p class="crumb"><a href="{{ '/documents/' | relative_url }}">← All Documents</a></p>
+  <p class="crumb"><a href="{{ '/documents/' | loc | relative_url }}">{{ 'doc_all' | t }}</a></p>
   <h1>{{ page.title }}</h1>
   <p class="meta">
     {% include badge.html type=page.type %}
-    {% include date.html d=page.date undated=page.undated fmt="%B %-d, %Y" %}
-    {% if page.source %}· Source: {{ page.source }}{% endif %}
-    {% if page.pages_count %}· {{ page.pages_count }} pages{% endif %}
+    {% include date.html d=page.date undated=page.undated fmt="long" %}
+    {% if page.source %}· {{ 'doc_source' | t }}: {{ page.source }}{% endif %}
+    {% if page.pages_count %}· {{ 'doc_pages' | t: page.pages_count }}{% endif %}
   </p>
 
-  {% if page.summary %}<p class="lede">{{ page.summary }}</p>
-  <p class="ai-note">Summary written by AI. <a href="{{ '/about/#how-we-work' | relative_url }}">How we work</a></p>{% endif %}
-  {% if page.undated %}<p class="note">{{ page.date_note | default: "This document carries no date. The date used for sorting is when the city posted it." }}</p>{% endif %}
-  {% if page.compilation %}<p class="note">This file bundles many separate email conversations. We summarize each one as an entry on the <a href="{{ '/timeline/' | relative_url }}">timeline</a>, with the page numbers to look at. Many pages are repeats, because each printed email includes the messages before it.</p>{% endif %}
-  {% if page.sample %}<p class="note">This is a sample document used to test the site.</p>{% endif %}
+  {% if page.summary %}<p class="lede">{{ page.summary | en_quotes }}</p>
+  {% include ai-note.html reviewed=page.es_reviewed %}{% endif %}
+  {% if page.undated %}{% assign dnote = page.date_note %}{% unless dnote %}{% assign dnote = 'doc_undated_note' | t %}{% endunless %}<p class="note">{{ dnote }}</p>{% endif %}
+  {% if page.compilation %}<p class="note">{{ 'doc_compilation_note_1' | t }} <a href="{{ '/timeline/' | loc | relative_url }}">{{ 'doc_compilation_timeline' | t }}</a>{{ 'doc_compilation_note_2' | t }}</p>{% endif %}
+  {% if page.sample %}<p class="note">{{ 'doc_sample_note' | t }}</p>{% endif %}
+  {% if page.lang == "es" %}<p class="note">{{ 'doc_english_note' | t }}</p>{% endif %}
 
   <p class="actions">
-    {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}" target="_blank" rel="noopener">Open Original PDF</a>{% endif %}
-    {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}" target="_blank" rel="noopener">View Original Source</a>{% endif %}
+    {% if page.file %}<a class="btn" href="{{ page.file | relative_url }}" target="_blank" rel="noopener">{{ 'doc_open_pdf' | t }}</a>{% endif %}
+    {% if page.source_url %}<a class="btn ghost" href="{{ page.source_url }}" target="_blank" rel="noopener">{{ 'doc_view_source' | t }}</a>{% endif %}
   </p>
   {% if page.sha256 %}<details class="fingerprint">
-    <summary>Verify this file</summary>
-    <p>SHA-256 fingerprint of the original PDF we host:</p>
+    <summary>{{ 'doc_verify' | t }}</summary>
+    <p>{{ 'doc_verify_1' | t }}</p>
     <p><code>{{ page.sha256 }}</code></p>
-    <p class="muted small">To check your copy, run <code>shasum -a 256 {{ page.file | split: '/' | last }}</code> (Mac/Linux) or <code>certutil -hashfile {{ page.file | split: '/' | last }} SHA256</code> (Windows). If the result matches, it is the same file we have, byte for byte.</p>
+    <p class="muted small">{% assign fname = page.file | split: '/' | last %}{{ 'doc_verify_2' | t: fname }}</p>
   </details>{% endif %}
-  {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span> {% endfor %}</p>{% endif %}
+  {% if page.tags.size > 0 %}<p class="tags">{% for t in page.tags %}<span class="tag">{{ t | tag_t }}</span> {% endfor %}</p>{% endif %}
 
   {% assign my_entries = site.entries | where: "document", page.slug %}
   {%- assign mentioned = "" | split: "," -%}
@@ -40,25 +41,25 @@ layout: default
   {%- assign mentioned = mentioned | uniq -%}
   {% if mentioned.size > 0 %}
   <section class="names">
-    <h2>People and Organizations Named</h2>
+    <h2>{{ 'doc_names' | t }}</h2>
     {% assign roster = site.people | sort: "title" %}
-    <p><strong>People:</strong> {% for p in roster %}{% if p.kind == "person" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
-    <p><strong>Organizations:</strong> {% for p in roster %}{% if p.kind == "org" and mentioned contains p.slug %}<a href="{{ p.url | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
-    <p class="muted small">Everyone who sends, receives or is named in the conversations summarized for this document. <a href="{{ '/people/' | relative_url }}">All people and organizations</a></p>
+    <p><strong>{{ 'people' | t }}:</strong> {% for p in roster %}{% if p.kind == "person" and mentioned contains p.slug %}<a href="{{ p.url | loc | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
+    <p><strong>{{ 'organizations' | t }}:</strong> {% for p in roster %}{% if p.kind == "org" and mentioned contains p.slug %}<a href="{{ p.url | loc | relative_url }}">{{ p.title }}</a> {% endif %}{% endfor %}</p>
+    <p class="muted small">{{ 'doc_names_note' | t }} <a href="{{ '/people/' | loc | relative_url }}">{{ 'doc_names_all' | t }}</a></p>
   </section>
   {% endif %}
   {% if my_entries.size > 0 %}
   <section class="entries">
-    <h2>On the Timeline</h2>
+    <h2>{{ 'doc_on_timeline' | t }}</h2>
     <ul>
-      {% for e in my_entries %}<li><time>{{ e.date | date: "%b %-d, %Y" }}</time> {{ e.title }}{% if e.pages %} <span class="muted">(pp. {{ e.pages }})</span>{% endif %}</li>{% endfor %}
+      {% for e in my_entries %}<li><time>{{ e.date | fdate: 'short' }}</time> {{ e | tx: 'title' }}{% if e.pages %} <span class="muted">({{ 'pp' | t }} {{ e.pages }})</span>{% endif %}</li>{% endfor %}
     </ul>
   </section>
   {% endif %}
 
   <details class="fulltext" {% unless page.compilation %}open{% endunless %}>
-    <summary>Full Text{% if page.ocr %} <span class="muted">(machine-read from a scan; may contain errors)</span>{% endif %}</summary>
-    {{ content }}
+    <summary>{{ 'doc_full_text' | t }}{% if page.ocr %} <span class="muted">({{ 'doc_ocr_note' | t }})</span>{% endif %}</summary>
+    {% if page.lang == "es" %}<div lang="en">{{ content }}</div>{% else %}{{ content }}{% endif %}
   </details>
 </article>
 <script>
@@ -66,6 +67,6 @@ layout: default
   document.querySelectorAll("pre.doc-text").forEach(function (p) {
     p.tabIndex = 0;
     p.setAttribute("role", "region");
-    p.setAttribute("aria-label", "Full text of this document (scrollable)");
+    p.setAttribute("aria-label", {{ 'doc_text_label' | t | jsonify }});
   });
 </script>
