@@ -17,7 +17,7 @@ goatcounter_code: eyesonhawkeye
 # overview_through = the newest record it covers; overview_reviewed = when it was last
 # checked against the records. scripts/check_people.py warns if a record is newer than
 # overview_through. Update both whenever the overview text changes.
-overview_through: 2026-10-26
+overview_through: 2026-10-29
 overview_reviewed: 2026-10-29
 
 author:
