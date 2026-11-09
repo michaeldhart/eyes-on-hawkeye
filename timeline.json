@@ -23,7 +23,7 @@ plus every item in _entries. Entries may point at a document and a page range.
   {"id": {{ e.name | remove: ".md" | jsonify }}, "who": {% include who-json.html item=e %}, "title": {{ e | tx: 'title' | jsonify }}, "date": "{{ e.date | date: '%Y-%m-%d' }}", "type": {{ e.type | default: d.type | jsonify }},
    "summary": {{ e | tx: 'summary' | default: "" | jsonify }}, "rev": {{ e.es_reviewed | default: false | jsonify }},
    "url": {{ d.url | default: "" | loc | relative_url | jsonify }},
-   "pdf": {% if d.file and e.pages %}{{ d.file | append: "#page=" | append: e.pages | split: "-" | first | relative_url | jsonify }}{% elsif d.file %}{{ d.file | relative_url | jsonify }}{% else %}""{% endif %},
+   "pdf": {% if d.file and e.pages %}{{ e.pages | split: "-" | first | prepend: "#page=" | prepend: d.file | relative_url | jsonify }}{% elsif d.file %}{{ d.file | relative_url | jsonify }}{% else %}""{% endif %},
    "doc_title": {{ d | tx: 'title' | default: "" | jsonify }}, "pages": {{ e.pages | default: "" | jsonify }}}
 {%- endfor -%}
 ]
