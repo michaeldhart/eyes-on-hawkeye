@@ -5,7 +5,7 @@ description: Import a newly released city document (PDF) about Project Hawkeye i
 
 # Add a City Document
 
-Read `CLAUDE.md` first for voice, conventions and the Spanish style rules. This skill is the procedure; `CLAUDE.md` is the why. Pushing to `main` deploys the live site, so commit and push only when the user says so.
+Read `CLAUDE.md` first for voice and the decisions to keep, then `docs/conventions.md`, `docs/i18n.md` (Spanish style rules) and `docs/content-state.md`. This skill is the procedure; those files are the why. Pushing to `main` deploys the live site, so commit and push only when the user says so.
 
 ## 1. Find what's new
 - Fetch https://www.belvidereil.gov/recent-data-center-information/ and list its `wp-content/uploads` PDF links (ignore unrelated ones, e.g. 2023 files). Compare against `file:` in `_documents/*.md`.
@@ -42,7 +42,7 @@ Then edit the front matter: `people:`, `orgs:` slugs, a final summary and Spanis
 - State what the records show and don't show. "The documents don't show..." not "there was no...".
 - Attribute every factual or contested claim to who made it (residents' fact sheets, a guide, an official's opinion, the developer's letter). The records don't verify them; say so when it matters. Quote short and exactly.
 - Quote times and dates exactly; when two dates exist give both.
-- Pronouns: use none for anyone whose pronouns the records don't give (repeat the name). Mayor Morris and Mike Drella use he, as the existing text does. In Spanish avoid gendered articles for them too ("una persona residente", "Erica Bluege (City Clerk)", "la secretaría municipal"); follow `CLAUDE.md` Spanish style otherwise. Never infer gender from a name.
+- Pronouns: use none for anyone whose pronouns the records don't give (repeat the name). Mayor Morris and Mike Drella use he, as the existing text does. In Spanish avoid gendered articles for them too ("una persona residente", "Erica Bluege (City Clerk)", "la secretaría municipal"); follow the Spanish style in `docs/i18n.md` otherwise. Never infer gender from a name.
 - Spanish: quotes stay English followed by a translation in parentheses; names and email subjects stay as written.
 
 ## 7. People
@@ -56,5 +56,5 @@ Then edit the front matter: `people:`, `orgs:` slugs, a final summary and Spanis
 ## 9. Verify and wrap up
 - `python3 scripts/check_people.py`, `python3 scripts/check_i18n.py`, `bundle exec jekyll build` (no warnings).
 - Preview with the `jekyll` launch config: check the document page (and `/es/`), a timeline entry, and the home page; no console errors.
-- Update the content table and counts in `CLAUDE.md` ("State of the content").
+- Update the content table and counts in `docs/content-state.md`.
 - Report what was added, the judgment calls (omissions, descriptions in place of unreadable text, overview edits), and ask before committing and pushing. Commit messages end with the attribution line from the session.

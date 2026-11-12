@@ -1,0 +1,36 @@
+name: CI
+# Runs the same checks as the deploy workflow on every pull request, without deploying.
+# The job name `checks` is what the branch ruleset on `main` requires.
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    name: checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with: { ruby-version: "3.4", bundler-cache: true }
+      - name: Check the people and organizations registry
+        run: python3 scripts/check_people.py
+      - name: Check the Spanish translations
+        run: python3 scripts/check_i18n.py
+      - name: Build the site (fail on errors and warnings)
+        # `shell: bash` makes GitHub run bash with -e and pipefail, so a failing
+        # `jekyll build` fails the step even though `tee` succeeds. The log lives
+        # in $RUNNER_TEMP so Jekyll never copies it into _site.
+        shell: bash
+        env: { JEKYLL_ENV: production }
+        run: |
+          set -euo pipefail
+          bundle exec jekyll build --baseurl "" 2>&1 | tee "$RUNNER_TEMP/build.log"
+          if grep -qi 'warning' "$RUNNER_TEMP/build.log"; then
+            echo "::error::The Jekyll build produced warnings"
+            exit 1
+          fi
