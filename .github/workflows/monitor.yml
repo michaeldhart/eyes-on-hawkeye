@@ -1,0 +1,43 @@
+name: Monitor
+# Daily check that the live site is up and intact. On Mondays (and on manual runs)
+# it also downloads every PDF and compares it with the sha256 in its front matter.
+# A failure opens an issue (or comments on the open one); it never changes the site.
+on:
+  schedule:
+    - cron: "17 14 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: monitor
+  cancel-in-progress: false
+jobs:
+  live-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Smoke-test the live site
+        shell: bash
+        run: |
+          set -euo pipefail
+          extra=""
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            extra="--hash-pdfs"
+          fi
+          python3 scripts/smoke_test.py --base-url "https://eyesonhawkeye.com" --retries 3 --retry-wait 20 $extra
+      - name: Open or update an issue if the check failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          title="Daily site check failed"
+          body="The scheduled check of the live site failed. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" --body "$body"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body "$body"
+          fi

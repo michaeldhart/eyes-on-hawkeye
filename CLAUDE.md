@@ -42,14 +42,14 @@ Load these on demand instead of keeping them in context.
 - Tools needed for ingest: poppler (`pdftotext`, `pdfinfo`) and `ocrmypdf`; all six city PDFs so far are scans with no text layer.
 - Git remote is SSH (`git@github.com:michaeldhart/eyes-on-hawkeye.git`). Commit messages end with the Co-Authored-By line from the session's attribution guidance.
 - Pushing to `main` deploys the live site. Commit and push when asked, and say so.
-- Fast check: `./init.sh` installs gems, runs both check scripts and builds the site (about 30 seconds from a fresh clone).
+- Fast check: `./init.sh` installs gems, runs the three check scripts (`check_people.py`, `check_i18n.py`, `check_pdfs.py`) and builds the site (about 30 seconds from a fresh clone). To smoke-test a running copy: `python3 scripts/smoke_test.py --base-url http://127.0.0.1:4000` (add `--hash-pdfs` to compare the PDFs the site serves).
 
 ## Running under Apiary
 
 This repo is a hive of [Apiary](https://github.com/michaeldhart/apiary), an automated change pipeline; see its [hive profile](https://github.com/michaeldhart/apiary/blob/main/hives/eyes-on-hawkeye.md) for the risk rules. When a task comes from Apiary:
 
 - **Never push to `main`.** Work on a branch named `apiary/<short-name>` and open a pull request; the owner merges. (This overrides the lines above about committing and pushing.)
-- **Don't edit the factory's gates and context** unless the task explicitly says so: `.github/workflows/**`, `scripts/check_*.py`, `CLAUDE.md`, `docs/**`, `.claude/**`, `_config.yml`. Those changes are owner-reviewed (risk tier R3).
+- **Don't edit the factory's gates and context** unless the task explicitly says so: `.github/workflows/**`, `scripts/check_*.py`, `scripts/smoke_test.py`, `CLAUDE.md`, `docs/**`, `.claude/**`, `_config.yml`. Those changes are owner-reviewed (risk tier R3).
   - **Exceptions for a document-ingest task** (the `add-city-document` skill), which is expected to update `docs/content-state.md` (the content table and counts) and, in `_config.yml`, only the `overview_through` and `overview_reviewed` keys, together with an overview change the owner will approve. Nothing else in those files.
   - If a task suggests a convention should change, describe the proposed change in the PR description instead of editing `docs/` or `CLAUDE.md`.
   - The skill's "ask before committing and pushing" step becomes: commit to the `apiary/` branch and open the PR; the PR is the ask.
