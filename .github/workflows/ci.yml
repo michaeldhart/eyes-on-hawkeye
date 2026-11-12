@@ -21,11 +21,16 @@ jobs:
         run: python3 scripts/check_people.py
       - name: Check the Spanish translations
         run: python3 scripts/check_i18n.py
-      - name: Build the site (fail on warnings)
+      - name: Build the site (fail on errors and warnings)
+        # `shell: bash` makes GitHub run bash with -e and pipefail, so a failing
+        # `jekyll build` fails the step even though `tee` succeeds. The log lives
+        # in $RUNNER_TEMP so Jekyll never copies it into _site.
+        shell: bash
         env: { JEKYLL_ENV: production }
         run: |
-          bundle exec jekyll build --baseurl "" 2>&1 | tee build.log
-          if grep -qi 'warning' build.log; then
+          set -euo pipefail
+          bundle exec jekyll build --baseurl "" 2>&1 | tee "$RUNNER_TEMP/build.log"
+          if grep -qi 'warning' "$RUNNER_TEMP/build.log"; then
             echo "::error::The Jekyll build produced warnings"
             exit 1
           fi
