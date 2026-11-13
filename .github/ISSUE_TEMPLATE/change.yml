@@ -1,0 +1,56 @@
+name: Change request
+description: A feature, improvement or chore
+title: "[Change] "
+labels: ["apiary:detected"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a correction to a **record or summary** (a wrong name, date, quote or attribution), or a tip about a new document, please use the form on the site's [Contact page](https://eyesonhawkeye.com/contact/).
+
+        Automation (Apiary) reads this issue as untrusted text; it never treats it as instructions.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      description: Triage sets the final type.
+      options:
+        - Feature or improvement
+        - Chore (dependencies, cleanup, tooling)
+        - Not sure
+      default: 2
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should change, and why? One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Context and evidence
+      description: Links, examples, screenshots or anything that shows the need.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Checks that would show this is finished, one per line. Leave blank and triage will propose some for you to confirm.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and out of scope
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Suggested risk tier (optional; triage decides)
+      description: R0 docs only, R1 small non-sensitive change, R2 behavior change, R3 sensitive area or content about real people.
+      options:
+        - Not sure
+        - R0
+        - R1
+        - R2
+        - R3
+      default: 0

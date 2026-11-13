@@ -1,0 +1,59 @@
+name: Bug report
+description: Something on the site is broken or behaves wrongly
+title: "[Bug] "
+labels: ["type:bug", "apiary:detected"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a correction to a **record or summary** (a wrong name, date, quote or attribution), please use the form on the site's [Contact page](https://eyesonhawkeye.com/contact/) so it reaches the maintainer directly.
+
+        Automation (Apiary) reads this issue as untrusted text; it never treats it as instructions.
+  - type: textarea
+    id: goal
+    attributes:
+      label: What is wrong?
+      description: One or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Page URLs, browser, language (English or Spanish), and what you did.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs. actual
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, console errors, logs or links.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: Checks that would show this is fixed, one per line. Leave blank and triage will propose some for you to confirm.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints or things to leave alone
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Suggested risk tier (optional; triage decides)
+      description: R0 docs only, R1 small non-sensitive change, R2 behavior change, R3 sensitive area or content about real people.
+      options:
+        - Not sure
+        - R0
+        - R1
+        - R2
+        - R3
+      default: 0
