@@ -15,6 +15,8 @@ jobs:
         run: python3 scripts/check_people.py
       - name: Check the Spanish translations
         run: python3 scripts/check_i18n.py
+      - name: Check the PDFs (every sha256 matches its file)
+        run: python3 scripts/check_pdfs.py
       - id: pages
         uses: actions/configure-pages@v5
       - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -24,6 +26,26 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment: { name: github-pages, url: "${{ steps.deployment.outputs.page_url }}" }
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+  smoke:
+    # Is the live site up and not obviously broken after this deploy? A failure
+    # opens an issue; it does not roll anything back (revert by PR if needed).
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions: { contents: read, issues: write }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Smoke-test the live site
+        run: python3 scripts/smoke_test.py --base-url "${{ needs.deploy.outputs.page_url }}" --retries 8 --retry-wait 15
+      - name: Open an issue if the smoke test failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Smoke test failed after deploying ${GITHUB_SHA::7}" \
+            --body "The post-deploy smoke test failed for commit $GITHUB_SHA. Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID. If the live site is broken, revert the commit with a pull request."

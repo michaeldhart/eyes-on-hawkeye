@@ -21,6 +21,8 @@ jobs:
         run: python3 scripts/check_people.py
       - name: Check the Spanish translations
         run: python3 scripts/check_i18n.py
+      - name: Check the PDFs (every sha256 matches its file)
+        run: python3 scripts/check_pdfs.py
       - name: Build the site (fail on errors and warnings)
         # `shell: bash` makes GitHub run bash with -e and pipefail, so a failing
         # `jekyll build` fails the step even though `tee` succeeds. The log lives
@@ -34,3 +36,9 @@ jobs:
             echo "::error::The Jekyll build produced warnings"
             exit 1
           fi
+      - name: Smoke-test the built site
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 4000 --directory _site --bind 127.0.0.1 > /dev/null 2>&1 &
+          python3 scripts/smoke_test.py --base-url http://127.0.0.1:4000 --retries 5 --retry-wait 1
