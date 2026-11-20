@@ -36,32 +36,68 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 
 // ---------------------------------------------------------------- exceptions
 
+const RULE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+const KNOWN_KEYS = new Set(['path', 'rule', 'selector', 'html', 'reason', 'added', 'review_by']);
+const LIMITS = { reasonMin: 20, htmlMin: 12, maxDays: 90 };
+const DAY_MS = 86400000;
+
+// A real calendar date written YYYY-MM-DD, or null.
+function realDate(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+  const d = new Date(`${s}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== s ? null : d;
+}
+
 // Check the raw contents of exceptions.json. Returns the entries (with a `used` flag the audit
-// sets) and a list of problems; any problem fails the check.
+// sets) and a list of problems; any problem fails the check. An exception names one page, one
+// axe rule and one element (an exact axe target or a distinctive piece of its HTML), says why,
+// and must be reviewed again within 90 days.
 function validateExceptions(raw, today) {
   const problems = [];
   const entries = raw?.exceptions ?? [];
-  const list = entries.map((e, i) => ({ ...e, used: false, i }));
-  for (const e of list) {
-    const where = `exceptions.json entry ${e.i + 1} (${e.rule ?? '?'} on ${e.path ?? '?'})`;
-    for (const k of ['path', 'rule', 'reason', 'added', 'review_by']) {
-      if (!e[k] || typeof e[k] !== 'string') problems.push(`${where}: missing "${k}"`);
+  if (!Array.isArray(entries)) return { list: [], problems: ['exceptions.json: "exceptions" must be a list'] };
+  const list = [];
+  entries.forEach((entry, i) => {
+    if (!entry || typeof entry !== 'object' || Array.isArray(entry)) {
+      problems.push(`exceptions.json entry ${i + 1}: must be an object`);
+      return;
     }
-    if (!e.selector && !e.html) problems.push(`${where}: needs "selector" (part of axe's target) or "html" (part of the element's HTML); blanket exceptions are not allowed`);
-    if (e.review_by && e.review_by < today) problems.push(`${where}: review_by ${e.review_by} has passed; fix it or review the exception`);
-  }
+    const e = { ...entry, used: false, i };
+    list.push(e);
+    const where = `exceptions.json entry ${i + 1} (${entry.rule ?? '?'} on ${entry.path ?? '?'})`;
+    const bad = (msg) => problems.push(`${where}: ${msg}`);
+
+    for (const k of Object.keys(entry)) if (!KNOWN_KEYS.has(k)) bad(`unknown key "${k}"`);
+
+    if (typeof e.path !== 'string' || !e.path.startsWith('/')) bad('path must be one page such as /about/ (site-wide "*" is not allowed)');
+    if (typeof e.rule !== 'string' || !RULE_ID.test(e.rule)) bad(`rule ${JSON.stringify(e.rule)} is not an axe rule id`);
+    if (e.selector == null && e.html == null) bad('needs "selector" (an exact axe target) or "html" (part of the element\'s HTML); blanket exceptions are not allowed');
+    if (e.selector != null && (typeof e.selector !== 'string' || !e.selector.trim())) bad('"selector" must be a non-empty string');
+    if (e.html != null && (typeof e.html !== 'string' || e.html.length < LIMITS.htmlMin)) bad(`"html" must be at least ${LIMITS.htmlMin} characters`);
+    if (typeof e.reason !== 'string' || e.reason.trim().length < LIMITS.reasonMin) bad(`reason must be at least ${LIMITS.reasonMin} characters`);
+
+    const added = realDate(e.added);
+    const review = realDate(e.review_by);
+    if (!added) bad(`added ${JSON.stringify(e.added)} is not a real YYYY-MM-DD date`);
+    if (!review) bad(`review_by ${JSON.stringify(e.review_by)} is not a real YYYY-MM-DD date`);
+    if (added && review) {
+      if (review <= added) bad('review_by must be after added');
+      else if ((review - added) / DAY_MS > LIMITS.maxDays) bad(`review_by must be at most ${LIMITS.maxDays} days after added`);
+    }
+    if (review && e.review_by < today) bad(`review_by ${e.review_by} has passed; fix it or review the exception`);
+  });
   return { list, problems };
 }
 
 // Remove the nodes covered by an exception; return the violation, or null if nothing is left.
 function applyExceptions(violation, path, exceptions) {
   const nodes = violation.nodes.filter((node) => {
-    const target = node.target.flat().join(' ');
+    const targets = node.target.flat();
     const hit = exceptions.find(
       (e) =>
         e.rule === violation.id &&
-        (e.path === '*' || e.path === path) &&
-        (!e.selector || target.includes(e.selector)) &&
+        e.path === path &&
+        (!e.selector || targets.includes(e.selector)) &&
         (!e.html || (node.html ?? '').includes(e.html)),
     );
     if (hit) hit.used = true;
@@ -90,7 +126,7 @@ async function discoverPages(base) {
 
   // Document pages by rule, not by name: the shortest and the longest page.
   const docs = english.filter((p) => /^\/documents\/[^/]+\/$/.test(p));
-  if (!docs.length) throw new Error('sitemap lists no document pages');
+  if (docs.length < 2) throw new Error('sitemap lists fewer than two document pages (a short and a long one are audited)');
   const sizes = [];
   for (const p of docs) sizes.push([p, (await getText(`${base}${p}`)).length]);
   sizes.sort((a, b) => a[1] - b[1]);
@@ -111,15 +147,26 @@ const LANGS = [
 const DESKTOP = { width: 1280, height: 800 };
 const MOBILE = { width: 375, height: 812 };
 
+// The audit is hermetic: only the site itself is reachable, plus the origins below. The site
+// loads its search library (Lunr) from this CDN, so the search page cannot work without it.
+// Everything else (for example the analytics script in a production build) is blocked and counted.
+const ALLOWED_ORIGINS = new Set(['https://cdnjs.cloudflare.com']);
+
 const withPrefix = (prefix, path) => (path === '/' ? `${prefix}/` : `${prefix}${path}`);
 
 async function open(page, url) {
   for (let attempt = 0; ; attempt++) {
     try {
-      await page.goto(url, { waitUntil: 'networkidle' });
+      const res = await page.goto(url, { waitUntil: 'networkidle' });
+      if (!res) throw new Error(`no response for ${url}`);
+      if (!res.ok()) {
+        const err = new Error(`HTTP ${res.status()} for ${url}`);
+        err.noRetry = true; // a bad status is a finding, not a flaky load
+        throw err;
+      }
       return;
     } catch (e) {
-      if (attempt >= 1) throw e; // one retry on navigation errors only, never on violations
+      if (e.noRetry || attempt >= 1) throw e; // one retry on navigation errors only, never on violations or bad statuses
     }
   }
 }
@@ -168,13 +215,27 @@ function describeViolation(v) {
 
 // Run the audit over pages x languages x schemes, plus the states. Returns the counts and the
 // failures; the caller decides the exit code (see exitCodeFor).
-async function runAudit({ browser, base, pages, states, langs = LANGS, schemes = SCHEMES, exceptions, axeRules, log = console.log }) {
+async function runAudit({ browser, base, pages, states, langs = LANGS, schemes = SCHEMES, exceptions, expectAudits, axeRules, allowOrigins = ALLOWED_ORIGINS, log = console.log }) {
   const failures = [];
   const blocked = new Map();
+  const allowed = new Map();
   let audits = 0;
+  const baseOrigin = new URL(base).origin;
 
   async function check(label, path, scheme, viewport, enter) {
     const context = await browser.newContext({ colorScheme: scheme, viewport });
+    await context.route('**/*', (route) => {
+      const url = route.request().url();
+      if (url.startsWith('data:') || url.startsWith('blob:')) return route.continue();
+      const { origin, host } = new URL(url);
+      if (origin === baseOrigin) return route.continue();
+      if (allowOrigins.has(origin)) {
+        allowed.set(host, (allowed.get(host) ?? 0) + 1);
+        return route.continue();
+      }
+      blocked.set(host, (blocked.get(host) ?? 0) + 1);
+      return route.abort();
+    });
     const page = await context.newPage();
     page.setDefaultTimeout(30000);
     try {
@@ -219,7 +280,8 @@ async function runAudit({ browser, base, pages, states, langs = LANGS, schemes =
   for (const e of exceptions) {
     if (!e.used) failures.push(`exceptions.json entry ${e.i + 1} (${e.rule} on ${e.path}) matched nothing; remove it`);
   }
-  return { audits, failures, blocked };
+  if (expectAudits !== undefined && audits !== expectAudits) failures.push(`expected ${expectAudits} audits but ran ${audits}`);
+  return { audits, failures, blocked, allowed };
 }
 
 const exitCodeFor = (problems, result) => (problems.length || result.failures.length ? 1 : 0);
@@ -348,6 +410,10 @@ async function selfTest() {
     const hermetic = await run(['/ext/']);
     test('external requests are blocked and counted', hermetic.blocked.size >= 1 && externalHits === 0 && hermetic.failures.length === 0, `blocked hosts: ${hermetic.blocked.size}, external hits: ${externalHits}`);
 
+    // 8b. An allowlisted origin is let through (and counted), not blocked.
+    const allowedRun = await run(['/ext/'], { allowOrigins: new Set([`http://127.0.0.1:${external.address().port}`]) });
+    test('an allowlisted origin is allowed and counted', allowedRun.allowed.size === 1 && allowedRun.blocked.size === 0 && allowedRun.failures.length === 0, `allowed: ${allowedRun.allowed.size}, blocked: ${allowedRun.blocked.size}`);
+
     // 9. The audit-count guard fails when fewer audits ran than expected.
     const count = await run(['/clean/'], { expectAudits: 2 });
     test('audit-count guard fails when fewer audits ran', count.failures.some((f) => /expected 2 audits/.test(f)), count.failures.join('; ') || 'no failure reported');
@@ -382,6 +448,8 @@ async function audit(base, exceptionsFile, expectAudits) {
   }
   const all = [...problems, ...result.failures];
   console.log('');
+  const summary = (map) => `${[...map.values()].reduce((a, b) => a + b, 0)} request(s)${map.size ? ` (${[...map].map(([h, n]) => `${h} x${n}`).join(', ')})` : ''}`;
+  console.log(`Blocked ${summary(result.blocked)} to other origins; allowed ${summary(result.allowed)} to the site's own CDN.`);
   if (all.length) {
     console.log(`Accessibility check FAILED (${result.audits} audits run, ${all.length} problems):`);
     for (const f of all) console.log(`  - ${f}`);
