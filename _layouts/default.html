@@ -106,6 +106,7 @@
     </div>
   </header>
   <main id="main" class="wrap">
+    <img src="{{ '/favicon.ico' | relative_url }}"> <!-- DELIBERATE a11y violation (no alt) to prove the check fails; never merge -->
     {{ content }}
   </main>
   <footer class="site-footer">
