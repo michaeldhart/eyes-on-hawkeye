@@ -13,6 +13,7 @@ jobs:
   checks:
     name: checks
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
@@ -49,7 +50,7 @@ jobs:
           cache-dependency-path: scripts/a11y/package-lock.json
       - name: Install the accessibility checker
         working-directory: scripts/a11y
-        run: npm ci --no-audit --no-fund
+        run: npm ci --no-audit --no-fund --ignore-scripts
       - name: Cache the browser
         uses: actions/cache@v4
         with:
@@ -64,6 +65,14 @@ jobs:
         run: |
           set -euo pipefail
           node check-a11y.mjs --self-test
-          python3 -m http.server 4001 --directory ../../_site --bind 127.0.0.1 > /dev/null 2>&1 &
-          sleep 1
-          node check-a11y.mjs --base-url http://127.0.0.1:4001
+          python3 -m http.server 4001 --directory ../../_site --bind 127.0.0.1 > "$RUNNER_TEMP/a11y-server.log" 2>&1 &
+          server=$!
+          for _ in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:4001/sitemap.xml > /dev/null 2>&1; then break; fi
+            if ! kill -0 "$server" 2>/dev/null; then
+              echo "::error::The local server exited"; cat "$RUNNER_TEMP/a11y-server.log"; exit 1
+            fi
+            sleep 0.5
+          done
+          curl -fsS http://127.0.0.1:4001/sitemap.xml > /dev/null || { echo "::error::The local server did not answer"; cat "$RUNNER_TEMP/a11y-server.log"; exit 1; }
+          node check-a11y.mjs --base-url http://127.0.0.1:4001 --expect-audits 52
