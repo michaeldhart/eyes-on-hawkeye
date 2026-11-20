@@ -1,0 +1,17 @@
+{
+  "name": "eyes-on-hawkeye-a11y",
+  "private": true,
+  "description": "Accessibility check (axe-core in a real browser). CI and development only; nothing here is published with the site.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "self-test": "node check-a11y.mjs --self-test"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "axe-core": "4.14.0",
+    "playwright": "1.65.1"
+  }
+}
