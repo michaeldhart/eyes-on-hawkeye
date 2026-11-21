@@ -4,7 +4,7 @@
   "description": "Accessibility check (axe-core in a real browser). CI and development only; nothing here is published with the site.",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "self-test": "node check-a11y.mjs --self-test"

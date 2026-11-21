@@ -1,4 +1,4 @@
 {
-  "_about": "Known accessibility violations the check tolerates. Each entry needs: path (page path such as /about/ or /es/about/, or * for any page), rule (axe rule id), selector or html (part of axe's target or of the element's HTML; blanket entries are rejected), reason, added (YYYY-MM-DD) and review_by (YYYY-MM-DD). An expired or unmatched entry fails the check. Only the owner approves new entries.",
+  "_about": "Known accessibility violations the check tolerates. Each entry needs: path (one page such as /about/ or /es/about/; \"*\" is not allowed), rule (axe rule id), selector (an exact axe target) and/or html (at least 12 characters of the element's HTML; both must match when both are given), reason (at least 20 characters), added (YYYY-MM-DD, today or earlier) and review_by (YYYY-MM-DD, after added and at most 90 days later). Unknown keys fail. An expired or unmatched entry fails the check. Only the owner approves new entries.",
   "exceptions": []
 }
